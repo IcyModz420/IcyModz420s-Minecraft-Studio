@@ -30,6 +30,19 @@ static class FeatureTests
         {
             File.WriteAllText(doc, PlatformSupport.Markdown());
             Program.Info($"wrote {doc}");
+            // The README's compatibility grid, between its markers.
+            string readme = Path.Combine(TestPaths.Repo, "README.md");
+            if (File.Exists(readme))
+            {
+                string text = File.ReadAllText(readme);
+                const string Start = "<!-- compatibility:start -->", End = "<!-- compatibility:end -->";
+                int a = text.IndexOf(Start, StringComparison.Ordinal), b = text.IndexOf(End, StringComparison.Ordinal);
+                if (a >= 0 && b > a)
+                {
+                    File.WriteAllText(readme, text[..(a + Start.Length)] + PlatformSupport.MarkdownGrid().Replace("\n", "\r\n") + "\r\n" + text[b..]);
+                    Program.Info($"wrote the grid into {readme}");
+                }
+            }
         }
         var all = PlatformSupport.All;
         Program.Check(all.Select(f => f.Id).Distinct().Count() == all.Count, $"every feature has its own id ({all.Count} features)");

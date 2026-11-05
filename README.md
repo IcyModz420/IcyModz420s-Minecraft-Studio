@@ -1,82 +1,228 @@
 # IcyModz420's Minecraft Studio
 
-A Windows tool for opening, inspecting, repairing, editing and converting Minecraft worlds from every edition:
-Java Edition (Classic through 26.x), Bedrock (including Pocket Edition), the Legacy Console editions
-(Xbox 360, Xbox One, PS3, PS4, PS Vita, Wii U, Switch) and the New Nintendo 3DS Edition. It also includes
-studios for skins, textures, mobs and animations.
+[![Latest release](https://img.shields.io/github/v/release/IcyModz420/IcyModz420s-Minecraft-Studio?label=download)](https://github.com/IcyModz420/IcyModz420s-Minecraft-Studio/releases/latest)
+[![Downloads](https://img.shields.io/github/downloads/IcyModz420/IcyModz420s-Minecraft-Studio/total)](https://github.com/IcyModz420/IcyModz420s-Minecraft-Studio/releases)
+![Windows 10 and 11](https://img.shields.io/badge/platform-Windows%2010%20%7C%2011-blue)
+![Editions](https://img.shields.io/badge/editions-Java%20%7C%20Bedrock%20%7C%20Console%20%7C%203DS-brightgreen)
 
-![Which features work on which platform](docs/images/platforms.png)
+One program for every Minecraft world you have. Open a world from Java, Bedrock, Pocket Edition, an old Xbox 360 or
+PS3 save, a Wii U, a Switch or even a New 3DS, then look through it, fix it, edit it, or move it to another edition.
+
+![3D view of a piece of a world](docs/images/3d-view.png)
 
 ## Download
 
-Download the latest build from the [Releases](../../releases) page, unzip it anywhere and run
-`MinecraftStudio.exe`. It runs on 64-bit Windows 10 and 11; nothing else needs to be installed.
+1. Download the zip from the [latest release](https://github.com/IcyModz420/IcyModz420s-Minecraft-Studio/releases/latest).
+2. Unzip it anywhere.
+3. Run `MinecraftStudio.exe`.
 
-## Features
+Windows 10 or 11, 64-bit. No installer and nothing else to install. Your Java and Bedrock worlds show up in the list
+on the left by themselves.
 
-**Worlds**
-- Opens any world folder or save file and works out which edition and version it is.
-- Lists the Java and Bedrock worlds on the PC, and copies worlds off an Android phone over USB or Wi-Fi.
-- NBT editor for level.dat, player files, chunks and structures; Bedrock database browser; region file viewer.
+## What you can do with it
 
-**Map**
-- Every dimension, with a cave view, biome and slime chunk overlays, saved structures (with loot that hasn't been
-  taken yet), Nether portals and where they lead, and where players last died.
-- Exports a picture, a heightmap, or a web map that opens in any browser.
-- 3D view of any area or structure.
+**Move a world to another edition.** Take your old Xbox 360 or PS3 world to Java or Bedrock, a Java world to Bedrock
+or the other way round, or a new world back to an old version. Every block of the result is checked against the
+original, and anything that couldn't come across is listed.
 
-**Inspect**
-- Find blocks, items (including items inside shulker boxes), mobs and text, with results marked on the map.
-- Lost pets with their owners, villager trades, the busiest chunks, and lag machines.
-- Lists every mod, add-on and data pack a world depends on, and which of them are installed on the PC.
-- Compares two worlds block by block, even across editions, and brings chunks back from a backup.
+**Save a world that won't load.** A crash, a power cut or a bad update can leave a world that the game refuses to
+open. Rescue reads everything that can still be read, including chunks the game's own index has lost, and saves it
+into a new world.
 
-**Edit** (changes go into a copy of the world, and every block is checked)
-- Save and place buildings as Java `.nbt`, WorldEdit `.schem`, Litematica `.litematic`, Bedrock `.mcstructure`
-  or MCEdit `.schematic`, turned or mirrored, with a material list and a build checker.
-- Replace blocks, change biomes, and flatten, smooth, raise or lower terrain.
-- Map art from any picture, given to a player as maps or saved as schematics to build.
+**Find what you lost.** Diamonds in a chest somewhere, your dog that wandered off, the village you found once, a
+sign you wrote years ago. Find searches blocks, items (inside shulker boxes too), mobs and text, and shows them on the
+map. Pets are listed with their owner, and can be brought back to you.
 
-**Players**
-- Inventories, armour, ender chests, statistics and advancements.
-- Move a stuck player to safety, restore a Hardcore world after death, and copy items between worlds and editions.
-- Game mode, game rules, spawn point, time, weather and world border.
+**See your whole world.** A map of every dimension with villages, temples, shipwrecks, buried treasure, ancient
+cities and trial chambers marked, a gold ring where the loot hasn't been taken, Nether portals and where each one
+leads, slime chunks, biomes and where you last died. Export it as a picture or as a web map you can share.
+
+**Build and change things.** Cut a building out of one world and place it in another, in any edition, turned or
+mirrored. Works with WorldEdit `.schem`, Litematica `.litematic`, Java `.nbt`, Bedrock `.mcstructure` and MCEdit
+`.schematic` files. Replace blocks, change biomes, flatten or smooth land for a build, or turn any picture into map
+art.
+
+**Fix your player.** Stuck in a wall, lost in the void or trapped in the Nether: put them back on safe ground. Bring
+a Hardcore world back after a death, edit inventories, copy your items from one world or edition to another, or
+edit statistics and advancements.
+
+**Hunt down lag.** See which chunks are busiest, and find lag machines and book or chunk bans on a server world,
+then clean them up.
+
+**Check a modded world.** See which mods, add-ons and data packs a world needs, how much of each is in it, and which
+of them you have installed (Forge, NeoForge, Fabric and Quilt, from any launcher).
+
+**Make your own content.** Skin Studio, Texture Studio (with Java block models), Mob Studio and Animation Studio,
+plus templates for data packs and Bedrock add-ons and a checker that finds mistakes in packs.
+
+![Mods and add-ons in a world](docs/images/mods.png)
+
+## Supported editions
+
+| Edition | Versions |
+| --- | --- |
+| Java Edition | Classic and Indev through 26.x |
+| Bedrock Edition | 1.0 through 26.x, on any device (Windows, Android, iOS, Xbox, PlayStation, Switch) |
+| Pocket Edition | 0.1 through 0.16 |
+| Legacy Console Edition | Xbox 360, Xbox One, PS3, PS4, PS Vita, Wii U, Switch |
+| New Nintendo 3DS Edition | Opened and converted from (the 3DS deletes a world that was changed, so nothing is written to it) |
+
+Bedrock worlds have to be on the PC as a world folder or a `.mcworld` file. Android worlds can be copied over USB or
+Wi-Fi from inside the program. Console saves are opened from the files you copy off the console.
+
+## Compatibility
+
+Every feature and the editions it works on. ✅ works · ⚠️ works with a limit · 👁️ can be viewed but not changed ·
+❌ not available. In the program, Help → What Works Where shows the same table with the reason for each limit, and
+[FEATURES.md](FEATURES.md) explains them in full.
+
+<!-- compatibility:start -->
+**Open and find your worlds**
+
+| Feature | Java | Bedrock | Pocket 0.x | Xbox 360 | Xbox One Edition | PS3 | PS4 Edition | PS Vita | Wii U | Switch Edition | 3DS | Classic/Indev |
+|---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| Open any world | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Worlds on this PC | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Worlds from a phone | ❌ | ⚠️ | ⚠️ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| NBT editor | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Edit level.dat | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ⚠️ |
+| Bedrock database browser | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Region file viewer | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+
+**The map**
+
+| Feature | Java | Bedrock | Pocket 0.x | Xbox 360 | Xbox One Edition | PS3 | PS4 Edition | PS Vita | Wii U | Switch Edition | 3DS | Classic/Indev |
+|---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| Map of every dimension | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Slime chunks | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Structures on the map | ✅ | ⚠️ | ⚠️ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ⚠️ | ❌ |
+| Nether portals and where they lead | ✅ | ✅ | ❌ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ⚠️ | ❌ |
+| Where players last died | ⚠️ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Picture of a dimension | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Web map | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Heights picture | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 3D view | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Select chunks | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Delete chunks | ✅ | ⚠️ | ⚠️ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ❌ | ⚠️ |
+| Open a chunk's NBT | ✅ | ✅ | ❌ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | 👁️ | ❌ |
+
+**Look through the world**
+
+| Feature | Java | Bedrock | Pocket 0.x | Xbox 360 | Xbox One Edition | PS3 | PS4 Edition | PS Vita | Wii U | Switch Edition | 3DS | Classic/Indev |
+|---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| Find blocks, items, mobs and text | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Lost pets and villagers | ✅ | ✅ | ⚠️ | ⚠️ | ⚠️ | ⚠️ | ⚠️ | ⚠️ | ⚠️ | ⚠️ | ⚠️ | ❌ |
+| Bring the pets home | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Busiest chunks (lag finder) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Clear dropped items and experience orbs | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ❌ | ❌ |
+| Lag machines | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Clean up lag machines | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ❌ | ❌ |
+| Mods and add-ons in a world | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Compare with another world | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Bring chunks back from a backup | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ❌ | ⚠️ |
+| Check for damage | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+
+**Build and change**
+
+| Feature | Java | Bedrock | Pocket 0.x | Xbox 360 | Xbox One Edition | PS3 | PS4 Edition | PS Vita | Wii U | Switch Edition | 3DS | Classic/Indev |
+|---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| Save a structure (crop a building) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Place a structure | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ❌ | ✅ |
+| Check a build | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ❌ | ✅ |
+| Structure file | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Replace or fill blocks | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ❌ | ✅ |
+| Change the biome | ✅ | ✅ | ❌ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ❌ | ❌ |
+| Shape the land | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ❌ | ⚠️ |
+| A world's maps as pictures | ✅ | ✅ | ❌ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ❌ |
+| Make map art | ⚠️ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| New world from a heightmap | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ❌ | ✅ |
+
+**Players and items**
+
+| Feature | Java | Bedrock | Pocket 0.x | Xbox 360 | Xbox One Edition | PS3 | PS4 Edition | PS Vita | Wii U | Switch Edition | 3DS | Classic/Indev |
+|---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| Players and inventories | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | 👁️ | ⚠️ |
+| Copy items to another world | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ⚠️ |
+| Copy /give command | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Move to safety | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ❌ | ⚠️ |
+| Restore a Hardcore world from death | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Single-player and server players | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Statistics and advancements | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+
+**World settings (Cheats & game mode)**
+
+| Feature | Java | Bedrock | Pocket 0.x | Xbox 360 | Xbox One Edition | PS3 | PS4 Edition | PS Vita | Wii U | Switch Edition | 3DS | Classic/Indev |
+|---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| Game mode, difficulty, cheats, Hardcore and achievements | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ❌ |
+| Game rules | ✅ | ✅ | ✅ | ⚠️ | ⚠️ | ⚠️ | ⚠️ | ⚠️ | ⚠️ | ⚠️ | ✅ | ❌ |
+| World name | ✅ | ✅ | ⚠️ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ |
+| Spawn, time of day and weather | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ⚠️ |
+| World border | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+
+**Packs**
+
+| Feature | Java | Bedrock | Pocket 0.x | Xbox 360 | Xbox One Edition | PS3 | PS4 Edition | PS Vita | Wii U | Switch Edition | 3DS | Classic/Indev |
+|---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| World packs | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Packs on this PC | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Check a pack | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| New data pack or add-on | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
 
 **Convert and keep safe**
-- Converts any edition and version to any other (Java 26.1 back to Infdev, Bedrock, Pocket Edition, all seven
-  consoles, Classic and Indev), then checks the result against the original.
-- Rescues damaged worlds, makes backups (automatically if you want), and packs a world into a single file.
+
+| Feature | Java | Bedrock | Pocket 0.x | Xbox 360 | Xbox One Edition | PS3 | PS4 Edition | PS Vita | Wii U | Switch Edition | 3DS | Classic/Indev |
+|---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| Convert a world (from) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Convert a world (to) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ❌ | ✅ |
+| Change blocks as it converts | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ❌ | ✅ |
+| Backups | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Automatic backups | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Save a world as one file | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Rescue a damaged world | ✅ | ✅ | ⚠️ | ⚠️ | ⚠️ | ⚠️ | ⚠️ | ⚠️ | ⚠️ | ⚠️ | ⚠️ | ⚠️ |
+| Optimize storage | ✅ | ✅ | ❌ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ❌ | ❌ |
 
 **Create**
-- Skin Studio, Texture Studio (with Java block and item models), Mob Studio and Animation Studio.
-- New data pack and add-on templates for any version, and a pack checker.
 
-[FEATURES.md](FEATURES.md) lists every feature and the platforms it works on. In the app, the same table is under
-Help → What Works Where.
+| Feature | Java | Bedrock | Pocket 0.x | Xbox 360 | Xbox One Edition | PS3 | PS4 Edition | PS Vita | Wii U | Switch Edition | 3DS | Classic/Indev |
+|---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| Skin Studio | ✅ | ⚠️ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Texture Studio | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Block and item models | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Mob Studio | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Animation Studio | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
 
-| Mods and add-ons in a world | 3D view |
-| --- | --- |
-| ![Mods and add-ons window](docs/images/mods.png) | ![3D view of a piece of a world](docs/images/3d-view.png) |
+<!-- compatibility:end -->
 
-## Your worlds
+## Is it safe for my worlds?
 
-Tools that change a world either save into it only when you press Save, after making a backup, or write a new
-copy and check it. Converting, rescuing, placing, replacing, reshaping and restoring always write a new copy.
+Yes. Anything that changes a world either makes a backup first and saves only when you press Save, or writes a new
+copy of the world and checks every block of it. Converting, rescuing, placing, replacing, reshaping and restoring
+never touch the original. Automatic backups can be turned on in Settings.
+
+## FAQ
+
+**Do I need Minecraft installed?** No, for opening and editing worlds. The skin, texture and mob studios use the
+textures and models of the Minecraft you have installed, because none are included with this program.
+
+**Does it work on Mac or Linux?** Not yet. It is a Windows program.
+
+**Can I use it on a server world?** Yes. Open the world folder from the server, preferably while the server is
+stopped. There are tools for moving players between single-player and server files.
+
+**Does it support mods?** It opens modded Java worlds and keeps mod blocks, items and mobs when you edit them, and the
+mods window tells you what a world needs. Converting a modded world to another edition turns mod blocks into the
+closest vanilla blocks you choose.
 
 ## Command line
 
-`mcstudio.exe` runs the same features from scripts: `info`, `targets`, `convert`, `find`, `structures`, `lag`,
-`mods`, `restore`, `replace`, `biome`, `shape`, `heights`, `heightmap`, `move`, `maps`, `share`, `crop`,
-`structure`, `materials`, `obj`, `packcheck` and `newpack`.
+`mcstudio.exe` comes in the same zip and runs the same tools from scripts and batch files:
 
 ```
 mcstudio info "C:\path\to\world"
-mcstudio targets
 mcstudio convert "C:\path\to\world" --to <target> --out "C:\path\to\new folder"
-mcstudio help convert
+mcstudio targets
+mcstudio help
 ```
-
-It only reads the worlds and files it is given and writes its results to new folders and files.
 
 ## Building from source
 
@@ -88,18 +234,22 @@ dotnet build MinecraftStudio.sln -c Release
 
 | Project | What it is |
 | --- | --- |
-| `MinecraftStudio.Core` | Save formats, conversion and every world tool; no UI |
-| `MinecraftStudio` | The Windows app |
+| `MinecraftStudio.Core` | Save formats, conversion and every world tool, without UI |
+| `MinecraftStudio` | The Windows program |
 | `MinecraftStudio.Cli` | The `mcstudio` command line |
-| `McTests` | Test harness; runs against sample worlds that are not included in the repository |
+| `McTests` | Test harness, run against sample worlds that are not included in the repository |
 
-## Notes
+## Support
 
-No Minecraft textures, skins or models are included. The studios read them from the Minecraft installations on
-your PC. Third-party data used by the converter is listed in [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md).
+Found a bug or a world that won't open? [Open an issue](https://github.com/IcyModz420/IcyModz420s-Minecraft-Studio/issues)
+and say which edition and version the world is from.
 
-Not an official Minecraft product. Not approved by or associated with Mojang or Microsoft.
+If the tool helped you, the price is one subscription to **IcyModz420** on YouTube.
 
-If you find the tool useful, a subscription to IcyModz420 on YouTube is appreciated.
+## Legal
+
+Not an official Minecraft product. Not approved by or associated with Mojang or Microsoft. No Minecraft textures,
+skins or models are included. Third-party data used by the converter is listed in
+[THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md).
 
 Copyright © 2026 IcyModz420. All rights reserved.

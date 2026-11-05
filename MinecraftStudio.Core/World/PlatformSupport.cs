@@ -324,6 +324,27 @@ public static class PlatformSupport
     public static string MovingWorldsText() => string.Join("\n\n", MovingWorlds.Select(m => m.Where.ToUpperInvariant() + "\n" + string.Join("\n", m.Steps.Select(step => "  " + step.Replace("`", "")))));
 
     /// <summary>FEATURES.md: every feature with where it works, from this table.</summary>
+    /// <summary>
+    /// The whole table as one Markdown grid per group (the README's compatibility section): ✅ works, ⚠️ works with a limit,
+    /// 👁️ to look at only, ❌ not there.
+    /// </summary>
+    public static string MarkdownGrid()
+    {
+        var sb = new System.Text.StringBuilder();
+        string Head(Platform p) => ShortName(p).Replace(" Ed.", " Edition");
+        foreach (var group in All.GroupBy(f => f.Group))
+        {
+            sb.Append("\n**").Append(group.Key).Append("**\n\n| Feature | ").Append(string.Join(" | ", Everything.Select(Head))).Append(" |\n|---|");
+            sb.Append(string.Concat(Everything.Select(_ => ":---:|"))).Append('\n');
+            foreach (var f in group)
+                sb.Append("| ").Append(f.Name).Append(" | ").Append(string.Join(" | ", Everything.Select(p => f[p].Support switch
+                {
+                    Support.Yes => "✅", Support.Limited => "⚠️", Support.Look => "👁️", _ => "❌",
+                }))).Append(" |\n");
+        }
+        return sb.ToString();
+    }
+
     public static string Markdown()
     {
         var sb = new System.Text.StringBuilder();
