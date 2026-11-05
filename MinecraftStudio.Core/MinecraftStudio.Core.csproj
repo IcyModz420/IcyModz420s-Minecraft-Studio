@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <RootNamespace>MinecraftStudio.Core</RootNamespace>
+    <AssemblyName>MinecraftStudio.Core</AssemblyName>
+    <Product>IcyModz420's Minecraft Studio</Product>
+    <AssemblyTitle>IcyModz420's Minecraft Studio (save and pack logic)</AssemblyTitle>
+    <Company>IcyModz420</Company>
+    <Authors>IcyModz420</Authors>
+    <Copyright>Copyright © 2026 IcyModz420</Copyright>
+    <Version>1.0.0</Version>
+  </PropertyGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Data\*" LogicalName="MinecraftStudio.Data.%(Filename)%(Extension)" />
+    <EmbeddedResource Include="Data\mappings\*" LogicalName="MinecraftStudio.Data.mappings.%(Filename)%(Extension)" />
+  </ItemGroup>
+</Project>

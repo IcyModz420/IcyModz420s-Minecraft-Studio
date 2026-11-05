@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AssemblyTitle>IcyModz420's Minecraft Studio</AssemblyTitle>
+    <Product>IcyModz420's Minecraft Studio</Product>
+    <Company>IcyModz420</Company>
+    <Authors>IcyModz420</Authors>
+    <Copyright>Copyright © 2026 IcyModz420</Copyright>
+    <Description>IcyModz420's Minecraft Studio: an unofficial save, world, skin and texture tool for every Minecraft edition. Not affiliated with Mojang or Microsoft.</Description>
+    <Version>1.0.0</Version>
+    <RootNamespace>MinecraftStudio</RootNamespace>
+    <AssemblyName>MinecraftStudio</AssemblyName>
+    <ApplicationHighDpiMode>SystemAware</ApplicationHighDpiMode>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <InternalsVisibleTo Include="PhoneTest" />
+    <!-- tools/ui-smoke: the hidden-window UI checks -->
+    <InternalsVisibleTo Include="uismoke" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MinecraftStudio.Core\MinecraftStudio.Core.csproj" />
+  </ItemGroup>
+</Project>

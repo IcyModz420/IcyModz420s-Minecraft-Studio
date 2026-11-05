@@ -1,0 +1,477 @@
+legacy_id,java_1_12_name,data_values,java_1_13_block,first_state_properties,conversion_note
+0,air,0,minecraft:air,,
+1,stone,0,minecraft:stone,,
+1,stone,1,minecraft:granite,,
+1,stone,2,minecraft:polished_granite,,
+1,stone,3,minecraft:diorite,,
+1,stone,4,minecraft:polished_diorite,,
+1,stone,5,minecraft:andesite,,
+1,stone,6,minecraft:polished_andesite,,
+2,grass,0,minecraft:grass_block,snowy=false,snowy derived from block above
+3,dirt,0,minecraft:dirt,,
+3,dirt,1,minecraft:coarse_dirt,,
+3,dirt,2,minecraft:podzol,snowy=false,snowy derived from block above
+4,cobblestone,0,minecraft:cobblestone,,
+5,planks,0,minecraft:oak_planks,,
+5,planks,1,minecraft:spruce_planks,,
+5,planks,2,minecraft:birch_planks,,
+5,planks,3,minecraft:jungle_planks,,
+5,planks,4,minecraft:acacia_planks,,
+5,planks,5,minecraft:dark_oak_planks,,
+6,sapling,0 8,minecraft:oak_sapling,stage=0,
+6,sapling,1 9,minecraft:spruce_sapling,stage=0,
+6,sapling,2 10,minecraft:birch_sapling,stage=0,
+6,sapling,3 11,minecraft:jungle_sapling,stage=0,
+6,sapling,4 12,minecraft:acacia_sapling,stage=0,
+6,sapling,5 13,minecraft:dark_oak_sapling,stage=0,
+7,bedrock,0,minecraft:bedrock,,
+8,flowing_water,0-15,minecraft:water,level=0,
+9,water,0-15,minecraft:water,level=0,
+10,flowing_lava,0-15,minecraft:lava,level=0,
+11,lava,0-15,minecraft:lava,level=0,
+12,sand,0,minecraft:sand,,
+12,sand,1,minecraft:red_sand,,
+13,gravel,0,minecraft:gravel,,
+14,gold_ore,0,minecraft:gold_ore,,
+15,iron_ore,0,minecraft:iron_ore,,
+16,coal_ore,0,minecraft:coal_ore,,
+17,log,0 4 8,minecraft:oak_log,axis=y,
+17,log,1 5 9,minecraft:spruce_log,axis=y,
+17,log,2 6 10,minecraft:birch_log,axis=y,
+17,log,3 7 11,minecraft:jungle_log,axis=y,
+17,log,12,minecraft:oak_wood,,
+17,log,13,minecraft:spruce_wood,,
+17,log,14,minecraft:birch_wood,,
+17,log,15,minecraft:jungle_wood,,
+18,leaves,0 4 8 12,minecraft:oak_leaves,"persistent=false,distance=1",distance recomputed by the game; bit2 (no-decay) -> persistent=true
+18,leaves,1 5 9 13,minecraft:spruce_leaves,"persistent=false,distance=1",distance recomputed by the game; bit2 (no-decay) -> persistent=true
+18,leaves,2 6 10 14,minecraft:birch_leaves,"persistent=false,distance=1",distance recomputed by the game; bit2 (no-decay) -> persistent=true
+18,leaves,3 7 11 15,minecraft:jungle_leaves,"persistent=false,distance=1",distance recomputed by the game; bit2 (no-decay) -> persistent=true
+19,sponge,0,minecraft:sponge,,
+19,sponge,1,minecraft:wet_sponge,,
+20,glass,0,minecraft:glass,,
+21,lapis_ore,0,minecraft:lapis_ore,,
+22,lapis_block,0,minecraft:lapis_block,,
+23,dispenser,0-5 8-13,minecraft:dispenser,"triggered=false,facing=down",
+24,sandstone,0,minecraft:sandstone,,
+24,sandstone,1,minecraft:chiseled_sandstone,,
+24,sandstone,2,minecraft:cut_sandstone,,
+25,noteblock,0,minecraft:note_block,,note/instrument from block entity + block below
+26,bed,0-15,minecraft:red_bed,"part=foot,facing=south,occupied=false",colour from 1.12 block entity 'color' (pre-1.12 beds are red); facing/part/occupied from data
+27,golden_rail,0-5 8-13,minecraft:powered_rail,"shape=north_south,powered=false",
+28,detector_rail,0-5 8-13,minecraft:detector_rail,"shape=north_south,powered=false",
+29,sticky_piston,0-5 8-13,minecraft:sticky_piston,"facing=down,extended=false",
+30,web,0,minecraft:cobweb,,
+31,tallgrass,0,minecraft:dead_bush,,
+31,tallgrass,1,minecraft:grass,,renamed short_grass in 1.20.3
+31,tallgrass,2,minecraft:fern,,
+32,deadbush,0,minecraft:dead_bush,,
+33,piston,0-5 8-13,minecraft:piston,"facing=down,extended=false",
+34,piston_head,0-5 8-13,minecraft:piston_head,"short=false,facing=down,type=normal",
+35,wool,0,minecraft:white_wool,,
+35,wool,1,minecraft:orange_wool,,
+35,wool,2,minecraft:magenta_wool,,
+35,wool,3,minecraft:light_blue_wool,,
+35,wool,4,minecraft:yellow_wool,,
+35,wool,5,minecraft:lime_wool,,
+35,wool,6,minecraft:pink_wool,,
+35,wool,7,minecraft:gray_wool,,
+35,wool,8,minecraft:light_gray_wool,,
+35,wool,9,minecraft:cyan_wool,,
+35,wool,10,minecraft:purple_wool,,
+35,wool,11,minecraft:blue_wool,,
+35,wool,12,minecraft:brown_wool,,
+35,wool,13,minecraft:green_wool,,
+35,wool,14,minecraft:red_wool,,
+35,wool,15,minecraft:black_wool,,
+36,piston_extension,0-5 8-13,minecraft:moving_piston,"facing=down,type=normal",
+37,yellow_flower,0,minecraft:dandelion,,
+38,red_flower,0,minecraft:poppy,,
+38,red_flower,1,minecraft:blue_orchid,,
+38,red_flower,2,minecraft:allium,,
+38,red_flower,3,minecraft:azure_bluet,,
+38,red_flower,4,minecraft:red_tulip,,
+38,red_flower,5,minecraft:orange_tulip,,
+38,red_flower,6,minecraft:white_tulip,,
+38,red_flower,7,minecraft:pink_tulip,,
+38,red_flower,8,minecraft:oxeye_daisy,,
+39,brown_mushroom,0,minecraft:brown_mushroom,,
+40,red_mushroom,0,minecraft:red_mushroom,,
+41,gold_block,0,minecraft:gold_block,,
+42,iron_block,0,minecraft:iron_block,,
+43,double_stone_slab,0,minecraft:stone_slab,type=double,1.14 renamed this slab smooth_stone_slab (new stone_slab added)
+43,double_stone_slab,1,minecraft:sandstone_slab,type=double,
+43,double_stone_slab,2 10,minecraft:petrified_oak_slab,type=double,
+43,double_stone_slab,3 11,minecraft:cobblestone_slab,type=double,
+43,double_stone_slab,4 12,minecraft:brick_slab,type=double,
+43,double_stone_slab,5 13,minecraft:stone_brick_slab,type=double,
+43,double_stone_slab,6 14,minecraft:nether_brick_slab,type=double,
+43,double_stone_slab,7,minecraft:quartz_slab,type=double,
+43,double_stone_slab,8,minecraft:smooth_stone,,
+43,double_stone_slab,9,minecraft:smooth_sandstone,,
+43,double_stone_slab,15,minecraft:smooth_quartz,,
+44,stone_slab,0 8,minecraft:stone_slab,type=bottom,1.14 renamed this slab smooth_stone_slab (new stone_slab added)
+44,stone_slab,1 9,minecraft:sandstone_slab,type=bottom,
+44,stone_slab,2 10,minecraft:petrified_oak_slab,type=bottom,
+44,stone_slab,3 11,minecraft:cobblestone_slab,type=bottom,
+44,stone_slab,4 12,minecraft:brick_slab,type=bottom,
+44,stone_slab,5 13,minecraft:stone_brick_slab,type=bottom,
+44,stone_slab,6 14,minecraft:nether_brick_slab,type=bottom,
+44,stone_slab,7 15,minecraft:quartz_slab,type=bottom,
+45,brick_block,0,minecraft:bricks,,
+46,tnt,0-1,minecraft:tnt,unstable=false,
+47,bookshelf,0,minecraft:bookshelf,,
+48,mossy_cobblestone,0,minecraft:mossy_cobblestone,,
+49,obsidian,0,minecraft:obsidian,,
+50,torch,1-4,minecraft:wall_torch,facing=east,
+50,torch,5,minecraft:torch,,
+51,fire,0-15,minecraft:fire,"east=false,south=false,north=false,west=false,up=false,age=0",
+52,mob_spawner,0,minecraft:spawner,,spawner contents from block entity
+53,oak_stairs,0-7,minecraft:oak_stairs,"half=bottom,shape=outer_right,facing=east",legacy.json writes shape=outer_right for oak stairs; real shape is derived from neighbours
+54,chest,2-5,minecraft:chest,"facing=north,type=single",chest type (single/left/right) derived from neighbouring chests
+55,redstone_wire,0-15,minecraft:redstone_wire,"east=none,south=none,north=none,west=none,power=0",wire connections derived from neighbours
+56,diamond_ore,0,minecraft:diamond_ore,,
+57,diamond_block,0,minecraft:diamond_block,,
+58,crafting_table,0,minecraft:crafting_table,,
+59,wheat,0-7,minecraft:wheat,age=0,
+60,farmland,0-7,minecraft:farmland,moisture=0,
+61,furnace,2-5,minecraft:furnace,"facing=north,lit=false",
+62,lit_furnace,2-5,minecraft:furnace,"facing=north,lit=true",
+63,standing_sign,0-15,minecraft:sign,rotation=0,renamed oak_sign in 1.14
+64,wooden_door,0-11,minecraft:oak_door,"hinge=right,half=lower,powered=false,facing=east,open=false","lower+upper halves must be merged: facing/open from lower, hinge/powered from upper"
+65,ladder,2-5,minecraft:ladder,facing=north,
+66,rail,0-9,minecraft:rail,shape=north_south,
+67,stone_stairs,0-7,minecraft:cobblestone_stairs,"half=bottom,shape=straight,facing=east",stairs shape derived from neighbours
+68,wall_sign,2-5,minecraft:wall_sign,facing=north,renamed oak_wall_sign in 1.14
+69,lever,0-15,minecraft:lever,"powered=false,facing=north,face=ceiling",
+70,stone_pressure_plate,0-1,minecraft:stone_pressure_plate,powered=false,
+71,iron_door,0-11,minecraft:iron_door,"hinge=right,half=lower,powered=false,facing=east,open=false","lower+upper halves must be merged: facing/open from lower, hinge/powered from upper"
+72,wooden_pressure_plate,0-1,minecraft:oak_pressure_plate,powered=false,
+73,redstone_ore,0,minecraft:redstone_ore,lit=false,
+74,lit_redstone_ore,0,minecraft:redstone_ore,lit=true,
+75,unlit_redstone_torch,1-4,minecraft:redstone_wall_torch,"facing=east,lit=false",
+75,unlit_redstone_torch,5,minecraft:redstone_torch,lit=false,
+76,redstone_torch,1-4,minecraft:redstone_wall_torch,"facing=east,lit=true",
+76,redstone_torch,5,minecraft:redstone_torch,lit=true,
+77,stone_button,0-5 8-13,minecraft:stone_button,"powered=false,facing=east,face=ceiling",
+78,snow_layer,0-7,minecraft:snow,layers=1,
+79,ice,0,minecraft:ice,,
+80,snow,0,minecraft:snow_block,,
+81,cactus,0-15,minecraft:cactus,age=0,
+82,clay,0,minecraft:clay,,
+83,reeds,0-15,minecraft:sugar_cane,age=0,
+84,jukebox,0-1,minecraft:jukebox,has_record=false,has_record from block entity
+85,fence,0,minecraft:oak_fence,"east=false,south=false,north=false,west=false",connections derived from neighbours
+86,pumpkin,0-3,minecraft:carved_pumpkin,facing=south,
+87,netherrack,0,minecraft:netherrack,,
+88,soul_sand,0,minecraft:soul_sand,,
+89,glowstone,0,minecraft:glowstone,,
+90,portal,1-2,minecraft:nether_portal,axis=x,
+91,lit_pumpkin,0-3,minecraft:jack_o_lantern,facing=south,
+92,cake,0-6,minecraft:cake,bites=0,
+93,unpowered_repeater,0-15,minecraft:repeater,"delay=1,facing=south,locked=false,powered=false",
+94,powered_repeater,0-15,minecraft:repeater,"delay=1,facing=south,locked=false,powered=true",
+95,stained_glass,0,minecraft:white_stained_glass,,
+95,stained_glass,1,minecraft:orange_stained_glass,,
+95,stained_glass,2,minecraft:magenta_stained_glass,,
+95,stained_glass,3,minecraft:light_blue_stained_glass,,
+95,stained_glass,4,minecraft:yellow_stained_glass,,
+95,stained_glass,5,minecraft:lime_stained_glass,,
+95,stained_glass,6,minecraft:pink_stained_glass,,
+95,stained_glass,7,minecraft:gray_stained_glass,,
+95,stained_glass,8,minecraft:light_gray_stained_glass,,
+95,stained_glass,9,minecraft:cyan_stained_glass,,
+95,stained_glass,10,minecraft:purple_stained_glass,,
+95,stained_glass,11,minecraft:blue_stained_glass,,
+95,stained_glass,12,minecraft:brown_stained_glass,,
+95,stained_glass,13,minecraft:green_stained_glass,,
+95,stained_glass,14,minecraft:red_stained_glass,,
+95,stained_glass,15,minecraft:black_stained_glass,,
+96,trapdoor,0-15,minecraft:oak_trapdoor,"half=bottom,facing=north,open=false,powered=false",
+97,monster_egg,0,minecraft:infested_stone,,
+97,monster_egg,1,minecraft:infested_cobblestone,,
+97,monster_egg,2,minecraft:infested_stone_bricks,,
+97,monster_egg,3,minecraft:infested_mossy_stone_bricks,,
+97,monster_egg,4,minecraft:infested_cracked_stone_bricks,,
+97,monster_egg,5,minecraft:infested_chiseled_stone_bricks,,
+98,stonebrick,0,minecraft:stone_bricks,,
+98,stonebrick,1,minecraft:mossy_stone_bricks,,
+98,stonebrick,2,minecraft:cracked_stone_bricks,,
+98,stonebrick,3,minecraft:chiseled_stone_bricks,,
+99,brown_mushroom_block,0-9 14,minecraft:brown_mushroom_block,"north=false,east=false,south=false,west=false,up=false,down=false",
+99,brown_mushroom_block,10 15,minecraft:mushroom_stem,"north=true,east=true,south=true,west=true,up=false,down=false",
+100,red_mushroom_block,0-9 14,minecraft:red_mushroom_block,"north=false,east=false,south=false,west=false,up=false,down=false",
+100,red_mushroom_block,10 15,minecraft:mushroom_stem,"north=true,east=true,south=true,west=true,up=false,down=false",
+101,iron_bars,0,minecraft:iron_bars,"east=false,south=false,north=false,west=false",connections derived from neighbours
+102,glass_pane,0,minecraft:glass_pane,"east=false,south=false,north=false,west=false",connections derived from neighbours
+103,melon_block,0,minecraft:melon,,
+104,pumpkin_stem,0-7,minecraft:pumpkin_stem,age=0,becomes attached_pumpkin_stem when a pumpkin is adjacent
+105,melon_stem,0-7,minecraft:melon_stem,age=0,becomes attached_melon_stem when a melon is adjacent
+106,vine,0-15,minecraft:vine,"east=false,south=false,north=false,west=false,up=false",up derived from block above
+107,fence_gate,0-15,minecraft:oak_fence_gate,"in_wall=false,powered=false,facing=south,open=false",
+108,brick_stairs,0-7,minecraft:brick_stairs,"half=bottom,shape=straight,facing=east",stairs shape derived from neighbours
+109,stone_brick_stairs,0-7,minecraft:stone_brick_stairs,"half=bottom,shape=straight,facing=east",stairs shape derived from neighbours
+110,mycelium,0,minecraft:mycelium,snowy=false,snowy derived from block above
+111,waterlily,0,minecraft:lily_pad,,
+112,nether_brick,0,minecraft:nether_bricks,,
+113,nether_brick_fence,0,minecraft:nether_brick_fence,"east=false,south=false,north=false,west=false",connections derived from neighbours
+114,nether_brick_stairs,0-7,minecraft:nether_brick_stairs,"half=bottom,shape=straight,facing=east",stairs shape derived from neighbours
+115,nether_wart,0-3,minecraft:nether_wart,age=0,
+116,enchanting_table,0,minecraft:enchanting_table,,
+117,brewing_stand,0-7,minecraft:brewing_stand,"has_bottle_0=false,has_bottle_1=false,has_bottle_2=false",
+118,cauldron,0-3,minecraft:cauldron,level=0,1.17: level 1-3 becomes water_cauldron[level]
+119,end_portal,0,minecraft:end_portal,,
+120,end_portal_frame,0-7,minecraft:end_portal_frame,"eye=false,facing=south",
+121,end_stone,0,minecraft:end_stone,,
+122,dragon_egg,0,minecraft:dragon_egg,,
+123,redstone_lamp,0,minecraft:redstone_lamp,lit=false,
+124,lit_redstone_lamp,0,minecraft:redstone_lamp,lit=true,
+125,double_wooden_slab,0,minecraft:oak_slab,type=double,
+125,double_wooden_slab,1,minecraft:spruce_slab,type=double,
+125,double_wooden_slab,2,minecraft:birch_slab,type=double,
+125,double_wooden_slab,3,minecraft:jungle_slab,type=double,
+125,double_wooden_slab,4,minecraft:acacia_slab,type=double,
+125,double_wooden_slab,5,minecraft:dark_oak_slab,type=double,
+126,wooden_slab,0 8,minecraft:oak_slab,type=bottom,
+126,wooden_slab,1 9,minecraft:spruce_slab,type=bottom,
+126,wooden_slab,2 10,minecraft:birch_slab,type=bottom,
+126,wooden_slab,3 11,minecraft:jungle_slab,type=bottom,
+126,wooden_slab,4 12,minecraft:acacia_slab,type=bottom,
+126,wooden_slab,5 13,minecraft:dark_oak_slab,type=bottom,
+127,cocoa,0-11,minecraft:cocoa,"facing=south,age=0",
+128,sandstone_stairs,0-7,minecraft:sandstone_stairs,"half=bottom,shape=straight,facing=east",stairs shape derived from neighbours
+129,emerald_ore,0,minecraft:emerald_ore,,
+130,ender_chest,2-5,minecraft:ender_chest,facing=north,
+131,tripwire_hook,0-15,minecraft:tripwire_hook,"powered=false,attached=false,facing=south",
+132,tripwire,0-1 4-5 8-9 12-13,minecraft:tripwire,"disarmed=false,east=false,powered=false,south=false,north=false,west=false,attached=false",
+133,emerald_block,0,minecraft:emerald_block,,
+134,spruce_stairs,0-7,minecraft:spruce_stairs,"half=bottom,shape=straight,facing=east",stairs shape derived from neighbours
+135,birch_stairs,0-7,minecraft:birch_stairs,"half=bottom,shape=straight,facing=east",stairs shape derived from neighbours
+136,jungle_stairs,0-7,minecraft:jungle_stairs,"half=bottom,shape=straight,facing=east",stairs shape derived from neighbours
+137,command_block,0-5 8-13,minecraft:command_block,"conditional=false,facing=down",
+138,beacon,0,minecraft:beacon,,
+139,cobblestone_wall,0,minecraft:cobblestone_wall,"east=false,south=false,north=false,west=false,up=false",connections derived from neighbours
+139,cobblestone_wall,1,minecraft:mossy_cobblestone_wall,"east=false,south=false,north=false,west=false,up=false",connections derived from neighbours
+140,flower_pot,0,minecraft:flower_pot,,"1.7.2-1.12 contents come from block entity Item/Data, not the data value"
+140,flower_pot,1,minecraft:potted_poppy,,"1.7.2-1.12 contents come from block entity Item/Data, not the data value"
+140,flower_pot,2,minecraft:potted_dandelion,,"1.7.2-1.12 contents come from block entity Item/Data, not the data value"
+140,flower_pot,3,minecraft:potted_oak_sapling,,"1.7.2-1.12 contents come from block entity Item/Data, not the data value"
+140,flower_pot,4,minecraft:potted_spruce_sapling,,"1.7.2-1.12 contents come from block entity Item/Data, not the data value"
+140,flower_pot,5,minecraft:potted_birch_sapling,,"1.7.2-1.12 contents come from block entity Item/Data, not the data value"
+140,flower_pot,6,minecraft:potted_jungle_sapling,,"1.7.2-1.12 contents come from block entity Item/Data, not the data value"
+140,flower_pot,7,minecraft:potted_red_mushroom,,"1.7.2-1.12 contents come from block entity Item/Data, not the data value"
+140,flower_pot,8,minecraft:potted_brown_mushroom,,"1.7.2-1.12 contents come from block entity Item/Data, not the data value"
+140,flower_pot,9,minecraft:potted_cactus,,"1.7.2-1.12 contents come from block entity Item/Data, not the data value"
+140,flower_pot,10,minecraft:potted_dead_bush,,"1.7.2-1.12 contents come from block entity Item/Data, not the data value"
+140,flower_pot,11,minecraft:potted_fern,,"1.7.2-1.12 contents come from block entity Item/Data, not the data value"
+140,flower_pot,12,minecraft:potted_acacia_sapling,,"1.7.2-1.12 contents come from block entity Item/Data, not the data value"
+140,flower_pot,13,minecraft:potted_dark_oak_sapling,,"1.7.2-1.12 contents come from block entity Item/Data, not the data value"
+140,flower_pot,14,minecraft:potted_blue_orchid,,"1.7.2-1.12 contents come from block entity Item/Data, not the data value"
+140,flower_pot,15,minecraft:potted_allium,,"1.7.2-1.12 contents come from block entity Item/Data, not the data value"
+141,carrots,0-7,minecraft:carrots,age=0,
+142,potatoes,0-7,minecraft:potatoes,age=0,
+143,wooden_button,0-5 8-13,minecraft:oak_button,"powered=false,facing=east,face=ceiling",
+144,skull,0-1 8-9,minecraft:skeleton_skull,rotation=0,real head type from block entity SkullType; floor rotation from block entity Rot
+144,skull,2-5 10-13,minecraft:skeleton_wall_skull,facing=north,real head type from block entity SkullType; floor rotation from block entity Rot
+145,anvil,0-3,minecraft:anvil,facing=south,
+145,anvil,4-7,minecraft:chipped_anvil,facing=south,
+145,anvil,8-11,minecraft:damaged_anvil,facing=south,
+146,trapped_chest,2-5,minecraft:trapped_chest,"facing=north,type=single",chest type (single/left/right) derived from neighbouring chests
+147,light_weighted_pressure_plate,0-15,minecraft:light_weighted_pressure_plate,power=0,
+148,heavy_weighted_pressure_plate,0-15,minecraft:heavy_weighted_pressure_plate,power=0,
+149,unpowered_comparator,0-15,minecraft:comparator,"mode=compare,powered=false,facing=south",legacy.json ignores bit3 (powered); use bit3
+150,powered_comparator,0-15,minecraft:comparator,"mode=compare,powered=true,facing=south",
+151,daylight_detector,0-15,minecraft:daylight_detector,"inverted=false,power=0",
+152,redstone_block,0,minecraft:redstone_block,,
+153,quartz_ore,0,minecraft:nether_quartz_ore,,
+154,hopper,0 2-5 8 10-13,minecraft:hopper,"facing=down,enabled=true",
+155,quartz_block,0,minecraft:quartz_block,,
+155,quartz_block,1,minecraft:chiseled_quartz_block,,
+155,quartz_block,2-4 6 10,minecraft:quartz_pillar,axis=y,
+156,quartz_stairs,0-7,minecraft:quartz_stairs,"half=bottom,shape=straight,facing=east",stairs shape derived from neighbours
+157,activator_rail,0-5 8-13,minecraft:activator_rail,"shape=north_south,powered=false",
+158,dropper,0-5 8-13,minecraft:dropper,"triggered=false,facing=down",
+159,stained_hardened_clay,0,minecraft:white_terracotta,,
+159,stained_hardened_clay,1,minecraft:orange_terracotta,,
+159,stained_hardened_clay,2,minecraft:magenta_terracotta,,
+159,stained_hardened_clay,3,minecraft:light_blue_terracotta,,
+159,stained_hardened_clay,4,minecraft:yellow_terracotta,,
+159,stained_hardened_clay,5,minecraft:lime_terracotta,,
+159,stained_hardened_clay,6,minecraft:pink_terracotta,,
+159,stained_hardened_clay,7,minecraft:gray_terracotta,,
+159,stained_hardened_clay,8,minecraft:light_gray_terracotta,,
+159,stained_hardened_clay,9,minecraft:cyan_terracotta,,
+159,stained_hardened_clay,10,minecraft:purple_terracotta,,
+159,stained_hardened_clay,11,minecraft:blue_terracotta,,
+159,stained_hardened_clay,12,minecraft:brown_terracotta,,
+159,stained_hardened_clay,13,minecraft:green_terracotta,,
+159,stained_hardened_clay,14,minecraft:red_terracotta,,
+159,stained_hardened_clay,15,minecraft:black_terracotta,,
+160,stained_glass_pane,0,minecraft:white_stained_glass_pane,"east=false,south=false,north=false,west=false",connections derived from neighbours
+160,stained_glass_pane,1,minecraft:orange_stained_glass_pane,"east=false,south=false,north=false,west=false",connections derived from neighbours
+160,stained_glass_pane,2,minecraft:magenta_stained_glass_pane,"east=false,south=false,north=false,west=false",connections derived from neighbours
+160,stained_glass_pane,3,minecraft:light_blue_stained_glass_pane,"east=false,south=false,north=false,west=false",connections derived from neighbours
+160,stained_glass_pane,4,minecraft:yellow_stained_glass_pane,"east=false,south=false,north=false,west=false",connections derived from neighbours
+160,stained_glass_pane,5,minecraft:lime_stained_glass_pane,"east=false,south=false,north=false,west=false",connections derived from neighbours
+160,stained_glass_pane,6,minecraft:pink_stained_glass_pane,"east=false,south=false,north=false,west=false",connections derived from neighbours
+160,stained_glass_pane,7,minecraft:gray_stained_glass_pane,"east=false,south=false,north=false,west=false",connections derived from neighbours
+160,stained_glass_pane,8,minecraft:light_gray_stained_glass_pane,"east=false,south=false,north=false,west=false",connections derived from neighbours
+160,stained_glass_pane,9,minecraft:cyan_stained_glass_pane,"east=false,south=false,north=false,west=false",connections derived from neighbours
+160,stained_glass_pane,10,minecraft:purple_stained_glass_pane,"east=false,south=false,north=false,west=false",connections derived from neighbours
+160,stained_glass_pane,11,minecraft:blue_stained_glass_pane,"east=false,south=false,north=false,west=false",connections derived from neighbours
+160,stained_glass_pane,12,minecraft:brown_stained_glass_pane,"east=false,south=false,north=false,west=false",connections derived from neighbours
+160,stained_glass_pane,13,minecraft:green_stained_glass_pane,"east=false,south=false,north=false,west=false",connections derived from neighbours
+160,stained_glass_pane,14,minecraft:red_stained_glass_pane,"east=false,south=false,north=false,west=false",connections derived from neighbours
+160,stained_glass_pane,15,minecraft:black_stained_glass_pane,"east=false,south=false,north=false,west=false",connections derived from neighbours
+161,leaves2,0 4 8 12,minecraft:acacia_leaves,"persistent=false,distance=1",distance recomputed by the game; bit2 (no-decay) -> persistent=true
+161,leaves2,1 5 9 13,minecraft:dark_oak_leaves,"persistent=false,distance=1",distance recomputed by the game; bit2 (no-decay) -> persistent=true
+162,log2,0 4 8,minecraft:acacia_log,axis=y,
+162,log2,1 5 9,minecraft:dark_oak_log,axis=y,
+162,log2,12,minecraft:acacia_wood,,
+162,log2,13,minecraft:dark_oak_wood,,
+163,acacia_stairs,0-7,minecraft:acacia_stairs,"half=bottom,shape=straight,facing=east",stairs shape derived from neighbours
+164,dark_oak_stairs,0-7,minecraft:dark_oak_stairs,"half=bottom,shape=straight,facing=east",stairs shape derived from neighbours
+165,slime,0,minecraft:slime_block,,
+166,barrier,0,minecraft:barrier,,
+167,iron_trapdoor,0-15,minecraft:iron_trapdoor,"half=bottom,facing=north,open=false",
+168,prismarine,0,minecraft:prismarine,,
+168,prismarine,1,minecraft:prismarine_bricks,,
+168,prismarine,2,minecraft:dark_prismarine,,
+169,sea_lantern,0,minecraft:sea_lantern,,
+170,hay_block,0 4 8,minecraft:hay_block,axis=y,
+171,carpet,0,minecraft:white_carpet,,
+171,carpet,1,minecraft:orange_carpet,,
+171,carpet,2,minecraft:magenta_carpet,,
+171,carpet,3,minecraft:light_blue_carpet,,
+171,carpet,4,minecraft:yellow_carpet,,
+171,carpet,5,minecraft:lime_carpet,,
+171,carpet,6,minecraft:pink_carpet,,
+171,carpet,7,minecraft:gray_carpet,,
+171,carpet,8,minecraft:light_gray_carpet,,
+171,carpet,9,minecraft:cyan_carpet,,
+171,carpet,10,minecraft:purple_carpet,,
+171,carpet,11,minecraft:blue_carpet,,
+171,carpet,12,minecraft:brown_carpet,,
+171,carpet,13,minecraft:green_carpet,,
+171,carpet,14,minecraft:red_carpet,,
+171,carpet,15,minecraft:black_carpet,,
+172,hardened_clay,0,minecraft:terracotta,,
+173,coal_block,0,minecraft:coal_block,,
+174,packed_ice,0,minecraft:packed_ice,,
+175,double_plant,0 8,minecraft:sunflower,half=lower,upper half (bit3) takes its type from the lower half
+175,double_plant,1 9,minecraft:lilac,half=lower,upper half (bit3) takes its type from the lower half
+175,double_plant,2 10,minecraft:tall_grass,half=lower,upper half (bit3) takes its type from the lower half
+175,double_plant,3 11,minecraft:large_fern,half=lower,upper half (bit3) takes its type from the lower half
+175,double_plant,4 12,minecraft:rose_bush,half=lower,upper half (bit3) takes its type from the lower half
+175,double_plant,5 13,minecraft:peony,half=lower,upper half (bit3) takes its type from the lower half
+176,standing_banner,0-15,minecraft:white_banner,rotation=0,colour from block entity Base (0 black .. 15 white); patterns from block entity
+177,wall_banner,2-5,minecraft:white_wall_banner,facing=north,colour from block entity Base (0 black .. 15 white); patterns from block entity
+178,daylight_detector_inverted,0-15,minecraft:daylight_detector,"inverted=true,power=0",
+179,red_sandstone,0,minecraft:red_sandstone,,
+179,red_sandstone,1,minecraft:chiseled_red_sandstone,,
+179,red_sandstone,2,minecraft:cut_red_sandstone,,
+180,red_sandstone_stairs,0-7,minecraft:red_sandstone_stairs,"half=bottom,shape=straight,facing=east",stairs shape derived from neighbours
+181,double_stone_slab2,0,minecraft:red_sandstone_slab,type=double,
+181,double_stone_slab2,8,minecraft:smooth_red_sandstone,,
+182,stone_slab2,0 8,minecraft:red_sandstone_slab,type=bottom,
+183,spruce_fence_gate,0-15,minecraft:spruce_fence_gate,"in_wall=false,powered=false,facing=south,open=false",
+184,birch_fence_gate,0-15,minecraft:birch_fence_gate,"in_wall=false,powered=false,facing=south,open=false",
+185,jungle_fence_gate,0-15,minecraft:jungle_fence_gate,"in_wall=false,powered=false,facing=south,open=false",
+186,dark_oak_fence_gate,0-15,minecraft:dark_oak_fence_gate,"in_wall=false,powered=false,facing=south,open=false",
+187,acacia_fence_gate,0-15,minecraft:acacia_fence_gate,"in_wall=false,powered=false,facing=south,open=false",
+188,spruce_fence,0,minecraft:spruce_fence,"east=false,south=false,north=false,west=false",connections derived from neighbours
+189,birch_fence,0,minecraft:birch_fence,"east=false,south=false,north=false,west=false",connections derived from neighbours
+190,jungle_fence,0,minecraft:jungle_fence,"east=false,south=false,north=false,west=false",connections derived from neighbours
+191,dark_oak_fence,0,minecraft:dark_oak_fence,"east=false,south=false,north=false,west=false",connections derived from neighbours
+192,acacia_fence,0,minecraft:acacia_fence,"east=false,south=false,north=false,west=false",connections derived from neighbours
+193,spruce_door,0-11,minecraft:spruce_door,"hinge=right,half=lower,powered=false,facing=east,open=false",lower+upper halves must be merged
+194,birch_door,0-11,minecraft:birch_door,"hinge=right,half=lower,powered=false,facing=east,open=false",lower+upper halves must be merged
+195,jungle_door,0-11,minecraft:jungle_door,"hinge=right,half=lower,powered=false,facing=east,open=false",lower+upper halves must be merged
+196,acacia_door,0-11,minecraft:acacia_door,"hinge=right,half=lower,powered=false,facing=east,open=false",lower+upper halves must be merged
+197,dark_oak_door,0-11,minecraft:dark_oak_door,"hinge=right,half=lower,powered=false,facing=east,open=false",lower+upper halves must be merged
+198,end_rod,0-5,minecraft:end_rod,facing=down,
+199,chorus_plant,0,minecraft:chorus_plant,"east=false,south=false,north=false,west=false,up=false,down=false",connections derived from neighbours
+200,chorus_flower,0-5,minecraft:chorus_flower,age=0,
+201,purpur_block,0,minecraft:purpur_block,,
+202,purpur_pillar,0 4 8,minecraft:purpur_pillar,axis=y,
+203,purpur_stairs,0-7,minecraft:purpur_stairs,"half=bottom,shape=straight,facing=east",stairs shape derived from neighbours
+204,purpur_double_slab,0,minecraft:purpur_slab,type=double,
+205,purpur_slab,0 8,minecraft:purpur_slab,type=bottom,
+206,end_bricks,0,minecraft:end_stone_bricks,,
+207,beetroots,0-3,minecraft:beetroots,age=0,
+208,grass_path,0,minecraft:grass_path,,renamed dirt_path in 1.17
+209,end_gateway,0,minecraft:end_gateway,,
+210,repeating_command_block,0-5 8-13,minecraft:repeating_command_block,"conditional=false,facing=down",
+211,chain_command_block,0-5 8-13,minecraft:chain_command_block,"conditional=false,facing=down",
+212,frosted_ice,0-3,minecraft:frosted_ice,age=0,
+213,magma,0,minecraft:magma_block,,
+214,nether_wart_block,0,minecraft:nether_wart_block,,
+215,red_nether_brick,0,minecraft:red_nether_bricks,,
+216,bone_block,0 4 8,minecraft:bone_block,axis=y,
+217,structure_void,0,minecraft:structure_void,,
+218,observer,0-5 8-13,minecraft:observer,"powered=false,facing=down",
+219,white_shulker_box,0-5,minecraft:white_shulker_box,facing=down,
+220,orange_shulker_box,0-5,minecraft:orange_shulker_box,facing=down,
+221,magenta_shulker_box,0-5,minecraft:magenta_shulker_box,facing=down,
+222,light_blue_shulker_box,0-5,minecraft:light_blue_shulker_box,facing=down,
+223,yellow_shulker_box,0-5,minecraft:yellow_shulker_box,facing=down,
+224,lime_shulker_box,0-5,minecraft:lime_shulker_box,facing=down,
+225,pink_shulker_box,0-5,minecraft:pink_shulker_box,facing=down,
+226,gray_shulker_box,0-5,minecraft:gray_shulker_box,facing=down,
+227,silver_shulker_box,0-5,minecraft:light_gray_shulker_box,facing=down,
+228,cyan_shulker_box,0-5,minecraft:cyan_shulker_box,facing=down,
+229,purple_shulker_box,0-5,minecraft:purple_shulker_box,facing=down,
+230,blue_shulker_box,0-5,minecraft:blue_shulker_box,facing=down,
+231,brown_shulker_box,0-5,minecraft:brown_shulker_box,facing=down,
+232,green_shulker_box,0-5,minecraft:green_shulker_box,facing=down,
+233,red_shulker_box,0-5,minecraft:red_shulker_box,facing=down,
+234,black_shulker_box,0-5,minecraft:black_shulker_box,facing=down,
+235,white_glazed_terracotta,0-3,minecraft:white_glazed_terracotta,facing=south,
+236,orange_glazed_terracotta,0-3,minecraft:orange_glazed_terracotta,facing=south,
+237,magenta_glazed_terracotta,0-3,minecraft:magenta_glazed_terracotta,facing=south,
+238,light_blue_glazed_terracotta,0-3,minecraft:light_blue_glazed_terracotta,facing=south,
+239,yellow_glazed_terracotta,0-3,minecraft:yellow_glazed_terracotta,facing=south,
+240,lime_glazed_terracotta,0-3,minecraft:lime_glazed_terracotta,facing=south,
+241,pink_glazed_terracotta,0-3,minecraft:pink_glazed_terracotta,facing=south,
+242,gray_glazed_terracotta,0-3,minecraft:gray_glazed_terracotta,facing=south,
+243,silver_glazed_terracotta,0-3,minecraft:light_gray_glazed_terracotta,facing=south,
+244,cyan_glazed_terracotta,0-3,minecraft:cyan_glazed_terracotta,facing=south,
+245,purple_glazed_terracotta,0-3,minecraft:purple_glazed_terracotta,facing=south,
+246,blue_glazed_terracotta,0-3,minecraft:blue_glazed_terracotta,facing=south,
+247,brown_glazed_terracotta,0-3,minecraft:brown_glazed_terracotta,facing=south,
+248,green_glazed_terracotta,0-3,minecraft:green_glazed_terracotta,facing=south,
+249,red_glazed_terracotta,0-3,minecraft:red_glazed_terracotta,facing=south,
+250,black_glazed_terracotta,0-3,minecraft:black_glazed_terracotta,facing=south,
+251,concrete,0,minecraft:white_concrete,,
+251,concrete,1,minecraft:orange_concrete,,
+251,concrete,2,minecraft:magenta_concrete,,
+251,concrete,3,minecraft:light_blue_concrete,,
+251,concrete,4,minecraft:yellow_concrete,,
+251,concrete,5,minecraft:lime_concrete,,
+251,concrete,6,minecraft:pink_concrete,,
+251,concrete,7,minecraft:gray_concrete,,
+251,concrete,8,minecraft:light_gray_concrete,,
+251,concrete,9,minecraft:cyan_concrete,,
+251,concrete,10,minecraft:purple_concrete,,
+251,concrete,11,minecraft:blue_concrete,,
+251,concrete,12,minecraft:brown_concrete,,
+251,concrete,13,minecraft:green_concrete,,
+251,concrete,14,minecraft:red_concrete,,
+251,concrete,15,minecraft:black_concrete,,
+252,concrete_powder,0,minecraft:white_concrete_powder,,
+252,concrete_powder,1,minecraft:orange_concrete_powder,,
+252,concrete_powder,2,minecraft:magenta_concrete_powder,,
+252,concrete_powder,3,minecraft:light_blue_concrete_powder,,
+252,concrete_powder,4,minecraft:yellow_concrete_powder,,
+252,concrete_powder,5,minecraft:lime_concrete_powder,,
+252,concrete_powder,6,minecraft:pink_concrete_powder,,
+252,concrete_powder,7,minecraft:gray_concrete_powder,,
+252,concrete_powder,8,minecraft:light_gray_concrete_powder,,
+252,concrete_powder,9,minecraft:cyan_concrete_powder,,
+252,concrete_powder,10,minecraft:purple_concrete_powder,,
+252,concrete_powder,11,minecraft:blue_concrete_powder,,
+252,concrete_powder,12,minecraft:brown_concrete_powder,,
+252,concrete_powder,13,minecraft:green_concrete_powder,,
+252,concrete_powder,14,minecraft:red_concrete_powder,,
+252,concrete_powder,15,minecraft:black_concrete_powder,,
+255,structure_block,0-3,minecraft:structure_block,mode=save,

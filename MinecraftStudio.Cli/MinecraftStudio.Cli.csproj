@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AssemblyName>mcstudio</AssemblyName>
+    <RootNamespace>MinecraftStudio.Cli</RootNamespace>
+    <Product>IcyModz420's Minecraft Studio</Product>
+    <Company>IcyModz420</Company>
+    <Authors>IcyModz420</Authors>
+    <Copyright>Copyright © 2026 IcyModz420</Copyright>
+    <Description>IcyModz420's Minecraft Studio from the command line: convert worlds, structures and schematics, check packs, export maps. Unofficial; not affiliated with Mojang or Microsoft.</Description>
+    <Version>1.0.0</Version>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MinecraftStudio.Core\MinecraftStudio.Core.csproj" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,101 @@
+java_current,java_numeric_pre_1_18,java_1_12_name,java_1_13_to_1_17_name,merged_into_1_18,bedrock_id,bedrock_name,lce_id,added,palette_key,map_rgb,map_rgb_source,grass_je,foliage_je,water_je,water_be,tint_basis,note
+ocean,0,ocean,ocean,,0,ocean,0,Beta 1.8,ocean,000070,cubiomes (MIT),8EB971,71A74D,3F76E4,1787D4,,
+plains,1,plains,plains,,1,plains,1,Beta 1.8,plains,8DB360,cubiomes (MIT),91BD59,77AB2F,3F76E4,44AFF5,,
+desert,2,desert,desert,,2,desert,2,Beta 1.8,desert,FA9418,cubiomes (MIT),BFB755,AEA42A,3F76E4,32A598,,
+windswept_hills,3,extreme_hills,mountains,,3,extreme_hills,3,Beta 1.8,windswept_hills,606060,cubiomes (MIT),8AB689,6DA36B,3F76E4,007BF7,,
+forest,4,forest,forest,,4,forest,4,Beta 1.8,forest,056621,cubiomes (MIT),79C05A,59AE30,3F76E4,1E97F2,,
+taiga,5,taiga,taiga,,5,taiga,5,Beta 1.8,taiga,0B6A5F,cubiomes (MIT),86B783,68A464,3F76E4,287082,,
+swamp,6,swampland,swamp,,6,swampland,6,Beta 1.8,swamp,07F9B2,cubiomes (MIT),6A7039|4C763C noise,6A7039,617B64,617B64,,
+river,7,river,river,,7,river,7,Beta 1.8,river,0000FF,cubiomes (MIT),8EB971,71A74D,3F76E4,0084FF,,
+nether_wastes,8,hell,nether,,8,hell,8,Beta 1.8,nether_wastes,572526,cubiomes (MIT),BFB755,AEA42A,3F76E4,905957,,1.13-1.15 name 'nether'; nether_wastes since 1.16
+the_end,9,sky,the_end,,9,the_end,9,Beta 1.8,the_end,8080FF,cubiomes (MIT),8EB971,71A74D,3F76E4,62529E,,Bedrock and LCE map all End sub-biomes to 9
+frozen_ocean,10,frozen_ocean,frozen_ocean,,46,frozen_ocean,46,1.0,frozen_ocean,7070D6,cubiomes (MIT),80B497,60A17B,3938C9,2570B5,,ID 10 meant the old frozen ocean up to 1.12 (Bedrock/LCE 10 legacy_frozen_ocean); 1.13 reused it for the new frozen ocean (Bedrock/LCE 46)
+frozen_river,11,frozen_river,frozen_river,,11,frozen_river,11,1.0,frozen_river,A0A0FF,cubiomes (MIT),80B497,60A17B,3938C9,185390,,
+snowy_plains,12,ice_flats,snowy_tundra,,12,ice_plains,12,1.0,snowy_plains,FFFFFF,cubiomes (MIT),80B497,60A17B,3F76E4,14559B,,
+,13,ice_mountains,snowy_mountains,snowy_plains,13,ice_mountains,13,1.0,snowy_mountains,A0A0A0,cubiomes (MIT),80B497,60A17B,3F76E4,1156A7,~merge target,
+mushroom_fields,14,mushroom_island,mushroom_fields,,14,mushroom_island,14,1.0,mushroom_fields,FF00FF,cubiomes (MIT),55C93F,2BBB0F,3F76E4,8A8997,,
+,15,mushroom_island_shore,mushroom_field_shore,mushroom_fields,15,mushroom_island_shore,15,1.0,mushroom_field_shore,A000FF,cubiomes (MIT),55C93F,2BBB0F,3F76E4,818193,~merge target,
+beach,16,beaches,beach,,16,beach,16,1.1,beach,FADE55,cubiomes (MIT),91BD59,77AB2F,3F76E4,157CAB,,
+,17,desert_hills,desert_hills,desert,17,desert_hills,17,1.1,desert_hills,D25F12,cubiomes (MIT),BFB755,AEA42A,3F76E4,1A7AA1,~merge target,
+,18,forest_hills,wooded_hills,forest,18,forest_hills,18,1.1,wooded_hills,22551C,cubiomes (MIT),79C05A,59AE30,3F76E4,056BD1,~merge target,
+,19,taiga_hills,taiga_hills,taiga,19,taiga_hills,19,1.1,taiga_hills,163933,cubiomes (MIT),86B783,68A464,3F76E4,236583,~merge target,
+,20,smaller_extreme_hills,mountain_edge,windswept_hills,20,extreme_hills_edge,20,1.1,mountain_edge,72789A,cubiomes (MIT),8AB689,6DA36B,3F76E4,045CD5,~merge target,
+jungle,21,jungle,jungle,,21,jungle,21,1.2.1,jungle,507B0A,cubiomes (MIT),59C93C,30BB0B,3F76E4,14A2C5,,
+,22,jungle_hills,jungle_hills,jungle,22,jungle_hills,22,1.2.1,jungle_hills,2C4205,cubiomes (MIT),59C93C,30BB0B,3F76E4,1B9ED8,~merge target,
+sparse_jungle,23,jungle_edge,jungle_edge,,23,jungle_edge,23,1.7.2,sparse_jungle,60930F,cubiomes (MIT),64C73F,3EB80F,3F76E4,0D8AE3,,
+deep_ocean,24,deep_ocean,deep_ocean,,24,deep_ocean,24,1.7.2,deep_ocean,000030,cubiomes (MIT),8EB971,71A74D,3F76E4,1787D4,,
+stony_shore,25,stone_beach,stone_shore,,25,stone_beach,25,1.7.2,stony_shore,A2A284,cubiomes (MIT),8AB689,6DA36B,3F76E4,0D67BB,,
+snowy_beach,26,cold_beach,snowy_beach,,26,cold_beach,26,1.7.2,snowy_beach,FAF0C0,cubiomes (MIT),83B593,64A278,3D57D6,1463A5,,
+birch_forest,27,birch_forest,birch_forest,,27,birch_forest,27,1.7.2,birch_forest,307444,cubiomes (MIT),88BB67,6BA941,3F76E4,0677CE,,
+,28,birch_forest_hills,birch_forest_hills,birch_forest,28,birch_forest_hills,28,1.7.2,birch_forest_hills,1F5F32,cubiomes (MIT),88BB67,6BA941,3F76E4,0A74C4,~merge target,
+dark_forest,29,roofed_forest,dark_forest,,29,roofed_forest,29,1.7.2,dark_forest,40511A,cubiomes (MIT),507A32,59AE30,3F76E4,3B6CD1,,
+snowy_taiga,30,taiga_cold,snowy_taiga,,30,cold_taiga,30,1.7.2,snowy_taiga,31554A,cubiomes (MIT),80B497,60A17B,3D57D6,205E83,,
+,31,taiga_cold_hills,snowy_taiga_hills,snowy_taiga,31,cold_taiga_hills,31,1.7.2,snowy_taiga_hills,243F36,cubiomes (MIT),80B497,60A17B,3D57D6,245B78,~merge target,
+old_growth_pine_taiga,32,redwood_taiga,giant_tree_taiga,,32,mega_taiga,32,1.7.2,old_growth_pine_taiga,596651,cubiomes (MIT),86B87F,68A55F,3F76E4,2D6D77,,
+,33,redwood_taiga_hills,giant_tree_taiga_hills,old_growth_pine_taiga,33,mega_taiga_hills,33,1.7.2,giant_tree_taiga_hills,454F3E,cubiomes (MIT),86B87F,68A55F,3F76E4,286378,~merge target,
+windswept_forest,34,extreme_hills_with_trees,wooded_mountains,,34,extreme_hills_plus_trees,34,1.7.2,windswept_forest,5B7352,cubiomes (MIT),8AB689,6DA36B,3F76E4,0E63AB,,
+savanna,35,savanna,savanna,,35,savanna,35,1.7.2,savanna,BDB25F,cubiomes (MIT),BFB755,AEA42A,3F76E4,2C8B9C,,
+savanna_plateau,36,savanna_rock,savanna_plateau,,36,savanna_plateau,36,1.7.2,savanna_plateau,A79D64,cubiomes (MIT),BFB755,AEA42A,3F76E4,2590A8,,
+badlands,37,mesa,badlands,,37,mesa,37,1.7.2,badlands,D94515,cubiomes (MIT),90814D,9E814D,3F76E4,4E7F81,,
+wooded_badlands,38,mesa_rock,wooded_badlands_plateau,,38,mesa_plateau_stone,38,1.7.2,wooded_badlands,B09765,cubiomes (MIT),90814D,9E814D,3F76E4,497F99,,
+,39,mesa_clear_rock,badlands_plateau,badlands,39,mesa_plateau,39,1.7.2,badlands_plateau,CA8C65,cubiomes (MIT),90814D,9E814D,3F76E4,55809E,~merge target,
+small_end_islands,40,,small_end_islands,,9,the_end,,1.13,small_end_islands,4B4BAB,cubiomes (MIT),8EB971,71A74D,3F76E4,62529E,,Java 40-43 are End biomes; Bedrock/LCE 40-43 are oceans
+end_midlands,41,,end_midlands,,9,the_end,,1.13,end_midlands,C9C959,cubiomes (MIT),8EB971,71A74D,3F76E4,62529E,,
+end_highlands,42,,end_highlands,,9,the_end,,1.13,end_highlands,B5B536,cubiomes (MIT),8EB971,71A74D,3F76E4,62529E,,
+end_barrens,43,,end_barrens,,9,the_end,,1.13,end_barrens,7070CC,cubiomes (MIT),8EB971,71A74D,3F76E4,62529E,,
+warm_ocean,44,,warm_ocean,,40,warm_ocean,40,1.13,warm_ocean,0000AC,cubiomes (MIT),8EB971,71A74D,43D5EE,02B0E5,,
+lukewarm_ocean,45,,lukewarm_ocean,,42,lukewarm_ocean,42,1.13,lukewarm_ocean,000090,cubiomes (MIT),8EB971,71A74D,45ADF2,0D96DB,,
+cold_ocean,46,,cold_ocean,,44,cold_ocean,44,1.13,cold_ocean,202070,cubiomes (MIT),8EB971,71A74D,3D57D6,2080C9,,
+,47,,deep_warm_ocean,warm_ocean,41,deep_warm_ocean,41,1.13,deep_warm_ocean,000050,cubiomes (MIT),8EB971,71A74D,43D5EE,02B0E5,~merge target,
+deep_lukewarm_ocean,48,,deep_lukewarm_ocean,,43,deep_lukewarm_ocean,43,1.13,deep_lukewarm_ocean,000040,cubiomes (MIT),8EB971,71A74D,45ADF2,0D96DB,,
+deep_cold_ocean,49,,deep_cold_ocean,,45,deep_cold_ocean,45,1.13,deep_cold_ocean,202038,cubiomes (MIT),8EB971,71A74D,3D57D6,2080C9,,
+deep_frozen_ocean,50,,deep_frozen_ocean,,47,deep_frozen_ocean,47,1.13,deep_frozen_ocean,404090,cubiomes (MIT),8EB971,71A74D,3938C9,2570B5,,
+the_void,127,void,the_void,,,,127,1.9,the_void,000000,cubiomes (MIT),8EB971,71A74D,3F76E4,,,no Bedrock equivalent
+sunflower_plains,129,mutated_plains,sunflower_plains,,129,sunflower_plains,129,1.7.2,sunflower_plains,B5DB88,cubiomes (MIT),91BD59,77AB2F,3F76E4,44AFF5,,
+,130,mutated_desert,desert_lakes,desert,130,desert_mutated,130,1.7.2,desert_lakes,FFBC40,cubiomes (MIT),BFB755,AEA42A,3F76E4,44AFF5,~merge target,
+windswept_gravelly_hills,131,mutated_extreme_hills,gravelly_mountains,,131,extreme_hills_mutated,131,1.7.2,windswept_gravelly_hills,888888,cubiomes (MIT),8AB689,6DA36B,3F76E4,0E63AB,,
+flower_forest,132,mutated_forest,flower_forest,,132,flower_forest,132,1.7.2,flower_forest,2D8E49,cubiomes (MIT),79C05A,59AE30,3F76E4,20A3CC,,
+,133,mutated_taiga,taiga_mountains,taiga,133,taiga_mutated,133,1.7.2,taiga_mountains,339287,cubiomes (MIT),86B783,68A464,3F76E4,1E6B82,~merge target,
+,134,mutated_swampland,swamp_hills,swamp,134,swampland_mutated,134,1.7.2,swamp_hills,2FFFDA,cubiomes (MIT),6A7039|4C763C noise,6A7039,617B64,4C6156,~merge target,
+ice_spikes,140,mutated_ice_flats,ice_spikes,,140,ice_plains_spikes,140,1.7.2,ice_spikes,B4DCDC,cubiomes (MIT),80B497,60A17B,3F76E4,14559B,,
+,149,mutated_jungle,modified_jungle,jungle,149,jungle_mutated,149,1.7.2,modified_jungle,78A332,cubiomes (MIT),59C93C,30BB0B,3F76E4,1B9ED8,~merge target,
+,151,mutated_jungle_edge,modified_jungle_edge,sparse_jungle,151,jungle_edge_mutated,151,1.7.2,modified_jungle_edge,88BB37,cubiomes (MIT),64C73F,3EB80F,3F76E4,0D8AE3,~merge target,
+old_growth_birch_forest,155,mutated_birch_forest,tall_birch_forest,,155,birch_forest_mutated,155,1.7.2,old_growth_birch_forest,589C6C,cubiomes (MIT),88BB67,6BA941,3F76E4,,,
+,156,mutated_birch_forest_hills,tall_birch_hills,old_growth_birch_forest,156,birch_forest_hills_mutated,156,1.7.2,tall_birch_hills,47875A,cubiomes (MIT),88BB67,6BA941,3F76E4,0A74C4,~merge target,
+,157,mutated_roofed_forest,dark_forest_hills,dark_forest,157,roofed_forest_mutated,157,1.7.2,dark_forest_hills,687942,cubiomes (MIT),507A32,59AE30,3F76E4,3B6CD1,~merge target,
+,158,mutated_taiga_cold,snowy_taiga_mountains,snowy_taiga,158,cold_taiga_mutated,158,1.7.2,snowy_taiga_mountains,597D72,cubiomes (MIT),80B497,60A17B,3D57D6,205E83,~merge target,
+old_growth_spruce_taiga,160,mutated_redwood_taiga,giant_spruce_taiga,,160,redwood_taiga_mutated,160,1.7.2,old_growth_spruce_taiga,818E79,cubiomes (MIT),86B783,68A464,3F76E4,2D6D77,,LCE name mega_spruce_taiga
+,161,mutated_redwood_taiga_hills,giant_spruce_taiga_hills,old_growth_spruce_taiga,161,redwood_taiga_hills_mutated,161,1.7.2,giant_spruce_taiga_hills,6D7766,cubiomes (MIT),86B783,68A464,3F76E4,286378,~merge target,
+,162,mutated_extreme_hills_with_trees,modified_gravelly_mountains,windswept_gravelly_hills,162,extreme_hills_plus_trees_mutated,162,1.7.2,modified_gravelly_mountains,839B7A,cubiomes (MIT),8AB689,6DA36B,3F76E4,0E63AB,~merge target,
+windswept_savanna,163,mutated_savanna,shattered_savanna,,163,savanna_mutated,163,1.7.2,windswept_savanna,E5DA87,cubiomes (MIT),BFB755,AEA42A,3F76E4,2590A8,,
+,164,mutated_savanna_rock,shattered_savanna_plateau,windswept_savanna,164,savanna_plateau_mutated,164,1.7.2,shattered_savanna_plateau,CFC58C,cubiomes (MIT),BFB755,AEA42A,3F76E4,2590A8,~merge target,
+eroded_badlands,165,mutated_mesa,eroded_badlands,,165,mesa_bryce,165,1.7.2,eroded_badlands,FF6D3D,cubiomes (MIT),90814D,9E814D,3F76E4,497F99,,
+,166,mutated_mesa_rock,modified_wooded_badlands_plateau,wooded_badlands,166,mesa_plateau_stone_mutated,166,1.7.2,modified_wooded_badlands_plateau,D8BF8D,cubiomes (MIT),90814D,9E814D,3F76E4,497F99,~merge target,
+,167,mutated_mesa_clear_rock,modified_badlands_plateau,badlands,167,mesa_plateau_mutated,167,1.7.2,modified_badlands_plateau,F2B48D,cubiomes (MIT),90814D,9E814D,3F76E4,55809E,~merge target,
+bamboo_jungle,168,,bamboo_jungle,,48,bamboo_jungle,,1.14,bamboo_jungle,849500,cubiomes (MIT),59C93C,30BB0B,3F76E4,14A2C5,,
+,169,,bamboo_jungle_hills,bamboo_jungle,49,bamboo_jungle_hills,,1.14,bamboo_jungle_hills,5C6C04,cubiomes (MIT),59C93C,30BB0B,3F76E4,1B9ED8,~merge target,
+soul_sand_valley,170,,soul_sand_valley,,178,soulsand_valley,,1.16,soul_sand_valley,4D3A2E,cubiomes (MIT),BFB755,AEA42A,3F76E4,905957,,
+crimson_forest,171,,crimson_forest,,179,crimson_forest,,1.16,crimson_forest,981A11,cubiomes (MIT),BFB755,AEA42A,3F76E4,905957,,
+warped_forest,172,,warped_forest,,180,warped_forest,,1.16,warped_forest,49907B,cubiomes (MIT),BFB755,AEA42A,3F76E4,905957,,
+basalt_deltas,173,,basalt_deltas,,181,basalt_deltas,,1.16,basalt_deltas,645F63,cubiomes (MIT),BFB755,AEA42A,3F76E4,,,
+dripstone_caves,174,,dripstone_caves,,188,dripstone_caves,,1.18,dripstone_caves,4E3012,cubiomes (MIT),91BD59,77AB2F,3F76E4,44AFF5,,numeric ID 174 existed in 1.17 (not generated without data packs)
+lush_caves,175,,lush_caves,,187,lush_caves,,1.18,lush_caves,283C00,cubiomes (MIT),8EB971,71A74D,3F76E4,44AFF5,,numeric ID 175 existed in 1.17
+meadow,,,,,186,meadow,,1.18,meadow,60A445,cubiomes (MIT),83BB6D,63A948,0E4ECF,44AFF5,,1.18+ saves store names only
+grove,,,,,185,grove,,1.18,grove,47726C,cubiomes (MIT),80B497,60A17B,3F76E4,44AFF5,,
+snowy_slopes,,,,,184,snowy_slopes,,1.18,snowy_slopes,C4C4C4,cubiomes (MIT),80B497,60A17B,3F76E4,44AFF5,,
+jagged_peaks,,,,,182,jagged_peaks,,1.18,jagged_peaks,DCDCC8,cubiomes (MIT),80B497,60A17B,3F76E4,44AFF5,,
+frozen_peaks,,,,,183,frozen_peaks,,1.18,frozen_peaks,B0B3CE,cubiomes (MIT),80B497,60A17B,3F76E4,44AFF5,,
+stony_peaks,,,,,189,stony_peaks,,1.18,stony_peaks,7B8F74,cubiomes (MIT),9ABE4B,82AC1E,3F76E4,44AFF5,,
+deep_dark,,,,,190,deep_dark,,1.19,deep_dark,031F29,cubiomes (MIT),91BD59,77AB2F,3F76E4,44AFF5,,
+mangrove_swamp,,,,,191,mangrove_swamp,,1.19,mangrove_swamp,2CCC8E,cubiomes (MIT),6A7039|4C763C noise,8DB127,3A7A6A,3A7A6A,,
+cherry_grove,,,,,192,cherry_grove,,1.20,cherry_grove,FF91C8,cubiomes (MIT),B6DB61,B6DB61,5DB7EF,5DB7EF,,
+pale_garden,,,,,193,pale_garden,,1.21.4,pale_garden,696D95,cubiomes (MIT),878D76,878D76,76889D,76889D,,
+sulfur_caves,,,,,194,sulfur_caves,,26.x,sulfur_caves,B8A93C,custom,ABA64F,77AB2F,,34BF89,,map colour is custom
+dappled_forest,,,,,195,dappled_forest,,26.x,dappled_forest,B5651D,custom,DF6827,E68E30,,375154,,map colour is custom
+ice_caves,,,,,196,ice_caves,,upcoming,ice_caves,8FC9E8,custom,80B497,60A17B,,,,listed as upcoming on the wiki; map colour is custom
+,,,,frozen_ocean,10,legacy_frozen_ocean,10,Bedrock,legacy_frozen_ocean,9090A0,custom,80B497,60A17B,3938C9,44AFF5,~merge target,Bedrock/LCE ID for the pre-1.13 frozen ocean
+,,,,,,,,Beta 1.2-1.7.3,rainforest,47840E,cubiomes (MIT),,,,,,"rainforest: seed-derived Beta biome, never stored in chunks"
+,,,,,,,,Beta 1.2-1.7.3,seasonal_forest,2F560F,cubiomes (MIT),,,,,,"seasonal_forest: seed-derived Beta biome, never stored in chunks"
+,,,,,,,,Beta 1.2-1.7.3,shrubland,789E31,cubiomes (MIT),,,,,,"shrubland: seed-derived Beta biome, never stored in chunks"
+,,,,,,,,Beta 1.2-1.7.3,ice_desert,E0E0F0,custom,,,,,,"ice_desert: seed-derived Beta biome, never stored in chunks"
+,,,,,,,,Beta 1.2-1.7.3,tundra,C8D8D8,custom,,,,,,"tundra: seed-derived Beta biome, never stored in chunks"

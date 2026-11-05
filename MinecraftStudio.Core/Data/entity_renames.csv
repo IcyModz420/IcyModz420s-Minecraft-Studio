@@ -1,0 +1,126 @@
+version,kind,old_id,new_id,note
+1.11 (16w32a),entity,AreaEffectCloud,area_effect_cloud,IDs gain the minecraft: namespace
+1.11 (16w32a),entity,ArmorStand,armor_stand,IDs gain the minecraft: namespace
+1.11 (16w32a),entity,Arrow,arrow,IDs gain the minecraft: namespace
+1.11 (16w32a),block_entity,Banner,banner,
+1.11 (16w32a),entity,Bat,bat,IDs gain the minecraft: namespace
+1.11 (16w32a),block_entity,Beacon,beacon,
+1.11 (16w32a),entity,Boat,boat,IDs gain the minecraft: namespace
+1.11 (16w32a),entity,ThrownExpBottle,xp_bottle,IDs gain the minecraft: namespace
+1.11 (16w32a),entity,Blaze,blaze,IDs gain the minecraft: namespace
+1.11 (16w32a),block_entity,Cauldron,brewing_stand,
+1.11 (16w32a),entity,CaveSpider,cave_spider,IDs gain the minecraft: namespace
+1.11 (16w32a),block_entity,Chest,chest,
+1.11 (16w32a),entity,Chicken,chicken,IDs gain the minecraft: namespace
+1.11 (16w32a),block_entity,Control,command_block,
+1.11 (16w32a),entity,Cow,cow,IDs gain the minecraft: namespace
+1.11 (16w32a),entity,Creeper,creeper,IDs gain the minecraft: namespace
+1.11 (16w32a),block_entity,DLDetector,daylight_detector,
+1.11 (16w32a),block_entity,Trap,dispenser,
+1.11 (16w32a),entity,DragonFireball,dragon_fireball,IDs gain the minecraft: namespace
+1.11 (16w32a),block_entity,Dropper,dropper,
+1.11 (16w32a),entity,ThrownEgg,egg,IDs gain the minecraft: namespace
+1.11 (16w32a),block_entity,EnchantTable,enchanting_table,
+1.11 (16w32a),block_entity,EndGateway,end_gateway,
+1.11 (16w32a),block_entity,AirPortal,end_portal,
+1.11 (16w32a),block_entity,EnderChest,ender_chest,
+1.11 (16w32a),entity,EnderCrystal,ender_crystal,IDs gain the minecraft: namespace
+1.11 (16w32a),entity,EnderDragon,ender_dragon,IDs gain the minecraft: namespace
+1.11 (16w32a),entity,ThrownEnderpearl,ender_pearl,IDs gain the minecraft: namespace
+1.11 (16w32a),entity,Enderman,enderman,IDs gain the minecraft: namespace
+1.11 (16w32a),entity,Endermite,endermite,IDs gain the minecraft: namespace
+1.11 (16w32a),entity,EyeOfEnderSignal,eye_of_ender_signal,IDs gain the minecraft: namespace
+1.11 (16w32a),entity,XPOrb,xp_orb,IDs gain the minecraft: namespace
+1.11 (16w32a),entity,FallingSand,falling_block,IDs gain the minecraft: namespace
+1.11 (16w32a),entity,Fireball,fireball,IDs gain the minecraft: namespace
+1.11 (16w32a),entity,FireworksRocketEntity,fireworks_rocket,IDs gain the minecraft: namespace
+1.11 (16w32a),block_entity,FlowerPot,flower_pot,
+1.11 (16w32a),block_entity,Furnace,furnace,
+1.11 (16w32a),entity,Ghast,ghast,IDs gain the minecraft: namespace
+1.11 (16w32a),entity,Giant,giant,IDs gain the minecraft: namespace
+1.11 (16w32a),entity,Guardian,guardian | elder_guardian (Elder flag),IDs gain the minecraft: namespace
+1.11 (16w32a),block_entity,Skull,skull,
+1.11 (16w32a),block_entity,Hopper,hopper,
+1.11 (16w32a),entity,EntityHorse,horse | donkey | mule | zombie_horse | skeleton_horse (Type 0-4),IDs gain the minecraft: namespace
+1.11 (16w32a),entity,VillagerGolem,villager_golem,IDs gain the minecraft: namespace
+1.11 (16w32a),entity,ItemFrame,item_frame,IDs gain the minecraft: namespace
+1.11 (16w32a),entity,Item,item,IDs gain the minecraft: namespace
+1.11 (16w32a),block_entity,RecordPlayer,jukebox,
+1.11 (16w32a),entity,LeashKnot,leash_knot,IDs gain the minecraft: namespace
+1.11 (16w32a),entity,LightningBolt,lightning_bolt,IDs gain the minecraft: namespace
+1.11 (16w32a),entity,LavaSlime,magma_cube,IDs gain the minecraft: namespace
+1.11 (16w32a),entity,MinecartRideable,minecart,IDs gain the minecraft: namespace
+1.11 (16w32a),entity,MinecartChest,chest_minecart,IDs gain the minecraft: namespace
+1.11 (16w32a),entity,MinecartCommandBlock,commandblock_minecart,IDs gain the minecraft: namespace
+1.11 (16w32a),entity,MinecartFurnace,furnace_minecart,IDs gain the minecraft: namespace
+1.11 (16w32a),entity,MinecartHopper,hopper_minecart,IDs gain the minecraft: namespace
+1.11 (16w32a),entity,MinecartSpawner,spawner_minecart,IDs gain the minecraft: namespace
+1.11 (16w32a),entity,MinecartTNT,tnt_minecart,IDs gain the minecraft: namespace
+1.11 (16w32a),entity,Mob,(removed),IDs gain the minecraft: namespace
+1.11 (16w32a),entity,Monster,(removed),IDs gain the minecraft: namespace
+1.11 (16w32a),block_entity,MobSpawner,mob_spawner,
+1.11 (16w32a),entity,MushroomCow,mooshroom,IDs gain the minecraft: namespace
+1.11 (16w32a),block_entity,Piston,piston,
+1.11 (16w32a),block_entity,Music,noteblock,
+1.11 (16w32a),entity,Ozelot,ocelot,IDs gain the minecraft: namespace
+1.11 (16w32a),entity,Painting,painting,IDs gain the minecraft: namespace
+1.11 (16w32a),entity,Pig,pig,IDs gain the minecraft: namespace
+1.11 (16w32a),entity,PolarBear,polar_bear,IDs gain the minecraft: namespace
+1.11 (16w32a),entity,Rabbit,rabbit,IDs gain the minecraft: namespace
+1.11 (16w32a),block_entity,Comparator,comparator,
+1.11 (16w32a),entity,Sheep,sheep,IDs gain the minecraft: namespace
+1.11 (16w32a),entity,ShulkerBullet,shulker_bullet,IDs gain the minecraft: namespace
+1.11 (16w32a),entity,Shulker,shulker,IDs gain the minecraft: namespace
+1.11 (16w32a),block_entity,Sign,sign,
+1.11 (16w32a),entity,Silverfish,silverfish,IDs gain the minecraft: namespace
+1.11 (16w32a),entity,Skeleton,skeleton | wither_skeleton | stray (SkeletonType 0/1/2),IDs gain the minecraft: namespace
+1.11 (16w32a),entity,Slime,slime,IDs gain the minecraft: namespace
+1.11 (16w32a),entity,SmallFireball,small_fireball,IDs gain the minecraft: namespace
+1.11 (16w32a),entity,SnowMan,snowman,IDs gain the minecraft: namespace
+1.11 (16w32a),entity,Snowball,snowball,IDs gain the minecraft: namespace
+1.11 (16w32a),entity,SpectralArrow,spectral_arrow,IDs gain the minecraft: namespace
+1.11 (16w32a),entity,Spider,spider,IDs gain the minecraft: namespace
+1.11 (16w32a),entity,ThrownPotion,potion,IDs gain the minecraft: namespace
+1.11 (16w32a),block_entity,Structure,structure_block,
+1.11 (16w32a),entity,Squid,squid,IDs gain the minecraft: namespace
+1.11 (16w32a),entity,PrimedTnt,tnt,IDs gain the minecraft: namespace
+1.11 (16w32a),entity,Villager,villager,IDs gain the minecraft: namespace
+1.11 (16w32a),entity,Witch,witch,IDs gain the minecraft: namespace
+1.11 (16w32a),entity,WitherBoss,wither,IDs gain the minecraft: namespace
+1.11 (16w32a),entity,WitherSkull,wither_skull,IDs gain the minecraft: namespace
+1.11 (16w32a),entity,Wolf,wolf,IDs gain the minecraft: namespace
+1.11 (16w32a),entity,Zombie,zombie | zombie_villager | husk (ZombieType / VillagerProfession),IDs gain the minecraft: namespace
+1.11 (16w32a),entity,PigZombie,zombie_pigman,IDs gain the minecraft: namespace
+1.13,entity,xp_orb,experience_orb,
+1.13,entity,xp_bottle,experience_bottle,
+1.13,entity,eye_of_ender_signal,eye_of_ender,
+1.13,entity,ender_crystal,end_crystal,
+1.13,entity,fireworks_rocket,firework_rocket,
+1.13,entity,commandblock_minecart,command_block_minecart,
+1.13,entity,snowman,snow_golem,
+1.13,entity,villager_golem,iron_golem,
+1.13,entity,evocation_fangs,evoker_fangs,
+1.13,entity,evocation_illager,evoker,
+1.13,entity,vindication_illager,vindicator,
+1.13,entity,illusion_illager,illusioner,
+1.13,block_entity,noteblock,(removed),note is now a block state
+1.13,block_entity,flower_pot,(removed),contents are now potted_* blocks
+1.13,block/item,numeric id:data,flattened names,see flattening.csv; items in legacy.json 'items'
+1.13,biome,1.12 names,1.13 names,see biomes.csv
+1.14,block/item,sign / wall_sign,oak_sign / oak_wall_sign,
+1.14,block/item,stone_slab,smooth_stone_slab,a new stone_slab (plain stone) was added
+1.14,item,rose_red / dandelion_yellow / cactus_green,red_dye / yellow_dye / green_dye,
+1.16,entity,zombie_pigman,zombified_piglin,spawn egg item renamed too
+1.16,biome,nether,nether_wastes,
+1.16,block state,wall north/east/south/west=true|false,none|low|tall,
+1.17,block/item,grass_path,dirt_path,
+1.17,block state,cauldron[level=1..3],water_cauldron[level=1..3],lava/powder snow cauldrons added
+1.18,biome,11 renames + 26 merges,,see biomes.csv
+1.20.3,block/item,grass,short_grass,
+1.20.5,item,scute,turtle_scute,
+1.20.5,item format,tag / Count,components / count,item stacks use data components
+1.21.2 (24w39a),entity,boat + Type,<wood>_boat; bamboo -> bamboo_raft,
+1.21.2 (24w39a),entity,chest_boat + Type,<wood>_chest_boat; bamboo -> bamboo_chest_raft,
+1.21.5 (verify),entity,potion,splash_potion / lingering_potion,current registry has splash_potion; snapshot not confirmed
+1.21.9 (25w35a),block/item,chain,iron_chain,
+26.1 (snapshot 6),file layout,"data/map_<n>.dat, data/idcounts.dat","data/minecraft/maps/<n>.dat, last_id.dat",

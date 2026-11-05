@@ -1,0 +1,257 @@
+id,hex,java_1_12_name,display_name,introduced_java,era,data_values_1_12,classic_indev_meaning,pe_bedrock_legacy_name_same_id,bedrock_vs_java,in_lce_xbox_one
+0,0x00,minecraft:air,Air,Classic rd-132211,Classic,,,air,same,yes
+1,0x01,minecraft:stone,Stone,Classic rd-132211,Classic,0 stone; 1 granite; 2 polished_granite; 3 diorite; 4 polished_diorite; 5 andesite; 6 polished_andesite (1-6 since 1.8),,stone,same,yes
+2,0x02,minecraft:grass,Grass Block,Classic rd-132211,Classic,none (snowy derived from the block above),,grass,same,yes
+3,0x03,minecraft:dirt,Dirt,Classic,Classic,0 dirt; 1 coarse_dirt (1.8); 2 podzol (1.7.2),,dirt,same,yes
+4,0x04,minecraft:cobblestone,Cobblestone,Classic,Classic,,,cobblestone,same,yes
+5,0x05,minecraft:planks,Wood Planks,Classic,Classic,0 oak; 1 spruce; 2 birch; 3 jungle (1-3 since 1.2.4); 4 acacia; 5 dark_oak (1.7.2),,planks,same,yes
+6,0x06,minecraft:sapling,Sapling,Classic,Classic,"bits0-2 type (0 oak,1 spruce,2 birch,3 jungle,4 acacia,5 dark_oak); bit3 growth stage",,sapling,same,yes
+7,0x07,minecraft:bedrock,Bedrock,Classic,Classic,,,bedrock,same,yes
+8,0x08,minecraft:flowing_water,Flowing Water,Classic,Classic,"bits0-2 level (0 source/full, 1-7 decreasing); bit3 falling",,flowing_water,same,yes
+9,0x09,minecraft:water,Stationary Water,Classic,Classic,"bits0-2 level (0 source/full, 1-7 decreasing); bit3 falling",,water,same,yes
+10,0x0A,minecraft:flowing_lava,Flowing Lava,Classic,Classic,"bits0-2 level (0 source/full, 1-7 decreasing); bit3 falling",,flowing_lava,same,yes
+11,0x0B,minecraft:lava,Stationary Lava,Classic,Classic,"bits0-2 level (0 source/full, 1-7 decreasing); bit3 falling",,lava,same,yes
+12,0x0C,minecraft:sand,Sand,Classic,Classic,0 sand; 1 red_sand (1.7.2),,sand,same,yes
+13,0x0D,minecraft:gravel,Gravel,Classic,Classic,,,gravel,same,yes
+14,0x0E,minecraft:gold_ore,Gold Ore,Classic,Classic,,,gold_ore,same,yes
+15,0x0F,minecraft:iron_ore,Iron Ore,Classic,Classic,,,iron_ore,same,yes
+16,0x10,minecraft:coal_ore,Coal Ore,Classic,Classic,,,coal_ore,same,yes
+17,0x11,minecraft:log,Wood (Log),Classic,Classic,"bits0-1 type (0 oak,1 spruce,2 birch,3 jungle); bits2-3 axis (0 y,4 x,8 z,12 bark on all faces -> *_wood)",,log,same,yes
+18,0x12,minecraft:leaves,Leaves,Classic,Classic,"bits0-1 type (0 oak,1 spruce,2 birch,3 jungle); bit2 no-decay (player placed -> persistent); bit3 check-decay",,leaves,same,yes
+19,0x13,minecraft:sponge,Sponge,Classic,Classic,0 sponge; 1 wet_sponge (1.8),,sponge,same,yes
+20,0x14,minecraft:glass,Glass,Classic,Classic,,,glass,same,yes
+21,0x15,minecraft:lapis_ore,Lapis Lazuli Ore,Beta 1.2,Beta,,Classic/Indev: red cloth,lapis_ore,same,yes
+22,0x16,minecraft:lapis_block,Lapis Lazuli Block,Beta 1.2,Beta,,Classic/Indev: orange cloth,lapis_block,same,yes
+23,0x17,minecraft:dispenser,Dispenser,Beta 1.2,Beta,"bits0-2 facing (0 down,1 up,2 north,3 south,4 west,5 east); bit3 triggered",Classic/Indev: yellow cloth,dispenser,same,yes
+24,0x18,minecraft:sandstone,Sandstone,Beta 1.2,Beta,0 sandstone; 1 chiseled; 2 smooth (-> cut_sandstone in 1.13),Classic/Indev: chartreuse cloth,sandstone,same,yes
+25,0x19,minecraft:noteblock,Note Block,Beta 1.2,Beta,none (pitch in block entity),Classic/Indev: green cloth,noteblock,same,yes
+26,0x1A,minecraft:bed,Bed,Beta 1.3,Beta,"bits0-1 facing (0 south,1 west,2 north,3 east); bit2 occupied; bit3 head part (else foot); colour in block entity since 1.12 (older beds are red)",Classic/Indev: spring green cloth,bed,same,yes
+27,0x1B,minecraft:golden_rail,Powered Rail,Beta 1.5,Beta,"bits0-2 shape (0 N-S,1 E-W,2 ascending east,3 ascending west,4 ascending north,5 ascending south); bit3 powered",Classic/Indev: cyan cloth,golden_rail,same,yes
+28,0x1C,minecraft:detector_rail,Detector Rail,Beta 1.5,Beta,"bits0-2 shape (0 N-S,1 E-W,2 ascending east,3 ascending west,4 ascending north,5 ascending south); bit3 powered",Classic/Indev: capri cloth,detector_rail,same,yes
+29,0x1D,minecraft:sticky_piston,Sticky Piston,Beta 1.7,Beta,"bits0-2 facing (0 down,1 up,2 north,3 south,4 west,5 east); bit3 extended",Classic/Indev: ultramarine cloth,sticky_piston,same,yes
+30,0x1E,minecraft:web,Cobweb,Beta 1.5,Beta,,Classic: purple cloth (wiki Indev table: violet),web,same,yes
+31,0x1F,minecraft:tallgrass,Tall Grass,Beta 1.6,Beta,0 shrub (-> dead_bush); 1 grass; 2 fern,Classic: violet cloth (wiki Indev table: purple),tallgrass,same,yes
+32,0x20,minecraft:deadbush,Dead Bush,Beta 1.6,Beta,,Classic/Indev: magenta cloth,deadbush,same,yes
+33,0x21,minecraft:piston,Piston,Beta 1.7,Beta,"bits0-2 facing (0 down,1 up,2 north,3 south,4 west,5 east); bit3 extended",Classic/Indev: rose cloth,piston,same,yes
+34,0x22,minecraft:piston_head,Piston Head,Beta 1.7,Beta,"bits0-2 facing (0 down,1 up,2 north,3 south,4 west,5 east); bit3 sticky",Classic/Indev: dark gray cloth,pistonArmCollision,different,yes
+35,0x23,minecraft:wool,Wool,Classic,Classic,"colour 0 white,1 orange,2 magenta,3 light_blue,4 yellow,5 lime,6 pink,7 gray,8 light_gray(silver),9 cyan,10 purple,11 blue,12 brown,13 green,14 red,15 black (colours since Beta 1.2; Infdev to Beta 1.1 had white only)",Classic/Indev: light gray cloth,wool,same,yes
+36,0x24,minecraft:piston_extension,Moving Piston,Beta 1.7,Beta,"bits0-2 facing (0 down,1 up,2 north,3 south,4 west,5 east); bit3 sticky (moving block stored in block entity)",Classic/Indev: white cloth,element_0,different,yes
+37,0x25,minecraft:yellow_flower,Dandelion,Classic,Classic,,,yellow_flower,same,yes
+38,0x26,minecraft:red_flower,Poppy (Rose),Classic,Classic,0 poppy/rose; 1 blue_orchid; 2 allium; 3 azure_bluet; 4 red_tulip; 5 orange_tulip; 6 white_tulip; 7 pink_tulip; 8 oxeye_daisy (1-8 since 1.7.2),,red_flower,same,yes
+39,0x27,minecraft:brown_mushroom,Brown Mushroom,Classic,Classic,,,brown_mushroom,same,yes
+40,0x28,minecraft:red_mushroom,Red Mushroom,Classic,Classic,,,red_mushroom,same,yes
+41,0x29,minecraft:gold_block,Block of Gold,Classic,Classic,,,gold_block,same,yes
+42,0x2A,minecraft:iron_block,Block of Iron,Classic,Classic,,,iron_block,same,yes
+43,0x2B,minecraft:double_stone_slab,Double Stone Slab,Classic,Classic,"bits0-2 type (0 stone,1 sandstone,2 wooden/petrified oak,3 cobblestone,4 brick,5 stone_brick,6 nether_brick,7 quartz); 8 smooth stone, 9 smooth sandstone, 15 smooth quartz (seamless)",,double_stone_slab,same,yes
+44,0x2C,minecraft:stone_slab,Stone Slab,Classic,Classic,bits0-2 type (as 43); bit3 top half,,stone_slab,same,yes
+45,0x2D,minecraft:brick_block,Bricks,Classic,Classic,,,brick_block,same,yes
+46,0x2E,minecraft:tnt,TNT,Classic,Classic,"bit0 explodes when broken (unstable, 1.8+)",,tnt,same,yes
+47,0x2F,minecraft:bookshelf,Bookshelf,Classic,Classic,,,bookshelf,same,yes
+48,0x30,minecraft:mossy_cobblestone,Moss Stone,Classic,Classic,,,mossy_cobblestone,same,yes
+49,0x31,minecraft:obsidian,Obsidian,Classic,Classic,,,obsidian,same,yes
+50,0x32,minecraft:torch,Torch,Indev,Indev,"1 wall facing east, 2 west, 3 south, 4 north, 5 floor (0 = floor)",,torch,same,yes
+51,0x33,minecraft:fire,Fire,Indev,Indev,age 0-15,,fire,same,yes
+52,0x34,minecraft:mob_spawner,Monster Spawner,Infdev 20100625,Infdev,none (entity in block entity),Indev: infinite water source,mob_spawner,same,yes
+53,0x35,minecraft:oak_stairs,Oak Wood Stairs,Infdev,Infdev,"bits0-1 facing (0 east,1 west,2 south,3 north); bit2 upside-down (half=top); shape derived from neighbours",Indev: infinite lava source,oak_stairs,same,yes
+54,0x36,minecraft:chest,Chest,Indev,Indev,"facing 2 north,3 south,4 west,5 east (double chests derived from neighbours)",,chest,same,yes
+55,0x37,minecraft:redstone_wire,Redstone Wire,Alpha 1.0.1,Alpha,power 0-15 (connections derived),Indev/Infdev: gear (removed in Alpha 1.0.1; converts to redstone wire),redstone_wire,same,yes
+56,0x38,minecraft:diamond_ore,Diamond Ore,Indev,Indev,,,diamond_ore,same,yes
+57,0x39,minecraft:diamond_block,Block of Diamond,Indev,Indev,,,diamond_block,same,yes
+58,0x3A,minecraft:crafting_table,Crafting Table,Indev,Indev,,,crafting_table,same,yes
+59,0x3B,minecraft:wheat,Wheat Crops,Indev,Indev,age 0-7,,wheat,same,yes
+60,0x3C,minecraft:farmland,Farmland,Indev,Indev,moisture 0-7,,farmland,same,yes
+61,0x3D,minecraft:furnace,Furnace,Indev,Indev,"facing 2 north,3 south,4 west,5 east",,furnace,same,yes
+62,0x3E,minecraft:lit_furnace,Burning Furnace,Indev,Indev,"facing 2 north,3 south,4 west,5 east",,lit_furnace,same,yes
+63,0x3F,minecraft:standing_sign,Standing Sign,Infdev 20100607,Infdev,"rotation 0-15 (0 south, clockwise in 22.5 degree steps)",,standing_sign,same,yes
+64,0x40,minecraft:wooden_door,Oak Door,Infdev 20100607,Infdev,"lower half (bit3=0): bits0-1 facing (0 east,1 south,2 west,3 north), bit2 open; upper half (bit3=1): bit0 hinge right, bit1 powered",,wooden_door,same,yes
+65,0x41,minecraft:ladder,Ladder,Infdev 20100607,Infdev,"facing 2 north,3 south,4 west,5 east",,ladder,same,yes
+66,0x42,minecraft:rail,Rail,Infdev 20100618,Infdev,"shape 0 N-S,1 E-W,2 ascending east,3 ascending west,4 ascending north,5 ascending south,6 curve S-E,7 S-W,8 N-W,9 N-E",,rail,same,yes
+67,0x43,minecraft:stone_stairs,Cobblestone Stairs,Infdev,Infdev,"bits0-1 facing (0 east,1 west,2 south,3 north); bit2 upside-down (half=top); shape derived from neighbours",,stone_stairs,same,yes
+68,0x44,minecraft:wall_sign,Wall Sign,Infdev 20100607,Infdev,"facing 2 north,3 south,4 west,5 east",,wall_sign,same,yes
+69,0x45,minecraft:lever,Lever,Alpha 1.0.1,Alpha,"bits0-2 (0 ceiling x-axis,1 wall facing east,2 west,3 south,4 north,5 floor z-axis,6 floor x-axis,7 ceiling z-axis); bit3 powered",,lever,same,yes
+70,0x46,minecraft:stone_pressure_plate,Stone Pressure Plate,Alpha 1.0.1,Alpha,0 up; 1 pressed,,stone_pressure_plate,same,yes
+71,0x47,minecraft:iron_door,Iron Door,Alpha 1.0.1,Alpha,"lower half (bit3=0): bits0-1 facing (0 east,1 south,2 west,3 north), bit2 open; upper half (bit3=1): bit0 hinge right, bit1 powered",,iron_door,same,yes
+72,0x48,minecraft:wooden_pressure_plate,Wooden Pressure Plate,Alpha 1.0.1,Alpha,0 up; 1 pressed,,wooden_pressure_plate,same,yes
+73,0x49,minecraft:redstone_ore,Redstone Ore,Alpha 1.0.1,Alpha,,,redstone_ore,same,yes
+74,0x4A,minecraft:lit_redstone_ore,Glowing Redstone Ore,Alpha 1.0.1,Alpha,,,lit_redstone_ore,same,yes
+75,0x4B,minecraft:unlit_redstone_torch,Redstone Torch (off),Alpha 1.0.1,Alpha,"1 wall facing east, 2 west, 3 south, 4 north, 5 floor (0 = floor)",,unlit_redstone_torch,same,yes
+76,0x4C,minecraft:redstone_torch,Redstone Torch (on),Alpha 1.0.1,Alpha,"1 wall facing east, 2 west, 3 south, 4 north, 5 floor (0 = floor)",,redstone_torch,same,yes
+77,0x4D,minecraft:stone_button,Stone Button,Alpha 1.0.1,Alpha,"bits0-2 (0 ceiling, 1 wall facing east, 2 west, 3 south, 4 north, 5 floor); bit3 pressed",,stone_button,same,yes
+78,0x4E,minecraft:snow_layer,Snow (layer),Alpha 1.0.4,Alpha,layers-1 (0-7),,snow_layer,same,yes
+79,0x4F,minecraft:ice,Ice,Alpha 1.0.4,Alpha,,,ice,same,yes
+80,0x50,minecraft:snow,Snow Block,Alpha 1.0.5,Alpha,,,snow,same,yes
+81,0x51,minecraft:cactus,Cactus,Alpha 1.0.6,Alpha,age 0-15,,cactus,same,yes
+82,0x52,minecraft:clay,Clay,Alpha 1.0.11,Alpha,,,clay,same,yes
+83,0x53,minecraft:reeds,Sugar Cane,Alpha 1.0.11,Alpha,age 0-15,,reeds,same,yes
+84,0x54,minecraft:jukebox,Jukebox,Alpha 1.0.14,Alpha,0 empty; 1 has record (record in block entity),,jukebox,same,yes
+85,0x55,minecraft:fence,Oak Fence,Alpha 1.0.17,Alpha,none (connections derived from neighbours),,fence,same,yes
+86,0x56,minecraft:pumpkin,Pumpkin,Alpha 1.2.0,Alpha,"facing 0 south,1 west,2 north,3 east (1.12 pumpkins all have faces -> carved_pumpkin in 1.13)",,pumpkin,same,yes
+87,0x57,minecraft:netherrack,Netherrack,Alpha 1.2.0,Alpha,,,netherrack,same,yes
+88,0x58,minecraft:soul_sand,Soul Sand,Alpha 1.2.0,Alpha,,,soul_sand,same,yes
+89,0x59,minecraft:glowstone,Glowstone,Alpha 1.2.0,Alpha,,,glowstone,same,yes
+90,0x5A,minecraft:portal,Nether Portal,Alpha 1.2.0,Alpha,"axis 1 x, 2 z (0 unset -> x)",,portal,same,yes
+91,0x5B,minecraft:lit_pumpkin,Jack o'Lantern,Alpha 1.2.0,Alpha,"facing 0 south,1 west,2 north,3 east",,lit_pumpkin,same,yes
+92,0x5C,minecraft:cake,Cake,Beta 1.2,Beta,bites 0-6,,cake,same,yes
+93,0x5D,minecraft:unpowered_repeater,Redstone Repeater (off),Beta 1.3,Beta,"bits0-1 facing (0 south,1 west,2 north,3 east); bits2-3 delay-1",,unpowered_repeater,same,yes
+94,0x5E,minecraft:powered_repeater,Redstone Repeater (on),Beta 1.3,Beta,"bits0-1 facing (0 south,1 west,2 north,3 east); bits2-3 delay-1",,powered_repeater,same,yes
+95,0x5F,minecraft:stained_glass,Stained Glass,1.7.2,Release,"colour 0 white,1 orange,2 magenta,3 light_blue,4 yellow,5 lime,6 pink,7 gray,8 light_gray(silver),9 cyan,10 purple,11 blue,12 brown,13 green,14 red,15 black",Beta 1.4 to 1.6.4: locked chest (April Fools block),invisibleBedrock,different,yes
+96,0x60,minecraft:trapdoor,Wooden Trapdoor,Beta 1.6,Beta,"bits0-1 facing (0 north,1 south,2 west,3 east); bit2 open; bit3 top half",,trapdoor,same,yes
+97,0x61,minecraft:monster_egg,Infested Block,Beta 1.8,Beta,0 stone; 1 cobblestone; 2 stone_brick; 3 mossy_stone_brick; 4 cracked_stone_brick; 5 chiseled_stone_brick,,monster_egg,same,yes
+98,0x62,minecraft:stonebrick,Stone Bricks,Beta 1.8,Beta,0 stone_bricks; 1 mossy; 2 cracked; 3 chiseled,,stonebrick,same,yes
+99,0x63,minecraft:brown_mushroom_block,Brown Mushroom Block,Beta 1.8,Beta,"0 pores on all faces; 1-9 cap faces (1 NW corner,2 N,3 NE,4 W,5 top,6 E,7 SW,8 S,9 SE); 10 stem sides; 14 cap all faces; 15 stem all faces",,brown_mushroom_block,same,yes
+100,0x64,minecraft:red_mushroom_block,Red Mushroom Block,Beta 1.8,Beta,"0 pores on all faces; 1-9 cap faces (1 NW corner,2 N,3 NE,4 W,5 top,6 E,7 SW,8 S,9 SE); 10 stem sides; 14 cap all faces; 15 stem all faces",,red_mushroom_block,same,yes
+101,0x65,minecraft:iron_bars,Iron Bars,Beta 1.8,Beta,none (connections derived from neighbours),,iron_bars,same,yes
+102,0x66,minecraft:glass_pane,Glass Pane,Beta 1.8,Beta,none (connections derived from neighbours),,glass_pane,same,yes
+103,0x67,minecraft:melon_block,Melon,Beta 1.8,Beta,,,melon_block,same,yes
+104,0x68,minecraft:pumpkin_stem,Pumpkin Stem,Beta 1.8,Beta,age 0-7 (attached facing derived),,pumpkin_stem,same,yes
+105,0x69,minecraft:melon_stem,Melon Stem,Beta 1.8,Beta,age 0-7 (attached facing derived),,melon_stem,same,yes
+106,0x6A,minecraft:vine,Vines,Beta 1.8,Beta,"bitmask 1 south, 2 west, 4 north, 8 east (up derived)",,vine,same,yes
+107,0x6B,minecraft:fence_gate,Oak Fence Gate,Beta 1.8,Beta,"bits0-1 facing (0 south,1 west,2 north,3 east); bit2 open; bit3 powered",,fence_gate,same,yes
+108,0x6C,minecraft:brick_stairs,Brick Stairs,Beta 1.8,Beta,"bits0-1 facing (0 east,1 west,2 south,3 north); bit2 upside-down (half=top); shape derived from neighbours",,brick_stairs,same,yes
+109,0x6D,minecraft:stone_brick_stairs,Stone Brick Stairs,Beta 1.8,Beta,"bits0-1 facing (0 east,1 west,2 south,3 north); bit2 upside-down (half=top); shape derived from neighbours",,stone_brick_stairs,same,yes
+110,0x6E,minecraft:mycelium,Mycelium,1.0,Release,,,mycelium,same,yes
+111,0x6F,minecraft:waterlily,Lily Pad,1.0,Release,,,waterlily,same,yes
+112,0x70,minecraft:nether_brick,Nether Brick,1.0,Release,,,nether_brick,same,yes
+113,0x71,minecraft:nether_brick_fence,Nether Brick Fence,1.0,Release,none (connections derived from neighbours),,nether_brick_fence,same,yes
+114,0x72,minecraft:nether_brick_stairs,Nether Brick Stairs,1.0,Release,"bits0-1 facing (0 east,1 west,2 south,3 north); bit2 upside-down (half=top); shape derived from neighbours",,nether_brick_stairs,same,yes
+115,0x73,minecraft:nether_wart,Nether Wart,1.0,Release,age 0-3,,nether_wart,same,yes
+116,0x74,minecraft:enchanting_table,Enchanting Table,1.0,Release,,,enchanting_table,same,yes
+117,0x75,minecraft:brewing_stand,Brewing Stand,1.0,Release,bit0 bottle in slot 0; bit1 slot 1; bit2 slot 2,,brewing_stand,same,yes
+118,0x76,minecraft:cauldron,Cauldron,1.0,Release,level 0-3,,cauldron,same,yes
+119,0x77,minecraft:end_portal,End Portal,1.0,Release,,,end_portal,same,yes
+120,0x78,minecraft:end_portal_frame,End Portal Frame,1.0,Release,"bits0-1 facing (0 south,1 west,2 north,3 east); bit2 eye",,end_portal_frame,same,yes
+121,0x79,minecraft:end_stone,End Stone,1.0,Release,,,end_stone,same,yes
+122,0x7A,minecraft:dragon_egg,Dragon Egg,1.0,Release,,,dragon_egg,same,yes
+123,0x7B,minecraft:redstone_lamp,Redstone Lamp (off),1.2.1,Release,,,redstone_lamp,same,yes
+124,0x7C,minecraft:lit_redstone_lamp,Redstone Lamp (on),1.2.1,Release,,,lit_redstone_lamp,same,yes
+125,0x7D,minecraft:double_wooden_slab,Double Wooden Slab,1.3.1,Release,"type 0 oak,1 spruce,2 birch,3 jungle,4 acacia,5 dark_oak",,dropper,different,yes
+126,0x7E,minecraft:wooden_slab,Wooden Slab,1.3.1,Release,bits0-2 type (0 oak..5 dark_oak); bit3 top half,,activator_rail,different,yes
+127,0x7F,minecraft:cocoa,Cocoa,1.3.1,Release,"bits0-1 facing (0 south,1 west,2 north,3 east); bits2-3 age 0-2",,cocoa,same,yes
+128,0x80,minecraft:sandstone_stairs,Sandstone Stairs,1.3.1,Release,"bits0-1 facing (0 east,1 west,2 south,3 north); bit2 upside-down (half=top); shape derived from neighbours",,sandstone_stairs,same,yes
+129,0x81,minecraft:emerald_ore,Emerald Ore,1.3.1,Release,,,emerald_ore,same,yes
+130,0x82,minecraft:ender_chest,Ender Chest,1.3.1,Release,"facing 2 north,3 south,4 west,5 east",,ender_chest,same,yes
+131,0x83,minecraft:tripwire_hook,Tripwire Hook,1.3.1,Release,"bits0-1 facing (0 south,1 west,2 north,3 east); bit2 attached; bit3 powered",,tripwire_hook,same,yes
+132,0x84,minecraft:tripwire,Tripwire,1.3.1,Release,bit0 powered; bit1 unused (suspended); bit2 attached; bit3 disarmed (connections derived),,tripWire,different,yes
+133,0x85,minecraft:emerald_block,Block of Emerald,1.3.1,Release,,,emerald_block,same,yes
+134,0x86,minecraft:spruce_stairs,Spruce Wood Stairs,1.3.1,Release,"bits0-1 facing (0 east,1 west,2 south,3 north); bit2 upside-down (half=top); shape derived from neighbours",,spruce_stairs,same,yes
+135,0x87,minecraft:birch_stairs,Birch Wood Stairs,1.3.1,Release,"bits0-1 facing (0 east,1 west,2 south,3 north); bit2 upside-down (half=top); shape derived from neighbours",,birch_stairs,same,yes
+136,0x88,minecraft:jungle_stairs,Jungle Wood Stairs,1.3.1,Release,"bits0-1 facing (0 east,1 west,2 south,3 north); bit2 upside-down (half=top); shape derived from neighbours",,jungle_stairs,same,yes
+137,0x89,minecraft:command_block,Command Block,1.4.2,Release,"bits0-2 facing (0 down,1 up,2 north,3 south,4 west,5 east) (1.9+); bit3 conditional",,command_block,same,no
+138,0x8A,minecraft:beacon,Beacon,1.4.2,Release,,,beacon,same,yes
+139,0x8B,minecraft:cobblestone_wall,Cobblestone Wall,1.4.2,Release,0 cobblestone; 1 mossy (connections derived),,cobblestone_wall,same,yes
+140,0x8C,minecraft:flower_pot,Flower Pot,1.4.2,Release,"1.7.2+: contents in block entity (Item, Data); 1.4.2-1.6: data = contents (1 rose,2 dandelion,3 oak sapling,4 spruce,5 birch,6 jungle,7 red mushroom,8 brown mushroom,9 cactus,10 dead bush,11 fern)",,flower_pot,same,yes
+141,0x8D,minecraft:carrots,Carrots,1.4.2,Release,age 0-7,,carrots,same,yes
+142,0x8E,minecraft:potatoes,Potatoes,1.4.2,Release,age 0-7,,potatoes,same,yes
+143,0x8F,minecraft:wooden_button,Wooden Button,1.4.2,Release,"bits0-2 (0 ceiling, 1 wall facing east, 2 west, 3 south, 4 north, 5 floor); bit3 pressed",,wooden_button,same,yes
+144,0x90,minecraft:skull,Mob Head,1.4.2,Release,"bits0-2 placement (1 floor; 2 north,3 south,4 west,5 east wall); bit3 no-drop; SkullType (0 skeleton,1 wither,2 zombie,3 player,4 creeper,5 dragon) and floor rotation Rot in block entity",,skull,same,yes
+145,0x91,minecraft:anvil,Anvil,1.4.2,Release,"bits0-1 facing (0 south,1 west,2 north,3 east as flattened); bits2-3 damage (0 anvil,1 chipped,2 damaged)",,anvil,same,yes
+146,0x92,minecraft:trapped_chest,Trapped Chest,1.5,Release,"facing 2 north,3 south,4 west,5 east",,trapped_chest,same,yes
+147,0x93,minecraft:light_weighted_pressure_plate,Weighted Pressure Plate (Light),1.5,Release,power 0-15,,light_weighted_pressure_plate,same,yes
+148,0x94,minecraft:heavy_weighted_pressure_plate,Weighted Pressure Plate (Heavy),1.5,Release,power 0-15,,heavy_weighted_pressure_plate,same,yes
+149,0x95,minecraft:unpowered_comparator,Redstone Comparator,1.5,Release,"bits0-1 facing (0 south,1 west,2 north,3 east); bit2 subtract mode; bit3 powered",,unpowered_comparator,same,yes
+150,0x96,minecraft:powered_comparator,"Redstone Comparator (powered, deprecated)",1.5,Release,as 149,,powered_comparator,same,yes
+151,0x97,minecraft:daylight_detector,Daylight Sensor,1.5,Release,power 0-15,,daylight_detector,same,yes
+152,0x98,minecraft:redstone_block,Block of Redstone,1.5,Release,,,redstone_block,same,yes
+153,0x99,minecraft:quartz_ore,Nether Quartz Ore,1.5,Release,,,quartz_ore,same,yes
+154,0x9A,minecraft:hopper,Hopper,1.5,Release,"bits0-2 facing (0 down,2 north,3 south,4 west,5 east); bit3 disabled (powered)",,hopper,same,yes
+155,0x9B,minecraft:quartz_block,Block of Quartz,1.5,Release,0 quartz_block; 1 chiseled; 2 pillar y; 3 pillar x; 4 pillar z,,quartz_block,same,yes
+156,0x9C,minecraft:quartz_stairs,Quartz Stairs,1.5,Release,"bits0-1 facing (0 east,1 west,2 south,3 north); bit2 upside-down (half=top); shape derived from neighbours",,quartz_stairs,same,yes
+157,0x9D,minecraft:activator_rail,Activator Rail,1.5,Release,"bits0-2 shape (0 N-S,1 E-W,2 ascending east,3 ascending west,4 ascending north,5 ascending south); bit3 powered",,double_wooden_slab,different,yes
+158,0x9E,minecraft:dropper,Dropper,1.5,Release,"bits0-2 facing (0 down,1 up,2 north,3 south,4 west,5 east); bit3 triggered",,wooden_slab,different,yes
+159,0x9F,minecraft:stained_hardened_clay,Stained Terracotta,1.6.1,Release,"colour 0 white,1 orange,2 magenta,3 light_blue,4 yellow,5 lime,6 pink,7 gray,8 light_gray(silver),9 cyan,10 purple,11 blue,12 brown,13 green,14 red,15 black",,stained_hardened_clay,same,yes
+160,0xA0,minecraft:stained_glass_pane,Stained Glass Pane,1.7.2,Release,"colour 0 white,1 orange,2 magenta,3 light_blue,4 yellow,5 lime,6 pink,7 gray,8 light_gray(silver),9 cyan,10 purple,11 blue,12 brown,13 green,14 red,15 black (connections derived)",,stained_glass_pane,same,yes
+161,0xA1,minecraft:leaves2,Leaves (Acacia/Dark Oak),1.7.2,Release,"bit0 type (0 acacia,1 dark_oak); bit2 no-decay; bit3 check-decay",,leaves2,same,yes
+162,0xA2,minecraft:log2,Wood (Acacia/Dark Oak),1.7.2,Release,"bit0 type (0 acacia,1 dark_oak); bits2-3 axis (0 y,4 x,8 z,12 bark -> *_wood)",,log2,same,yes
+163,0xA3,minecraft:acacia_stairs,Acacia Wood Stairs,1.7.2,Release,"bits0-1 facing (0 east,1 west,2 south,3 north); bit2 upside-down (half=top); shape derived from neighbours",,acacia_stairs,same,yes
+164,0xA4,minecraft:dark_oak_stairs,Dark Oak Wood Stairs,1.7.2,Release,"bits0-1 facing (0 east,1 west,2 south,3 north); bit2 upside-down (half=top); shape derived from neighbours",,dark_oak_stairs,same,yes
+165,0xA5,minecraft:slime,Slime Block,1.8,Release,,,slime,same,yes
+166,0xA6,minecraft:barrier,Barrier,1.8,Release,,,,different,yes
+167,0xA7,minecraft:iron_trapdoor,Iron Trapdoor,1.8,Release,"bits0-1 facing (0 north,1 south,2 west,3 east); bit2 open; bit3 top half",,iron_trapdoor,same,yes
+168,0xA8,minecraft:prismarine,Prismarine,1.8,Release,0 prismarine; 1 prismarine_bricks; 2 dark_prismarine,,prismarine,same,yes
+169,0xA9,minecraft:sea_lantern,Sea Lantern,1.8,Release,,,seaLantern,different,yes
+170,0xAA,minecraft:hay_block,Hay Bale,1.6.1,Release,"bits2-3 axis (0 y, 4 x, 8 z)",,hay_block,same,yes
+171,0xAB,minecraft:carpet,Carpet,1.6.1,Release,"colour 0 white,1 orange,2 magenta,3 light_blue,4 yellow,5 lime,6 pink,7 gray,8 light_gray(silver),9 cyan,10 purple,11 blue,12 brown,13 green,14 red,15 black",,carpet,same,yes
+172,0xAC,minecraft:hardened_clay,Terracotta,1.6.1,Release,,,hardened_clay,same,yes
+173,0xAD,minecraft:coal_block,Block of Coal,1.6.1,Release,,,coal_block,same,yes
+174,0xAE,minecraft:packed_ice,Packed Ice,1.7.2,Release,,,packed_ice,same,yes
+175,0xAF,minecraft:double_plant,Large Flowers,1.7.2,Release,"lower half: 0 sunflower,1 lilac,2 double tallgrass,3 large fern,4 rose bush,5 peony; upper half: bit3 set (type taken from the lower half)",,double_plant,same,yes
+176,0xB0,minecraft:standing_banner,Standing Banner,1.8,Release,"rotation 0-15; base colour (Base, inverted dye index 0 black..15 white) and patterns in block entity",,standing_banner,same,yes
+177,0xB1,minecraft:wall_banner,Wall Banner,1.8,Release,"facing 2 north,3 south,4 west,5 east; colour in block entity",,wall_banner,same,yes
+178,0xB2,minecraft:daylight_detector_inverted,Inverted Daylight Sensor,1.8,Release,power 0-15,,daylight_detector_inverted,same,yes
+179,0xB3,minecraft:red_sandstone,Red Sandstone,1.8,Release,0 red_sandstone; 1 chiseled; 2 smooth (-> cut_red_sandstone),,red_sandstone,same,yes
+180,0xB4,minecraft:red_sandstone_stairs,Red Sandstone Stairs,1.8,Release,"bits0-1 facing (0 east,1 west,2 south,3 north); bit2 upside-down (half=top); shape derived from neighbours",,red_sandstone_stairs,same,yes
+181,0xB5,minecraft:double_stone_slab2,Double Red Sandstone Slab,1.8,Release,0 red sandstone; 8 smooth red sandstone (seamless),,double_stone_slab2,same,yes
+182,0xB6,minecraft:stone_slab2,Red Sandstone Slab,1.8,Release,0 red sandstone; bit3 top half,,stone_slab2,same,yes
+183,0xB7,minecraft:spruce_fence_gate,Spruce Fence Gate,1.8,Release,"bits0-1 facing (0 south,1 west,2 north,3 east); bit2 open; bit3 powered",,spruce_fence_gate,same,yes
+184,0xB8,minecraft:birch_fence_gate,Birch Fence Gate,1.8,Release,"bits0-1 facing (0 south,1 west,2 north,3 east); bit2 open; bit3 powered",,birch_fence_gate,same,yes
+185,0xB9,minecraft:jungle_fence_gate,Jungle Fence Gate,1.8,Release,"bits0-1 facing (0 south,1 west,2 north,3 east); bit2 open; bit3 powered",,jungle_fence_gate,same,yes
+186,0xBA,minecraft:dark_oak_fence_gate,Dark Oak Fence Gate,1.8,Release,"bits0-1 facing (0 south,1 west,2 north,3 east); bit2 open; bit3 powered",,dark_oak_fence_gate,same,yes
+187,0xBB,minecraft:acacia_fence_gate,Acacia Fence Gate,1.8,Release,"bits0-1 facing (0 south,1 west,2 north,3 east); bit2 open; bit3 powered",,acacia_fence_gate,same,yes
+188,0xBC,minecraft:spruce_fence,Spruce Fence,1.8,Release,none (connections derived from neighbours),,repeating_command_block,different,yes
+189,0xBD,minecraft:birch_fence,Birch Fence,1.8,Release,none (connections derived from neighbours),,chain_command_block,different,yes
+190,0xBE,minecraft:jungle_fence,Jungle Fence,1.8,Release,none (connections derived from neighbours),,hard_glass_pane,different,yes
+191,0xBF,minecraft:dark_oak_fence,Dark Oak Fence,1.8,Release,none (connections derived from neighbours),,hard_stained_glass_pane,different,yes
+192,0xC0,minecraft:acacia_fence,Acacia Fence,1.8,Release,none (connections derived from neighbours),,chemical_heat,different,yes
+193,0xC1,minecraft:spruce_door,Spruce Door,1.8,Release,"lower half (bit3=0): bits0-1 facing (0 east,1 south,2 west,3 north), bit2 open; upper half (bit3=1): bit0 hinge right, bit1 powered",,spruce_door,same,yes
+194,0xC2,minecraft:birch_door,Birch Door,1.8,Release,"lower half (bit3=0): bits0-1 facing (0 east,1 south,2 west,3 north), bit2 open; upper half (bit3=1): bit0 hinge right, bit1 powered",,birch_door,same,yes
+195,0xC3,minecraft:jungle_door,Jungle Door,1.8,Release,"lower half (bit3=0): bits0-1 facing (0 east,1 south,2 west,3 north), bit2 open; upper half (bit3=1): bit0 hinge right, bit1 powered",,jungle_door,same,yes
+196,0xC4,minecraft:acacia_door,Acacia Door,1.8,Release,"lower half (bit3=0): bits0-1 facing (0 east,1 south,2 west,3 north), bit2 open; upper half (bit3=1): bit0 hinge right, bit1 powered",,acacia_door,same,yes
+197,0xC5,minecraft:dark_oak_door,Dark Oak Door,1.8,Release,"lower half (bit3=0): bits0-1 facing (0 east,1 south,2 west,3 north), bit2 open; upper half (bit3=1): bit0 hinge right, bit1 powered",,dark_oak_door,same,yes
+198,0xC6,minecraft:end_rod,End Rod,1.9,Release,"facing 0 down,1 up,2 north,3 south,4 west,5 east",,grass_path,different,yes
+199,0xC7,minecraft:chorus_plant,Chorus Plant,1.9,Release,none (connections derived from neighbours),,frame,different,yes
+200,0xC8,minecraft:chorus_flower,Chorus Flower,1.9,Release,age 0-5,,chorus_flower,same,yes
+201,0xC9,minecraft:purpur_block,Purpur Block,1.9,Release,,,purpur_block,same,yes
+202,0xCA,minecraft:purpur_pillar,Purpur Pillar,1.9,Release,"bits2-3 axis (0 y, 4 x, 8 z)",,colored_torch_rg,different,yes
+203,0xCB,minecraft:purpur_stairs,Purpur Stairs,1.9,Release,"bits0-1 facing (0 east,1 west,2 south,3 north); bit2 upside-down (half=top); shape derived from neighbours",,purpur_stairs,same,yes
+204,0xCC,minecraft:purpur_double_slab,Purpur Double Slab,1.9,Release,,,colored_torch_bp,different,yes
+205,0xCD,minecraft:purpur_slab,Purpur Slab,1.9,Release,bit3 top half,,undyed_shulker_box,different,yes
+206,0xCE,minecraft:end_bricks,End Stone Bricks,1.9,Release,,,end_bricks,same,yes
+207,0xCF,minecraft:beetroots,Beetroots,1.9,Release,age 0-3,,frosted_ice,different,yes
+208,0xD0,minecraft:grass_path,Grass Path,1.9,Release,,,end_rod,different,yes
+209,0xD1,minecraft:end_gateway,End Gateway,1.9,Release,,,end_gateway,same,yes
+210,0xD2,minecraft:repeating_command_block,Repeating Command Block,1.9,Release,"bits0-2 facing (0 down,1 up,2 north,3 south,4 west,5 east); bit3 conditional",,allow,different,no
+211,0xD3,minecraft:chain_command_block,Chain Command Block,1.9,Release,"bits0-2 facing (0 down,1 up,2 north,3 south,4 west,5 east); bit3 conditional",,deny,different,no
+212,0xD4,minecraft:frosted_ice,Frosted Ice,1.9,Release,age 0-3,,border_block,different,yes
+213,0xD5,minecraft:magma,Magma Block,1.10,Release,,,magma,same,yes
+214,0xD6,minecraft:nether_wart_block,Nether Wart Block,1.10,Release,,,nether_wart_block,same,yes
+215,0xD7,minecraft:red_nether_brick,Red Nether Bricks,1.10,Release,,,red_nether_brick,same,yes
+216,0xD8,minecraft:bone_block,Bone Block,1.10,Release,"bits2-3 axis (0 y, 4 x, 8 z)",,bone_block,same,yes
+217,0xD9,minecraft:structure_void,Structure Void,1.10,Release,,,structure_void,same,yes
+218,0xDA,minecraft:observer,Observer,1.11,Release,"bits0-2 facing (0 down,1 up,2 north,3 south,4 west,5 east); bit3 powered",,shulker_box,different,yes
+219,0xDB,minecraft:white_shulker_box,White Shulker Box,1.11,Release,"bits0-2 facing (0 down,1 up,2 north,3 south,4 west,5 east) (contents in block entity)",,purple_glazed_terracotta,different,yes
+220,0xDC,minecraft:orange_shulker_box,Orange Shulker Box,1.11,Release,"bits0-2 facing (0 down,1 up,2 north,3 south,4 west,5 east) (contents in block entity)",,white_glazed_terracotta,different,yes
+221,0xDD,minecraft:magenta_shulker_box,Magenta Shulker Box,1.11,Release,"bits0-2 facing (0 down,1 up,2 north,3 south,4 west,5 east) (contents in block entity)",,orange_glazed_terracotta,different,yes
+222,0xDE,minecraft:light_blue_shulker_box,Light Blue Shulker Box,1.11,Release,"bits0-2 facing (0 down,1 up,2 north,3 south,4 west,5 east) (contents in block entity)",,magenta_glazed_terracotta,different,yes
+223,0xDF,minecraft:yellow_shulker_box,Yellow Shulker Box,1.11,Release,"bits0-2 facing (0 down,1 up,2 north,3 south,4 west,5 east) (contents in block entity)",,light_blue_glazed_terracotta,different,yes
+224,0xE0,minecraft:lime_shulker_box,Lime Shulker Box,1.11,Release,"bits0-2 facing (0 down,1 up,2 north,3 south,4 west,5 east) (contents in block entity)",,yellow_glazed_terracotta,different,yes
+225,0xE1,minecraft:pink_shulker_box,Pink Shulker Box,1.11,Release,"bits0-2 facing (0 down,1 up,2 north,3 south,4 west,5 east) (contents in block entity)",,lime_glazed_terracotta,different,yes
+226,0xE2,minecraft:gray_shulker_box,Gray Shulker Box,1.11,Release,"bits0-2 facing (0 down,1 up,2 north,3 south,4 west,5 east) (contents in block entity)",,pink_glazed_terracotta,different,yes
+227,0xE3,minecraft:silver_shulker_box,Silver Shulker Box,1.11,Release,"bits0-2 facing (0 down,1 up,2 north,3 south,4 west,5 east) (contents in block entity)",,gray_glazed_terracotta,different,yes
+228,0xE4,minecraft:cyan_shulker_box,Cyan Shulker Box,1.11,Release,"bits0-2 facing (0 down,1 up,2 north,3 south,4 west,5 east) (contents in block entity)",,silver_glazed_terracotta,different,yes
+229,0xE5,minecraft:purple_shulker_box,Purple Shulker Box,1.11,Release,"bits0-2 facing (0 down,1 up,2 north,3 south,4 west,5 east) (contents in block entity)",,cyan_glazed_terracotta,different,yes
+230,0xE6,minecraft:blue_shulker_box,Blue Shulker Box,1.11,Release,"bits0-2 facing (0 down,1 up,2 north,3 south,4 west,5 east) (contents in block entity)",,,different,yes
+231,0xE7,minecraft:brown_shulker_box,Brown Shulker Box,1.11,Release,"bits0-2 facing (0 down,1 up,2 north,3 south,4 west,5 east) (contents in block entity)",,blue_glazed_terracotta,different,yes
+232,0xE8,minecraft:green_shulker_box,Green Shulker Box,1.11,Release,"bits0-2 facing (0 down,1 up,2 north,3 south,4 west,5 east) (contents in block entity)",,brown_glazed_terracotta,different,yes
+233,0xE9,minecraft:red_shulker_box,Red Shulker Box,1.11,Release,"bits0-2 facing (0 down,1 up,2 north,3 south,4 west,5 east) (contents in block entity)",,green_glazed_terracotta,different,yes
+234,0xEA,minecraft:black_shulker_box,Black Shulker Box,1.11,Release,"bits0-2 facing (0 down,1 up,2 north,3 south,4 west,5 east) (contents in block entity)",,red_glazed_terracotta,different,yes
+235,0xEB,minecraft:white_glazed_terracotta,White Glazed Terracotta,1.12,Release,"facing 0 south,1 west,2 north,3 east",,black_glazed_terracotta,different,yes
+236,0xEC,minecraft:orange_glazed_terracotta,Orange Glazed Terracotta,1.12,Release,"facing 0 south,1 west,2 north,3 east",,concrete,different,yes
+237,0xED,minecraft:magenta_glazed_terracotta,Magenta Glazed Terracotta,1.12,Release,"facing 0 south,1 west,2 north,3 east",,concretePowder,different,yes
+238,0xEE,minecraft:light_blue_glazed_terracotta,Light Blue Glazed Terracotta,1.12,Release,"facing 0 south,1 west,2 north,3 east",,chemistry_table,different,yes
+239,0xEF,minecraft:yellow_glazed_terracotta,Yellow Glazed Terracotta,1.12,Release,"facing 0 south,1 west,2 north,3 east",,underwater_torch,different,yes
+240,0xF0,minecraft:lime_glazed_terracotta,Lime Glazed Terracotta,1.12,Release,"facing 0 south,1 west,2 north,3 east",,chorus_plant,different,yes
+241,0xF1,minecraft:pink_glazed_terracotta,Pink Glazed Terracotta,1.12,Release,"facing 0 south,1 west,2 north,3 east",,stained_glass,different,yes
+242,0xF2,minecraft:gray_glazed_terracotta,Gray Glazed Terracotta,1.12,Release,"facing 0 south,1 west,2 north,3 east",,camera,different,yes
+243,0xF3,minecraft:silver_glazed_terracotta,Silver Glazed Terracotta,1.12,Release,"facing 0 south,1 west,2 north,3 east",,podzol,different,yes
+244,0xF4,minecraft:cyan_glazed_terracotta,Cyan Glazed Terracotta,1.12,Release,"facing 0 south,1 west,2 north,3 east",,beetroot,different,yes
+245,0xF5,minecraft:purple_glazed_terracotta,Purple Glazed Terracotta,1.12,Release,"facing 0 south,1 west,2 north,3 east",,stonecutter,different,yes
+246,0xF6,minecraft:blue_glazed_terracotta,Blue Glazed Terracotta,1.12,Release,"facing 0 south,1 west,2 north,3 east",,glowingobsidian,different,yes
+247,0xF7,minecraft:brown_glazed_terracotta,Brown Glazed Terracotta,1.12,Release,"facing 0 south,1 west,2 north,3 east",,netherreactor,different,yes
+248,0xF8,minecraft:green_glazed_terracotta,Green Glazed Terracotta,1.12,Release,"facing 0 south,1 west,2 north,3 east",,info_update,different,yes
+249,0xF9,minecraft:red_glazed_terracotta,Red Glazed Terracotta,1.12,Release,"facing 0 south,1 west,2 north,3 east",,info_update2,different,yes
+250,0xFA,minecraft:black_glazed_terracotta,Black Glazed Terracotta,1.12,Release,"facing 0 south,1 west,2 north,3 east",,movingBlock,different,yes
+251,0xFB,minecraft:concrete,Concrete,1.12,Release,"colour 0 white,1 orange,2 magenta,3 light_blue,4 yellow,5 lime,6 pink,7 gray,8 light_gray(silver),9 cyan,10 purple,11 blue,12 brown,13 green,14 red,15 black",,observer,different,yes
+252,0xFC,minecraft:concrete_powder,Concrete Powder,1.12,Release,"colour 0 white,1 orange,2 magenta,3 light_blue,4 yellow,5 lime,6 pink,7 gray,8 light_gray(silver),9 cyan,10 purple,11 blue,12 brown,13 green,14 red,15 black",,structure_block,different,yes
+253,0xFD,,(unused),,,,,hard_glass,,
+254,0xFE,,(unused),,,,,hard_stained_glass,,
+255,0xFF,minecraft:structure_block,Structure Block,1.9,Release,"mode 0 save,1 load,2 corner,3 data",,reserved6,different,yes

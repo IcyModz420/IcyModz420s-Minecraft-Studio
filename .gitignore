@@ -1,0 +1,16 @@
+# Build output
+bin/
+obj/
+
+# Visual Studio / VS Code
+.vs/
+*.user
+.vscode/*
+!.vscode/launch.json
+!.vscode/tasks.json
+
+# Downloaded sample worlds used by McTests (third-party test data, ~224 MB)
+TestData/
+
+# Release packages
+artifacts/
