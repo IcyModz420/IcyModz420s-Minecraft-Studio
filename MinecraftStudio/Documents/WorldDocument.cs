@@ -111,6 +111,7 @@ sealed partial class WorldDocument : Document
             Item("Busiest chunks (lag finder)…", (_, _) => ShowBusyChunks()),
             Item("Lag machines…", (_, _) => ShowLagMachines()),
             Item("Mods and add-ons…", (_, _) => ShowMods()),
+            Item("Check for problems…", (_, _) => ShowCheck()),
             Item("Compare with another world…", (_, _) => ShowCompare()));
         bar.Items.AddRange(
         [
@@ -223,6 +224,7 @@ sealed partial class WorldDocument : Document
     LagMachinesDialog? _lag;
     CompareDialog? _compare;
     ModsDialog? _mods;
+    WorldCheckDialog? _check;
 
     /// <summary>The Find window of this world (one per world; it stays open beside the map until closed).</summary>
     public FindDialog ShowFind()
@@ -272,6 +274,18 @@ sealed partial class WorldDocument : Document
         return _mods;
     }
 
+    /// <summary>The "Check for problems" window of this world (one per world, beside the map like Find).</summary>
+    public WorldCheckDialog ShowCheck()
+    {
+        if (_check == null || _check.IsDisposed)
+        {
+            _check = new WorldCheckDialog(this);
+            _check.Show(FindForm());
+        }
+        else _check.Activate();
+        return _check;
+    }
+
     /// <summary>The "Compare with another world" window of this world (one per world, beside the map like Find).</summary>
     public CompareDialog ShowCompare()
     {
@@ -319,6 +333,7 @@ sealed partial class WorldDocument : Document
         if (disposing) { _structuresCts.Cancel(); _structuresCts.Dispose(); }
         if (disposing && _compare is { IsDisposed: false } compare) compare.Close();
         if (disposing && _mods is { IsDisposed: false } mods) mods.Close();
+        if (disposing && _check is { IsDisposed: false } check) check.Close();
         base.Dispose(disposing);
     }
 

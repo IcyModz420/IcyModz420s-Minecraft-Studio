@@ -64,6 +64,7 @@ public static partial class StructurePlacement
                     StampChunk = (c, d) => { if (d == dimensionId && want.Contains(new ChunkPos(c.X, c.Z))) edit(c); },
                     Verify = false,
                     ConvertPlayers = false,
+                    KeepUnfinishedChunks = true,
                 };
                 report = WorldConverter.Run(src, target, temp, options, progress, cancel);
             }

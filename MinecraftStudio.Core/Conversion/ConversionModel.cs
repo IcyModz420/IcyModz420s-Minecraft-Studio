@@ -82,6 +82,10 @@ public sealed class ConversionOptions
 {
     /// <summary>Overworld chunks that only use y 0–255: let the game add terrain below y=0 (as when it upgrades its own old worlds).</summary>
     public bool LetGameExtendOldTerrain { get; set; } = true;
+
+    /// <summary>Writes chunks a Java world had not finished making as they are. A conversion leaves them for the target to
+    /// make; an edit into a copy of the world in its own format (placing, replacing, shaping) keeps every chunk it touches.</summary>
+    public bool KeepUnfinishedChunks { get; set; }
     public bool ConvertEntities { get; set; } = true;
     public bool ConvertBlockEntities { get; set; } = true;
     public bool ConvertPlayers { get; set; } = true;

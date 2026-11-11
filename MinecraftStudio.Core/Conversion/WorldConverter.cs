@@ -47,6 +47,15 @@ public static class WorldConverter
     };
 
     /// <summary>Targets that can hold the rescue chests (Classic and Indev levels are written with blocks only).</summary>
+    /// <summary>
+    /// Whether chunks a Java world had not finished making are written as they are. Java and Bedrock make a missing chunk
+    /// themselves, so a conversion leaves those out (written as finished, they were holes and blank chunks — a Bedrock world
+    /// full of those would not open). A fixed-size target (Pocket 0.x, Classic, Indev) can't make one, and a console save
+    /// is fixed-size too and not proven to: they take them as they are, as does an edit into a copy of the world itself.
+    /// </summary>
+    public static bool KeepsUnfinished(ConversionTarget target, ConversionOptions options) =>
+        options.KeepUnfinishedChunks || target.Kind is TargetKind.LegacyConsole or TargetKind.PocketLegacy or TargetKind.Classic or TargetKind.Indev;
+
     public static bool CanRescue(ConversionTarget t) => t.Kind is TargetKind.Java or TargetKind.Bedrock or TargetKind.LegacyConsole or TargetKind.PocketLegacy;
 
     /// <summary>
@@ -150,6 +159,8 @@ public static class WorldConverter
                 var ordered = Ordered(positions).ToList();
                 ChunkPos? rescueAt = overworld && log.AcceptsRescues ? RescueChests.PickChunk(positions, info) : null;
                 if (rescueAt is ChunkPos ra) { ordered.Remove(ra); ordered.Add(ra); }
+                bool keepUnfinished = KeepsUnfinished(target, options);
+                int unfinished = 0;
                 foreach (var pos in ordered)
                 {
                     cancel.ThrowIfCancellationRequested();
@@ -159,6 +170,11 @@ public static class WorldConverter
                     {
                         report.FailedChunks++; done++;
                         log.Add(LossKind.Block, "Damaged chunk", "could not be read in the source and was not converted", lost: true);
+                        continue;
+                    }
+                    if (c.Unfinished && !keepUnfinished && pos != rescueAt && c.Entities.Count == 0 && !loose.ContainsKey((dimId, pos)))
+                    {
+                        unfinished++; done++;
                         continue;
                     }
                     if (loose.Remove((dimId, pos), out var setDown)) c.Entities.AddRange(setDown);
@@ -177,6 +193,8 @@ public static class WorldConverter
                     if ((++done & 31) == 0) progress?.Report(new ConversionProgress { Stage = $"Converting {dim.DisplayName}", Done = done, Total = total });
                 }
                 writer.EndDimension();
+                if (unfinished > 0)
+                    report.Notes.Add($"{dim.DisplayName}: {unfinished:N0} chunks the game had not finished making were left for {target.Name} to make (nobody has been in them).");
                 foreach (var w in reader.Warnings.Take(50)) report.Warnings.Add($"{dim.DisplayName}: {w}");
                 if (reader.Warnings.Count > 50) report.Warnings.Add($"{dim.DisplayName}: {reader.Warnings.Count - 50} more warnings.");
             }

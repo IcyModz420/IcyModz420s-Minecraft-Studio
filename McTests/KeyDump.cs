@@ -86,4 +86,32 @@ static class KeyDump
         }
         Console.WriteLine($"{shown} keys matched");
     }
+
+    /// <summary>shape &lt;world&gt;… : is every chunk stored the way the game stores it (the converter's check)?</summary>
+    public static void Shape(string[] args)
+    {
+        foreach (var path in args)
+        {
+            using var w = BedrockWorld.Open(path);
+            var found = BedrockChunkShape.Check(w);
+            Program.Check(found.Count == 0, $"{Path.GetFileName(Path.TrimEndingDirectorySeparator(path))}: " + (found.Count == 0 ? "every chunk as the game stores it" : string.Join("; ", found.Select(f => $"{f.Count:N0} × {f.Problem} (first: {f.First})"))));
+        }
+    }
+
+    /// <summary>keystats &lt;world&gt; : how many records of each kind (per dimension), their total size.</summary>
+    public static void Stats(string[] args)
+    {
+        using var w = BedrockWorld.Open(args[0]);
+        var groups = new SortedDictionary<string, (int N, long Bytes)>(StringComparer.Ordinal);
+        foreach (var key in w.Db.Keys())
+        {
+            string d = BedrockKeys.Describe(key);
+            d = System.Text.RegularExpressions.Regex.Replace(d, @"^chunk -?\d+,-?\d+ ?", "");
+            d = System.Text.RegularExpressions.Regex.Replace(d, @"y=-?\d+|[0-9a-f]{8}-[0-9a-f-]{27}|\d{3,}", "#");
+            int len = w.Db.Get(key)?.Length ?? 0;
+            groups.TryGetValue(d, out var g);
+            groups[d] = (g.N + 1, g.Bytes + len);
+        }
+        foreach (var (k, g) in groups) Console.WriteLine($"{g.N,9} {g.Bytes,12}  {k}");
+    }
 }

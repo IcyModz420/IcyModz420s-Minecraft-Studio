@@ -91,8 +91,8 @@ game on those consoles is a **Bedrock** world; one made in the old edition is a 
   *Works on:* all.
 - **Bring chunks back from a backup** — griefing, a creeper hole or a bad update undone, into a copy; mobs that walked away are not doubled; the backup may even be another edition or console.
   *Works on:* Java, Bedrock, Pocket 0.x, consoles; Classic/Indev (the blocks only (an Indev level's chests and mobs stay as they are)). Not 3DS (a changed 3DS chunk makes the game delete the world).
-- **Check for damage** — reads every chunk and says which are damaged.
-  *Works on:* Java, Bedrock (in the most depth: region tables, the database); Pocket 0.x, consoles, 3DS, Classic/Indev.
+- **Check for problems** — what stops a world opening, crashes the game or throws players out, loses things or leaves a player stuck — damaged chunks, how they are stored, book and chunk bans and other lag machines, mods, packs, the game version and every player — each with its fix.
+  *Works on:* Java, Bedrock (in the most depth: region tables (Java), the database and how every chunk is stored (Bedrock), mods not on this PC (Java), packs, the game version (Java)); Pocket 0.x, Classic/Indev (damaged chunks, lag machines, stuck players); consoles (damaged chunks, the save's archive, lag machines, stuck players); 3DS (damaged chunks, lag machines, the player (only shown: nothing is written into a 3DS world)).
 
 ## Build and change
 

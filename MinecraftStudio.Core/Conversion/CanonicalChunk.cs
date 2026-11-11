@@ -22,6 +22,11 @@ public sealed class CanonicalChunk
     public int X { get; }
     public int Z { get; }
 
+    /// <summary>A Java chunk the game had not finished making (status before "full": no player has been in it). It is
+    /// not written: the target makes it itself. Written as finished, its missing terrain is a hole or an empty void
+    /// chunk (a Bedrock world with thousands of them would not open).</summary>
+    public bool Unfinished { get; set; }
+
     /// <summary>Sections by index (block y / 16): palette of canonical states + YZX indices.</summary>
     public SortedDictionary<int, BlockSection> Sections { get; } = [];
 

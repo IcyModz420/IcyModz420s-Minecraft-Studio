@@ -141,6 +141,11 @@ public static class WorldVerifier
                     check("LevelDB database", ok, ok
                         ? $"{b.Db.Count:N0} records; table checksums and the manifest are valid"
                         : string.Join("; ", b.Db.Warnings.Take(3)));
+                    // Every chunk stored as the game stores it: a world that reads back here can still fail to open in the game.
+                    var shape = BedrockChunkShape.Check(b);
+                    check("Chunks stored the game's way", shape.Count == 0, shape.Count == 0
+                        ? "every chunk has the records the game writes for its kind"
+                        : string.Join("; ", shape.Take(4).Select(s => $"{s.Count:N0} × {s.Problem} (first: {s.First})")));
                     break;
                 }
             case ConsoleWorld c:
@@ -199,6 +204,7 @@ public static class WorldVerifier
                 CanonicalChunk? s, o;
                 try { s = srcReader.Get(pos); } catch { continue; }
                 if (s == null) continue;
+                if (s.Unfinished && !WorldConverter.KeepsUnfinished(target, options) && s.Entities.Count == 0) continue;   // left for the target to make
                 try { o = outReader.Get(new ChunkPos(pos.X - offset.X, pos.Z - offset.Z)); }
                 catch { loadErrors++; continue; }
                 if (o == null) { if (!s.IsEmpty) missing++; continue; }

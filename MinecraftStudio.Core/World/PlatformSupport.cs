@@ -214,7 +214,10 @@ public static class PlatformSupport
         F("compare", Look_, "Compare with another world", "what changed since a backup, or what a conversion changed, block by block, marked on the map (even two different editions)", Yes(Everything)),
         F("restore", Look_, "Bring chunks back from a backup", "griefing, a creeper hole or a bad update undone, into a copy; mobs that walked away are not doubled; the backup may even be another edition or console",
             Yes(JBPC), Some("the blocks only (an Indev level's chests and mobs stay as they are)", C), Not(ThreeDsWrite, T)),
-        F("check", Look_, "Check for damage", "reads every chunk and says which are damaged", Yes("in the most depth: region tables, the database", J, B), Yes(With(P, Consoles, T, C))),
+        F("check", Look_, "Check for problems", "what stops a world opening, crashes the game or throws players out, loses things or leaves a player stuck — damaged chunks, how they are stored, book and chunk bans and other lag machines, mods, packs, the game version and every player — each with its fix",
+            Yes("in the most depth: region tables (Java), the database and how every chunk is stored (Bedrock), mods not on this PC (Java), packs, the game version (Java)", J, B),
+            Yes("damaged chunks, the save's archive, lag machines, stuck players", Consoles), Yes("damaged chunks, lag machines, stuck players", P, C),
+            Yes("damaged chunks, lag machines, the player (only shown: nothing is written into a 3DS world)", T)),
 
         F("crop", Build, "Save a structure (crop a building)", "drag a box on the map; save it as Java .nbt, WorldEdit .schem, Litematica .litematic, Bedrock .mcstructure or MCEdit .schematic, for any Java version", Yes(Everything)),
         F("place", Build, "Place a structure", "any structure or schematic into a copy of a world, turned or mirrored, standing on the ground; every block checked", Yes(NotThreeDs), Not(ThreeDsWrite, T)),

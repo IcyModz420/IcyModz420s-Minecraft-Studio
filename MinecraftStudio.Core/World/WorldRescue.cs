@@ -44,12 +44,33 @@ public static class WorldRescue
         }
         if (Directory.Exists(path))
         {
-            if (LooksBedrock(path)) return BedrockWorld.OpenForRescue(path, findings, progress);
+            if (LooksBedrock(path))
+            {
+                var bedrock = BedrockWorld.OpenForRescue(path, findings, progress);
+                ShapeFindings(bedrock, findings);
+                return bedrock;
+            }
             if (LooksJava(path)) return JavaWorld.OpenForRescue(path, findings, progress, cancel);
         }
         var world = WorldLoader.Open(path, progress);
         findings.Add($"{world.FormatDescription}: read the normal way. Chunks that cannot be read are left out (and listed) when it is rescued into a new world.");
         return world;
+    }
+
+    /// <summary>Chunks stored in a way the game can't open: a repaired copy leaves the blank ones out; converting writes the rest again.</summary>
+    static void ShapeFindings(BedrockWorld world, List<string> findings)
+    {
+        List<ChunkShapeProblem> problems;
+        try { problems = BedrockChunkShape.Check(world); }
+        catch (Exception e) when (e is IOException or InvalidDataException or IO.SaveFormatException) { return; }
+        foreach (var p in problems)
+            findings.Add(p.LostVersion
+                ? $"{Count(p.Count, "chunk has", "chunks have")} lost its Version record (the first: {p.First}): the game wouldn't see them and would make them again over what was built there. The repaired copy writes it again, as the world's other chunks of their kind have it (one whose heights were damaged too shows no kind: it is left for the game to make again, and listed as lost)."
+                : p.Problem == BedrockChunkShape.HeightsOnlyProblem
+                ? $"{Count(p.Count, "chunk is", "chunks are")} left with only heights by the damage (the first: {p.First}): nothing of yours is in them. The repaired copy leaves them out, and the game makes them again."
+                : p.Blank
+                ? $"{Count(p.Count, "chunk is", "chunks are")} blank and stored old-style (the first: {p.First}): the game can't open the world with them. The repaired copy leaves them out, and the game makes them again."
+                : $"{Count(p.Count, "chunk has", "chunks have")} {p.Problem} (the first: {p.First}): the game may not open the world. Convert it to the same Bedrock version to write every chunk again the way the game stores them.");
     }
 
     /// <summary>

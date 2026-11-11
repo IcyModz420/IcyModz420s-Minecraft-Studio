@@ -40,6 +40,8 @@ public sealed class LagScan
     public List<LagMachine> Machines { get; } = [];
     public int ChunksRead { get; set; }
     public List<string> Warnings { get; } = [];
+    /// <summary>The chunks that could not be read at all, by dimension id (each is in the warnings too).</summary>
+    public Dictionary<string, List<ChunkPos>> Damaged { get; } = new(StringComparer.Ordinal);
 }
 
 public static partial class LagMachines
@@ -95,10 +97,11 @@ public static partial class LagMachines
     /// Every lag machine in the dimensions given (each chunk read once). Damaged chunks are skipped and reported in the
     /// warnings; nothing is written. <paramref name="shared"/>: the world is being read by a map too (one opened for rescue
     /// cannot be opened twice), so each chunk is read under its dimension's lock, as the map reads it. <paramref name="only"/>:
-    /// just those chunks are looked at (the check after a clean-up).
+    /// just those chunks are looked at (the check after a clean-up). <paramref name="alsoEach"/>: given every chunk read, for a caller
+    /// looking for more in the same pass (Check for problems); the chunks that cannot be read are in <see cref="LagScan.Damaged"/>.
     /// </summary>
     public static LagScan Find(SaveWorld world, IEnumerable<WorldDimension> dimensions, IProgress<string>? progress = null, CancellationToken cancel = default, bool shared = false,
-        IReadOnlySet<ChunkPos>? only = null)
+        IReadOnlySet<ChunkPos>? only = null, Action<CanonicalChunk, WorldDimension>? alsoEach = null)
     {
         var scan = new LagScan();
         foreach (var dim in dimensions)
@@ -122,7 +125,13 @@ public static partial class LagMachines
                     c = reader.Get(pos);
                 }
                 finally { if (shared) Monitor.Exit(dim); }
-                if (c == null) continue;
+                if (c == null)
+                {
+                    if (!scan.Damaged.TryGetValue(dim.Id, out var damaged)) scan.Damaged[dim.Id] = damaged = [];
+                    damaged.Add(pos);
+                    continue;
+                }
+                alsoEach?.Invoke(c, dim);
                 Entities(c, hits);
                 Data(c, hits);
                 parts.Add(c, hits);

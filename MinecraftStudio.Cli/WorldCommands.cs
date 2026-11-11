@@ -170,6 +170,14 @@ static class WorldCommands
         return !report.Bedrock && missing.Count > 0 ? 1 : 0;
     }
 
+    public static int Check(Args a)
+    {
+        using var w = WorldLoader.Open(a.Require(0, "the world"));
+        var report = WorldCheck.Run(w);
+        Console.Write(report.Text());
+        return report.Serious ? 1 : 0;
+    }
+
     public static int Restore(Args a)
     {
         using var w = WorldLoader.Open(a.Require(0, "the world"));

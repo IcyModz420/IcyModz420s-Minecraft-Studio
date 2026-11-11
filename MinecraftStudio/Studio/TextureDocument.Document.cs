@@ -76,10 +76,8 @@ partial class TextureDocument
 
     protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
     {
-        var focused = ActiveControl;
-        while (focused is ContainerControl cc && cc.ActiveControl != null) focused = cc.ActiveControl;
-        bool typing = focused is TextBoxBase;
-        if (!typing)
+        // Keys a focused list, box or slider uses stay with it (StudioKeys); the rest are the studio's shortcuts.
+        if (!StudioKeys.UsesKey(StudioKeys.Focused(this), keyData))
         {
             switch (keyData)
             {

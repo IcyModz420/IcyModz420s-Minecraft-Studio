@@ -325,51 +325,15 @@ partial class MainForm
     static long FolderSize(string path) =>
         File.Exists(path) ? new FileInfo(path).Length : Directory.Exists(path) ? Directory.EnumerateFiles(path, "*", SearchOption.AllDirectories).Sum(f => new FileInfo(f).Length) : 0;
 
-    public async Task CheckWorld(SaveWorld? world = null)
+    /// <summary>
+    /// Check for problems: the world's own window (WorldCheckDialog) — what stops it opening, crashes it, loses things or
+    /// leaves a player stuck, damage in its chunks, region files and database included, each with its fix.
+    /// </summary>
+    public Task CheckWorld(SaveWorld? world = null)
     {
-        if ((world ?? SelectedWorld()) is not SaveWorld w) { Dialogs.Info(this, "Open or select a world first."); return; }
-        var report = new System.Text.StringBuilder();
-        bool damaged = false;
-        await RunAsync("Checking " + w.Name, progress =>
-        {
-            report.AppendLine($"{w.Name} — {w.FormatDescription}");
-            report.AppendLine();
-            foreach (var d in w.Dimensions)
-            {
-                int ok = 0, bad = 0;
-                var positions = d.ChunkPositions.ToList();
-                for (int i = 0; i < positions.Count; i++)
-                {
-                    if ((i & 255) == 0) progress.Report($"{d.DisplayName}: {i:N0}/{positions.Count:N0} chunks");
-                    try { lock (d) { var c = d.LoadChunk(positions[i]); if (c != null) foreach (var s in c.Sections.Values) _ = s.Indices; } ok++; }
-                    catch (Exception ex) { bad++; if (bad <= 50) report.AppendLine($"  {d.DisplayName} chunk {positions[i]}: {ex.Message}"); }
-                }
-                report.AppendLine($"{d.DisplayName}: {ok:N0} chunks read correctly, {bad:N0} damaged.");
-                if (bad > 0) damaged = true;
-                if (d is JavaRegionDimension jd)
-                    foreach (var f in jd.RegionFiles)
-                        foreach (var issue in RegionFile.Open(f).Validate(false))
-                        {
-                            report.AppendLine($"  {Path.GetFileName(f)} slot {issue.Index}: {issue.Message}");
-                            damaged |= issue.Fatal;
-                        }
-            }
-            if (w is BedrockWorld bw)
-            {
-                report.AppendLine();
-                report.AppendLine($"Database: {bw.Db.Count:N0} records, {bw.Db.Manifest.Files.Count} tables, {bw.Db.CorruptLogFragments} damaged log fragments.");
-                foreach (var warn in bw.Db.Warnings) report.AppendLine("  " + warn);
-                damaged |= bw.Db.Warnings.Count > 0 || bw.Db.CorruptLogFragments > 0;
-            }
-            if (w is ConsoleWorld cw) foreach (var warn in cw.Warnings) report.AppendLine("  " + warn);
-            if (damaged)
-            {
-                report.AppendLine();
-                report.AppendLine("World → Rescue a Damaged World saves everything that can still be read into a new copy, including chunks the");
-                report.AppendLine("region headers have lost and older copies of damaged chunks. The world itself is not changed.");
-            }
-        });
-        Dialogs.ShowText(this, "World check — " + w.Name, report.ToString());
+        if ((world ?? SelectedWorld()) is not SaveWorld w) { Dialogs.Info(this, "Open or select a world first."); return Task.CompletedTask; }
+        OpenWorldDocument(w)?.ShowCheck();
+        return Task.CompletedTask;
     }
 
     void ShowSettings()

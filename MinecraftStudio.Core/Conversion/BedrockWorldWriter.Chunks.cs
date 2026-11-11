@@ -59,7 +59,9 @@ public partial class BedrockWorldWriter
         _pendingFrames = frames;
         // Below 1.18 the world is 0–255 (0–127 before 1.0): cut to that height, with a bedrock floor where the ground goes on.
         if (!ModernHeight) c = c.FitHeight(0, Range(false).Max, bedrockFloor: _dim != 2);
-        bool oldStyle = ModernHeight && _dim == 0 && !c.HasExtendedHeight && _options.LetGameExtendOldTerrain;
+        // A chunk with no blocks at all is written as an air chunk of today's kind: as old-style terrain the game would
+        // try to extend nothing (blank heights, no sub-chunks) — a converted world full of those did not open.
+        bool oldStyle = ModernHeight && _dim == 0 && !c.HasExtendedHeight && _options.LetGameExtendOldTerrain && c.Sections.Values.Any(s => !s.IsEmpty);
         bool modern = ModernHeight && !oldStyle;
         int version = oldStyle ? OldChunkVersion : ChunkVersion;
         bool wroteAny = Terrain == BedrockTerrain.LegacyTerrain ? WriteLegacyTerrain(c) : WriteSubChunks(c, modern);

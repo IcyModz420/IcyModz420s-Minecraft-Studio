@@ -91,10 +91,11 @@ sealed partial class AnimationDocument : Document
         left.Controls.Add(_find);
 
         // ---- side panel (right)
-        var side = new Panel { Dock = DockStyle.Right, Width = this.Px(300), BackColor = C.BG2, AutoScroll = true };
+        var side = new Panel { Dock = DockStyle.Right, Width = this.Px(360), BackColor = C.BG2, AutoScroll = true };
         Theme.DarkControl(side);
         var stack = new FlowLayoutPanel { Dock = DockStyle.Top, AutoSize = true, FlowDirection = FlowDirection.TopDown, WrapContents = false, BackColor = C.BG2, Padding = new Padding(this.Px(4), this.Px(6), 0, this.Px(10)) };
-        _sideWidth = this.Px(276);
+        // Every row fits this width (three boxes and a Key button; two buttons a row): nothing needs a sideways scroll.
+        _sideWidth = this.Px(336);
         stack.Controls.Add(Header("ANIMATIONS"));
         _animList = new ListBox { Width = _sideWidth, Height = this.Px(150), BackColor = C.BG, ForeColor = C.FG, BorderStyle = BorderStyle.FixedSingle, IntegralHeight = false, Margin = Indent(), AccessibleName = "The mob's animations" };
         Theme.DarkControl(_animList);
@@ -144,7 +145,7 @@ sealed partial class AnimationDocument : Document
         _timeline = new AnimationTimeline { Dock = DockStyle.Bottom, Height = this.Px(190) };
         _timeline.TimeChanged += t => SetTime(t);
         _timeline.BoneClicked += b => ChooseBone(b);
-        _timeline.KeyClicked += (b, ch, t) => { ChooseBone(b); SetTime(t); _keyChannel = ch; FillKeyFields(); };
+        _timeline.KeyClicked += (b, ch, t) => { ChooseBone(b); _keyChannel = ch; _key = (b, ch, t); _timeline.SelectedKey = _key; SetTime(t); };
         _timeline.KeyMoved += MoveKey;
         _timeline.KeyDeleted += (b, ch, t) => DeleteKey(b, ch, t);
         _timeline.KeyLerpChanged += SetLerp;
@@ -420,8 +421,10 @@ sealed partial class AnimationDocument : Document
 
     protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
     {
-        var focused = ActiveControl;
-        while (focused is ContainerControl cc && cc.ActiveControl != null) focused = cc.ActiveControl;
+        var focused = StudioKeys.Focused(this);
+        // A key the focused control uses itself stays with it (typing, Space on a check box, arrows in a list, a drop-down or
+        // a slider); elsewhere — the mob, the timeline, a button — it is the studio's, so after "1 tick ▶" the arrows step on.
+        if (StudioKeys.UsesKey(focused, keyData)) return base.ProcessCmdKey(ref msg, keyData);
         if (focused is not TextBoxBase)
         {
             switch (keyData)

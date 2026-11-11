@@ -135,7 +135,8 @@ static class MatrixTests
                 var s = srcReader.Get(pos);
                 if (s == null) continue;
                 var o = outReader.Get(new ChunkPos(pos.X - offset.X, pos.Z - offset.Z));
-                if (o == null) { if (!s.IsEmpty) { missing++; if (Environment.GetEnvironmentVariable("MSS_MISSING") != null) Console.WriteLine($"   missing {pos} ({s.Sections.Count} sections, {s.Sections.Values.Sum(x => x.Palette.Length)} palette entries)"); } continue; }
+                // A chunk the game had not finished making is left for a target that makes chunks itself (WorldConverter.KeepsUnfinished).
+                if (o == null) { if (!s.IsEmpty && !(s.Unfinished && !WorldConverter.KeepsUnfinished(target, options) && s.Entities.Count == 0)) { missing++; if (Environment.GetEnvironmentVariable("MSS_MISSING") != null) Console.WriteLine($"   missing {pos} ({s.Sections.Count} sections, {s.Sections.Values.Sum(x => x.Palette.Length)} palette entries)"); } continue; }
                 if (s.NeedsShapeUpdate) ShapeFixer.Fix(s, srcReader, walls: dim is not BedrockDimension);
                 if (o.NeedsShapeUpdate) ShapeFixer.Fix(o, outReader, walls: outDim is not BedrockDimension);
                 if (s.Sections.Count == 0) continue;
