@@ -21,7 +21,7 @@ partial class MainForm
         ["Compare with Another World…"] = "compare", ["Save a Structure (Crop a Building)…"] = "crop", ["Place a Structure…"] = "place",
         ["Open a Structure File (Turn, Convert, Materials)…"] = "structurefile", ["Replace Blocks, Change the Biome or Shape the Land…"] = "replace", ["Map Art…"] = "mapsee",
         ["Convert World…"] = "convertfrom", ["Back Up Now"] = "backups", ["Backups (Timeline, Restore)…"] = "backups", ["Save World as a File (.mcworld / .zip)…"] = "share",
-        ["Check for Damage"] = "check", ["Rescue a Damaged World…"] = "rescue", ["Optimize / Compact Storage"] = "optimize", ["Edit level.dat"] = "leveldat",
+        ["Check for Problems…"] = "check", ["Rescue a Damaged World…"] = "rescue", ["Optimize / Compact Storage"] = "optimize", ["Edit level.dat"] = "leveldat",
         ["Bedrock Database Browser"] = "database",
         ["New World from a Heightmap…"] = "heightmap", ["Skin Studio…"] = "skins", ["Texture Studio…"] = "textures", ["Mob Studio…"] = "mobs", ["Animation Studio…"] = "animations",
         ["Check a Pack (Resource or Data)…"] = "packcheck", ["New Data Pack or Add-on…"] = "newpack",

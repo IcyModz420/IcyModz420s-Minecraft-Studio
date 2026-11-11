@@ -334,9 +334,8 @@ sealed partial class MobDocument : Document
 
     protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
     {
-        var focused = ActiveControl;
-        while (focused is ContainerControl cc && cc.ActiveControl != null) focused = cc.ActiveControl;
-        if (focused is not TextBoxBase)
+        // Keys a focused list, box or slider uses stay with it (StudioKeys); the rest are the studio's shortcuts.
+        if (!StudioKeys.UsesKey(StudioKeys.Focused(this), keyData))
         {
             switch (keyData)
             {

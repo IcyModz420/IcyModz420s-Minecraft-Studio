@@ -276,6 +276,18 @@ public static class WorldRepair
             var keys = b.Db.Keys();
             var written = new bool[keys.Count];
             int count = 0, unreadable = 0;
+            // Blank old-style chunks (no blocks) stop the game opening a world of today's chunks, and heights left without blocks
+            // or a Version by damage are chunks the game doesn't see: their Version, heights and finished mark are left out, and
+            // the game makes those chunks again. Nothing of the player's is in them.
+            var blank = BedrockChunkShape.Blank(b);
+            var heightsOnly = BedrockChunkShape.HeightsOnly(b);
+            // Blocks whose Version record was damaged: the game wouldn't see those chunks and would make them again over what
+            // was built there, so the Version is written again, as the world's other chunks of their kind have it.
+            var lostVersions = BedrockChunkShape.LostVersions(b);
+            // Blocks whose Version went with their heights: nothing shows which to write back, so they are left for the game
+            // to make again (the damaged world itself still has them).
+            var unrestorable = BedrockChunkShape.Unrestorable(b);
+            int restored = 0;
             using (var builder = new LevelDbBuilder(Path.Combine(output, "db")))
             {
                 for (int i = 0; i < keys.Count; i++)
@@ -285,6 +297,13 @@ public static class WorldRepair
                         cancel.ThrowIfCancellationRequested();
                         Stage("Writing the repaired database", i, keys.Count);
                     }
+                    if (BedrockKeys.TryParseChunkKey(keys[i], out var ck))
+                    {
+                        var at = (ck.Dimension, ck.X, ck.Z);
+                        if (BedrockChunkShape.IsBlankChunkRecord(ck.Tag) && (blank.Contains(at) || heightsOnly.Contains(at))) continue;
+                        if (unrestorable.Contains(at) && (BedrockChunkShape.IsBlankChunkRecord(ck.Tag) || ck.Tag is ChunkTag.SubChunkPrefix or ChunkTag.LegacyTerrain)) continue;
+                        if (ck.IsVersion && lostVersions.ContainsKey(at)) continue;   // an empty or damaged one: written again below
+                    }
                     byte[]? value;
                     try { value = b.Db.Get(keys[i]); }
                     catch (Exception e) when (e is IOException or InvalidDataException or SaveFormatException) { unreadable++; continue; }
@@ -293,14 +312,37 @@ public static class WorldRepair
                     written[i] = true;
                     count++;
                 }
+                foreach (var ((dim, x, z), (version, modern)) in lostVersions)
+                {
+                    builder.Put(BedrockKeys.Make(x, z, dim, version <= 20 ? ChunkTag.LegacyVersion : ChunkTag.Version), [version]);
+                    count++;
+                    restored++;
+                    // Today's chunks are saved finished; one whose mark went with the damage gets it back, or the game would
+                    // go on generating it.
+                    var finished = BedrockKeys.Make(x, z, dim, ChunkTag.FinalizedState);
+                    if (modern && Readable(b, finished) == null)
+                    {
+                        builder.Put(finished, [2, 0, 0, 0]);
+                        count++;
+                    }
+                }
                 Stage("Writing the repaired database", 1, 1);
                 builder.Finish();
             }
             if (unreadable > 0) Lose(LossKind.World, "Database records", "could not be read and were left out", unreadable);
+            if (blank.Count > 0)
+                Report.Notes.Add($"{WorldRescue.Count(blank.Count, "blank chunk", "blank chunks")} (old-style, with no blocks — stored that way, they stop the game opening the world) were left out: the game makes them again.");
+            if (heightsOnly.Count > 0)
+                Report.Notes.Add($"{WorldRescue.Count(heightsOnly.Count, "chunk", "chunks")} left with only heights by the damage (no blocks, no Version) were left out: the game makes them again.");
+            if (unrestorable.Count > 0)
+                Lose(LossKind.Block, "Chunks whose Version and heights were damaged",
+                    "nothing shows what kind of chunk they were, so the game makes them again: what was built there is lost (the damaged world still has it)", unrestorable.Count);
+            if (restored > 0)
+                Report.Notes.Add($"{WorldRescue.Count(restored, "chunk", "chunks")} whose Version record was damaged got it back ({string.Join(", ", lostVersions.Values.Select(v => v.Version).Distinct().Order())}, as the world's other chunks of their kind have it), so their blocks load instead of the game making those chunks again.");
             BedrockLevelDat(b);
-            Report.Chunks = b.Dimensions.Sum(d => d.ChunkPositions.Count);
+            Report.Chunks = b.Dimensions.Sum(d => d.ChunkPositions.Count) - blank.Count + restored;
             Report.Notes.Add($"Wrote {count:N0} database records ({Report.Chunks:N0} chunks) byte for byte and {_copied.Count:N0} other files. Nothing was converted.");
-            VerifyBedrock(b, keys, written, count, unreadable > 0);
+            VerifyBedrock(b, keys, written, count, unreadable > 0, blank, lostVersions.Keys.ToHashSet());
         }
 
         void BedrockLevelDat(BedrockWorld b)
@@ -339,7 +381,8 @@ public static class WorldRepair
             _copied.RemoveAll(c => string.Equals(c.To, path, StringComparison.OrdinalIgnoreCase));
         }
 
-        void VerifyBedrock(BedrockWorld b, List<byte[]> keys, bool[] written, int count, bool recordsLeftOut)
+        void VerifyBedrock(BedrockWorld b, List<byte[]> keys, bool[] written, int count, bool recordsLeftOut, HashSet<(int Dimension, int X, int Z)> blank,
+            HashSet<(int Dimension, int X, int Z)> restored)
         {
             Stage("Checking the repaired copy", 0, 1);
             try
@@ -381,11 +424,22 @@ public static class WorldRepair
                 {
                     var other = reopened.Dimensions.FirstOrDefault(x => x.Id == d.Id);
                     var have = other?.ChunkPositions.ToHashSet() ?? [];
+                    // The blank chunks left out are not there, the ones whose Version was written again are; every other chunk read is.
+                    int index = d is BedrockDimension bd ? bd.Dimension : 0;
+                    var want = d.ChunkPositions.Where(p => !blank.Contains((index, p.X, p.Z))).ToHashSet();
+                    foreach (var (dim, x, z) in restored) if (dim == index) want.Add(new ChunkPos(x, z));
                     // Records that could not be read can take chunks with them (those are listed as lost).
-                    bool ok = have.SetEquals(d.ChunkPositions) || recordsLeftOut && have.IsSubsetOf(d.ChunkPositions);
-                    if (!ok) problems.Add($"{d.DisplayName}: {have.Count:N0} chunks, {d.ChunkPositions.Count:N0} read");
+                    bool ok = have.SetEquals(want) || recordsLeftOut && have.IsSubsetOf(want);
+                    if (!ok) problems.Add($"{d.DisplayName}: {have.Count:N0} chunks, {want.Count:N0} read");
                 }
                 Report.Checks.Add(new VerifyCheck("Chunks", problems.Count == 0, problems.Count == 0 ? $"every dimension lists the {Report.Chunks:N0} chunks read" : string.Join("; ", problems)));
+                if (reopened is BedrockWorld copy)
+                {
+                    var shape = BedrockChunkShape.Check(copy);
+                    Report.Checks.Add(new VerifyCheck("Chunks stored the game's way", shape.Count == 0, shape.Count == 0
+                        ? "every chunk has the records the game writes for its kind"
+                        : string.Join("; ", shape.Take(4).Select(s => $"{s.Count:N0} × {s.Problem} (first: {s.First})"))));
+                }
             }
             finally { reopened?.Dispose(); }
             VerifyCopies();
@@ -448,6 +502,13 @@ public static class WorldRepair
             return fs.ReadByte() == 0x1F && fs.ReadByte() == 0x8B;
         }
         catch (Exception e) when (e is IOException or UnauthorizedAccessException) { return false; }
+    }
+
+    /// <summary>A database record, or null when it isn't there or doesn't read (a damaged world).</summary>
+    static byte[]? Readable(BedrockWorld b, byte[] key)
+    {
+        try { return b.Db.Get(key); }
+        catch (Exception e) when (e is IOException or InvalidDataException or SaveFormatException) { return null; }
     }
 
     /// <summary>Whether an NBT file reads completely (a Java level.dat must also have its Data section).</summary>

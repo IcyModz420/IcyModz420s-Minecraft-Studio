@@ -72,16 +72,33 @@ sealed class AnimationTimeline : Control
             TextRenderer.DrawText(g, "Choose an animation on the right.", f, ClientRectangle, C.FG_DIM, TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter);
             return;
         }
-        // Ruler: a tick every twentieth, a label every quarter (or every second for long animations).
+        // Ruler: ticks on round times at least 4 px apart (every twentieth of a second, the game's tick, when there is
+        // room), labels at least ~56 px apart — so an hour-long animation draws a few hundred lines, not 72,000 every frame —
+        // and a label that would run into the one before is left out. Times are counted, not added up (no drift).
         using (var bg = new SolidBrush(C.BG3)) g.FillRectangle(bg, 0, 0, Width, Ruler);
-        double label = Length > 4 ? 1 : Length > 1.5 ? 0.5 : 0.25;
+        double perSecond = Math.Max(1e-6, (X(Length) - X(0)) / Length);
+        double[] nice = [Snap, 0.1, 0.25, 0.5, 1, 2, 5, 10, 15, 30, 60, 120, 300, 600, 1800, 3600];
+        double minor = nice.FirstOrDefault(s => s * perSecond >= this.Px(4), 3600);
+        double label = nice.FirstOrDefault(s => s >= minor && s * perSecond >= this.Px(56), 3600);
         using var tick = new Pen(C.BORDER);
-        for (double t = 0; t <= Length + 1e-9; t += Snap)
+        for (long i = 0; i * minor <= Length + 1e-9; i++)
         {
+            float x = X(i * minor);
+            g.DrawLine(tick, x, Ruler - this.Px(4), x, Ruler);
+        }
+        int lastEnd = int.MinValue;
+        for (long i = 0; i * label <= Length + 1e-9; i++)
+        {
+            double t = i * label;
             float x = X(t);
-            bool major = Math.Abs(t / label - Math.Round(t / label)) < 1e-6;
-            g.DrawLine(tick, x, Ruler - (major ? this.Px(10) : this.Px(4)), x, Ruler);
-            if (major) TextRenderer.DrawText(g, $"{t:0.##}s", f, new Point((int)x + this.Px(2), this.Px(2)), C.FG_DIM);
+            g.DrawLine(tick, x, Ruler - this.Px(10), x, Ruler);
+            // Beside its tick, or before it where it would run off the edge (the last one).
+            string text = $"{t:0.##}s";
+            int w = TextRenderer.MeasureText(g, text, f).Width;
+            int at = (int)x + this.Px(2) + w > Width ? (int)x - this.Px(2) - w : (int)x + this.Px(2);
+            if (at <= lastEnd + this.Px(4)) continue;
+            TextRenderer.DrawText(g, text, f, new Point(at, this.Px(2)), C.FG_DIM);
+            lastEnd = at + w;
         }
         // Rows.
         for (int i = _scroll; i < _bones.Count; i++)
@@ -209,6 +226,14 @@ sealed class AnimationTimeline : Control
         _drag = DragKind.None;
         Capture = false;
         Invalidate();
+    }
+
+    protected override void OnMouseCaptureChanged(EventArgs e)
+    {
+        base.OnMouseCaptureChanged(e);
+        // Capture taken away mid-drag (another window, a menu) while the button is still down: the drag ends, nothing
+        // moved. (A normal let-go releases capture with no button down; OnMouseUp finishes that drag.)
+        if (!Capture && _drag != DragKind.None && MouseButtons != MouseButtons.None) { _drag = DragKind.None; Invalidate(); }
     }
 
     protected override void OnMouseWheel(MouseEventArgs e)

@@ -39,6 +39,10 @@ static partial class Program
             case "stfs": ConsoleTests.Stfs(args.Skip(1).ToArray()); break;
             case "rawdat": ConsoleTests.RawDat(args.Skip(1).ToArray()); break;
             case "chunkkeys": KeyDump.Chunk(args.Skip(1).ToArray()); break;
+            case "keystats": KeyDump.Stats(args.Skip(1).ToArray()); break;
+            case "unfinished": UnfinishedTests.Run(); break;
+            case "check": CheckTests.Run(); break;
+            case "shape": KeyDump.Shape(args.Skip(1).ToArray()); break;
             case "playerkeys": KeyDump.PlayerKeys(args.Skip(1).ToArray()); break;
             case "playerground": KeyDump.PlayerGround(args.Skip(1).ToArray()); break;
             case "inspectbedrock": InspectTests.Bedrock(args.Skip(1).ToArray()); break;

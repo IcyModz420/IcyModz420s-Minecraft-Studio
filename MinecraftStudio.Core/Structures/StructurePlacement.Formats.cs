@@ -39,6 +39,7 @@ public static partial class StructurePlacement
                     StampChunk = StructureClip.Stamp(s, dimensionId, ox, oy, oz, minY, maxY, pasteAir),
                     Verify = false,
                     ConvertPlayers = false,
+                    KeepUnfinishedChunks = true,
                 };
                 report = WorldConverter.Run(src, target, temp, options, progress, cancel);
             }

@@ -63,7 +63,9 @@ partial class AnimationDocument
         }
         _smooth = new DarkCheckBox("Smooth from this key", false) { Margin = new Padding(0, this.Px(4), this.Px(6), 0) };
         _smooth.CheckedChanged += (_, _) => { if (!_updating && _bone != null) SetLerp(_bone, _keyChannel, _time, _smooth.Checked ? KeyLerp.Smooth : KeyLerp.Linear); };
-        stack.Controls.Add(Row(SmallButton("Whole animation", WholeAnimation), SmallButton("Delete key", () => { if (_bone != null) DeleteKey(_bone, _keyChannel, _time); }), _smooth));
+        stack.Controls.Add(Row(SmallButton("Whole animation", WholeAnimation), SmallButton("Delete key", () => { if (_bone != null) DeleteKey(_bone, _keyChannel, _time); })));
+        _smooth.Margin = Indent();
+        stack.Controls.Add(_smooth);
         _keyNote = Note("Choose a bone: click a part of the mob, a row of the timeline, or pick it above.");
         stack.Controls.Add(_keyNote);
     }
@@ -76,7 +78,8 @@ partial class AnimationDocument
         _boneTurn = Three("Bone turn");
         stack.Controls.Add(Row([Caption("Pivot"), .. _pivot]));
         stack.Controls.Add(Row([Caption("Turn"), .. _boneTurn]));
-        stack.Controls.Add(Row(SmallButton("Apply to the bone", ApplyBone), SmallButton("Add a bone", AddBone), SmallButton("Remove", RemoveBone)));
+        stack.Controls.Add(Row(SmallButton("Apply to the bone", ApplyBone)));
+        stack.Controls.Add(Row(SmallButton("Add a bone", AddBone), SmallButton("Remove the bone", RemoveBone)));
         _cubes = new ListBox { Width = _sideWidth, Height = this.Px(80), BackColor = C.BG, ForeColor = C.FG, BorderStyle = BorderStyle.FixedSingle, IntegralHeight = false, Margin = Indent(), AccessibleName = "The bone's boxes" };
         Theme.DarkControl(_cubes);
         _cubes.SelectedIndexChanged += (_, _) => FillCubeFields();
@@ -88,7 +91,8 @@ partial class AnimationDocument
         stack.Controls.Add(Row([Caption("Corner"), .. _cubeOrigin]));
         stack.Controls.Add(Row([Caption("Size"), .. _cubeSize]));
         stack.Controls.Add(Row([Caption("Texture"), .. _cubeUv, Caption("inflate"), _cubeInflate]));
-        stack.Controls.Add(Row(SmallButton("Apply to the box", ApplyCube), SmallButton("Add a box", AddCube), SmallButton("Remove", RemoveCube)));
+        stack.Controls.Add(Row(SmallButton("Apply to the box", ApplyCube)));
+        stack.Controls.Add(Row(SmallButton("Add a box", AddCube), SmallButton("Remove the box", RemoveCube)));
         _modelNote = Note("Sizes and places are in pixels (16 to a block); y is up, the mob faces north.");
         stack.Controls.Add(_modelNote);
     }
@@ -353,7 +357,7 @@ partial class AnimationDocument
         {
             _boneBox.Items.Clear();
             foreach (var b in _project?.Model?.Bones ?? []) _boneBox.Items.Add(new ComboItem(b.Name + (b.Parent != null ? $"  (on {b.Parent})" : ""), null, b.Name));
-            if (_bone != null && _boneBox.Items.Cast<ComboItem>().ToList().FindIndex(i => (i.Tag as string) == _bone) is int bi and >= 0) _boneBox.SelectedIndex = bi;
+            if (_bone != null && _boneBox.Items.Cast<ComboItem>().ToList().FindIndex(i => string.Equals(i.Tag as string, _bone, StringComparison.OrdinalIgnoreCase)) is int bi and >= 0) _boneBox.SelectedIndex = bi;
         }
         var bone = ModelBone;
         for (int i = 0; i < 3; i++)

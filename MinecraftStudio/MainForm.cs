@@ -180,7 +180,7 @@ sealed partial class MainForm : Form
             Item("Back Up Now", async (_, _) => await BackupNow(), null, Glyphs.Backup),
             Item("Backups (Timeline, Restore)…", async (_, _) => await ShowBackups(), null, Glyphs.Backup),
             Item("Save World as a File (.mcworld / .zip)…", async (_, _) => await ShareWorld(), null, Glyphs.Export),
-            Item("Check for Damage", async (_, _) => await CheckWorld(), null, Glyphs.Check),
+            Item("Check for Problems…", async (_, _) => await CheckWorld(), null, Glyphs.Check),
             Item("Rescue a Damaged World…", async (_, _) => await ShowRescue(), null, Glyphs.Repair),
             Item("Optimize / Compact Storage", async (_, _) => await Optimize(), null, Glyphs.Broom),
             Heading("ADVANCED"),

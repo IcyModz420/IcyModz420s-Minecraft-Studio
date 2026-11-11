@@ -18,6 +18,8 @@ static class Program
             "Lists the world's structures — villages, outposts, shipwrecks, buried treasure, temples, fortresses … — with the loot not taken yet.", WorldCommands.Structures),
         ("lag", "lag <world> [--dim id] [--clean --out <new folder>]",
             "Finds lag machines: piles no survival play makes, solid masses of redstone parts, machines left running, summoning command blocks, book and chunk bans (exit 1 when any is found); --clean takes them out of a new copy, checked.", WorldCommands.Lag),
+        ("check", "check <world>",
+            "Looks for what stops a world opening, crashes the game or kicks its players, loses things or leaves a player stuck: every chunk, how a Bedrock world's chunks are stored, lag machines, book and chunk bans, mods not on this PC, the packs it uses, the game version, every player — each with its fix (exit 1 when something worse than a warning is found).", WorldCommands.Check),
         ("mods", "mods <world> [--all]",
             "Which mods, add-ons and data packs the world holds blocks, mobs, items, biomes or dimensions of, how many of each, and which mods on this PC have them (exit 1 when a Java world needs one that isn't on this PC); --all lists every kind.", WorldCommands.Mods),
         ("restore", "restore <world> <backup> --out <new folder> [--dim id] [--area x1,z1,x2,z2] [--keep-new-mobs]",

@@ -375,6 +375,24 @@ partial class WorldDocument
         if (dlg.Moved) PlayersChanged();
     }
 
+    /// <summary>The Move to safety window for one player (Check for problems' fix): beside their bed or near the world spawn.</summary>
+    public void MovePlayerToSafety(string? name)
+    {
+        if (IsDirty)
+        {
+            Dialogs.Info(FindForm()!, "Save the world's changes first (Ctrl+S): moving a player saves them straight away.");
+            return;
+        }
+        if (_world.Players.FirstOrDefault(p => p.Name == name) is not { } player)
+        {
+            Dialogs.Info(FindForm()!, $"{name ?? "That player"} is not among the world's players any more: check the world again.");
+            return;
+        }
+        using var dlg = new MovePlayerDialog(_world, player);
+        dlg.ShowDialog(FindForm());
+        if (dlg.Moved) PlayersChanged();
+    }
+
     // Filled in on the Cheats page (standing on the block clicked); written with its Save changes, after a backup.
     void SetSpawnHere(MapBlockClick at)
     {

@@ -152,6 +152,27 @@ static class Smoke
         return false;
     }
 
+    /// <summary>
+    /// Side panels (docked left or right, scrolling up and down) whose content is wider than they are: what is past the edge
+    /// is cut off, or needs a sideways scroll. The Animation Studio's was, at 200 % (its Smooth box and Remove buttons).
+    /// </summary>
+    static List<string> Sideways(Control root)
+    {
+        var problems = new List<string>();
+        foreach (var panel in All(root).OfType<Panel>().Where(p => p.AutoScroll && p.Dock is DockStyle.Left or DockStyle.Right && p.Visible))
+        {
+            panel.PerformLayout();
+            int room = panel.ClientSize.Width;
+            foreach (var c in All(panel).Where(c => c.Visible))
+            {
+                int left = 0;
+                for (var a = c; a != null && a != panel; a = a.Parent) left += a.Left;
+                if (left + c.Width > room + 1) problems.Add($"{Name(c)} reaches {left + c.Width} in a side panel {room} wide");
+            }
+        }
+        return problems;
+    }
+
     static string Name(Control c) => $"{c.GetType().Name}{(c.AccessibleName ?? (c.Text.Length > 0 ? c.Text : null)) switch { null => "", var n => $" \"{(n.Length > 40 ? n[..40] + "…" : n)}\"" }}";
 
     static IEnumerable<Control> All(Control c)
@@ -259,6 +280,8 @@ static class Smoke
             Draw(form);
             var canvas = All(doc).OfType<PixelCanvas>().First();
             Draw(canvas);
+            var sideways = Sideways(form);
+            Check(sideways.Count == 0, $"  Skin Studio: nothing in a side panel is cut off{(sideways.Count > 0 ? ": " + string.Join("; ", sideways.Take(4)) : "")}");
             form.Controls.Remove(doc);
             doc.Dispose();
         });
@@ -321,6 +344,27 @@ static class Smoke
             var built = TexturePackWriter.Bedrock(ed.Pack, TextureNames.Default, DateTime.Now);
             Console.WriteLine($"    pack textures: {string.Join(", ", ed.Pack.Textures.Keys)}; known to the table: {TextureNames.Default.IsKnown(ed.Selected!)}; written: {string.Join(", ", built.Written)}; not included: {string.Join(" | ", built.NotIncluded)}");
             Check(built.Problems.Count == 0 && built.Written.Count == 1, $"  the painted mob is written into a Bedrock pack ({string.Join("; ", built.Problems)})");
+            var sideways = Sideways(form);
+            Check(sideways.Count == 0, $"  Mob Studio: nothing in a side panel is cut off{(sideways.Count > 0 ? ": " + string.Join("; ", sideways.Take(4)) : "")}");
+            form.Controls.Remove(doc);
+            doc.Dispose();
+        });
+
+        Try("Animation Studio builds over Bedrock's mobs; its side panel fits", () =>
+        {
+            var catalog = MobCatalog.Bedrock();
+            if (catalog == null) { Console.WriteLine("  (Bedrock not installed)"); return; }
+            var doc = new MinecraftStudio.Studio.AnimationDocument(catalog, "Smoke Anims") { Dock = DockStyle.Fill };
+            form.Controls.Add(doc);
+            form.PerformLayout();
+            Snapshot.Create(form);
+            form.PerformLayout();
+            Draw(form);
+            var sideways = Sideways(form);
+            Check(sideways.Count == 0, $"  nothing in its side panel is cut off{(sideways.Count > 0 ? ": " + string.Join("; ", sideways.Take(6)) : "")}");
+            string folder = Path.Combine(temp, "windows");
+            Directory.CreateDirectory(folder);
+            using (var bmp = Snapshot.Of(form)) bmp.Save(Path.Combine(folder, "animation-studio.png"));
             form.Controls.Remove(doc);
             doc.Dispose();
         });
@@ -600,6 +644,28 @@ static class Smoke
             Check(buttons["Find its things"].Enabled && buttons["Show on the map"].Enabled && !buttons["Show the mod's file"].Enabled && buttons["Copy the report"].Enabled,
                 "  Find, Show on the map and Copy are on; Show the mod's file is off (no jar on this PC)");
             Look(dlg, "mods", pictures);
+        });
+        Try("Check for problems window finds what stops a world opening, and offers its fix", () =>
+        {
+            string bad = Path.Combine(Repo, "TestData", "regressions", "bedrock-blank-old-chunks");
+            if (!Directory.Exists(bad)) { Console.WriteLine("  (no world that didn't open in TestData)"); return; }
+            using var w = MinecraftStudio.Core.World.WorldLoader.Open(bad);
+            using var doc = new MinecraftStudio.Documents.WorldDocument(w);
+            using var dlg = new MinecraftStudio.Documents.WorldCheckDialog(doc);
+            dlg.CreateControl();
+            dlg.PerformLayout();
+            Snapshot.Create(dlg);
+            var check = dlg.CheckAsync();
+            Check(Pump(() => check.IsCompleted, 300) && check.Exception == null && dlg.Report != null, "  it reads every chunk and looks at how they are stored");
+            var list = All(dlg).OfType<ListView>().Single();
+            Check(list.Items.Count >= 1 && list.Items[0].SubItems[1].Text.StartsWith("3,307 chunks are stored", StringComparison.Ordinal) && list.Items[0].Text == "Won't open",
+                $"  the 3,307 blank chunks come first, as \"Won't open\" ({string.Join(" | ", list.Items.Cast<ListViewItem>().Select(i => i.Text + ": " + i.SubItems[1].Text))})");
+            var buttons = All(dlg).OfType<Button>().ToList();
+            Check(buttons.Any(b => b.Text == "Rescue…" && b.Enabled) && buttons.Any(b => b.Text == "Show on the map" && b.Enabled) && buttons.Any(b => b.Text == "Copy the report" && b.Enabled),
+                "  its fix is Rescue (a repaired copy), and Show on the map and Copy are on");
+            var details = All(dlg).OfType<TextBox>().Single(t => t.AccessibleName == "What is wrong and how to fix it");
+            Check(details.Text.Contains("What fixes it: Rescue", StringComparison.Ordinal), "  the details say what fixes it");
+            Look(dlg, "world-check", pictures);
         });
         Try("Mods and add-ons window says why not for a console save", () =>
         {

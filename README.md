@@ -27,7 +27,8 @@ original, and anything that couldn't come across is listed.
 
 **Save a world that won't load.** A crash, a power cut or a bad update can leave a world that the game refuses to
 open. Rescue reads everything that can still be read, including chunks the game's own index has lost, and saves it
-into a new world.
+into a new world. Check for problems tells you first what is wrong — damaged or badly stored chunks, book and chunk
+bans, missing mods, a player stuck in a wall — and opens the fix for each one.
 
 **Find what you lost.** Diamonds in a chest somewhere, your dog that wandered off, the village you found once, a
 sign you wrote years ago. Find searches blocks, items (inside shulker boxes too), mobs and text, and shows them on the
@@ -120,7 +121,7 @@ Every feature and the editions it works on. ✅ works · ⚠️ works with a lim
 | Mods and add-ons in a world | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
 | Compare with another world | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | Bring chunks back from a backup | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ❌ | ⚠️ |
-| Check for damage | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Check for problems | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 
 **Build and change**
 

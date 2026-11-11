@@ -68,7 +68,7 @@ sealed class OverviewPage : WorldPage
         Tile("Convert", "To another edition, console or version", Glyphs.Convert, () => Main.ShowConvert(World), "convertfrom");
         Tile("Backups", "Back up now; every backup, restored as a new world or compared", Glyphs.Backup, () => Main.ShowBackups(World), "backups");
         Tile("Share as a file", World is BedrockWorld ? "A .mcworld: opened, Minecraft imports it" : "A .zip with the world, to send or keep", Glyphs.Export, () => Main.ShareWorld(World), "share");
-        Tile("Check for damage", "Read every chunk and report problems", Glyphs.Check, () => Main.CheckWorld(World), "check");
+        Tile("Check for problems", "What stops it opening or crashes it, and how to fix it", Glyphs.Check, () => Do(() => Owner.ShowCheck()), "check");
         Tile("Rescue", "Save what can be read from a damaged world", Glyphs.Repair, () => Main.ShowRescue(World.Location), "rescue");
         Tile("Optimize", "Rewrite the storage compactly", Glyphs.Broom, () => Main.Optimize(World), "optimize");
         Group("ADVANCED");

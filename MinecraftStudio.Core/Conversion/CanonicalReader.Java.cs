@@ -26,6 +26,9 @@ public partial class CanonicalReader
         {
             InhabitedTime = Math.Max(0, col.InhabitedTime),
             LastUpdate = Math.Max(0, col.LastUpdate),
+            // 1.14+ statuses (structure_starts … light, spawn); before 1.13 an unpopulated chunk still has its terrain
+            // and may have been walked in, so it is kept.
+            Unfinished = dv >= 1901 && col.Status is string st && st is not ("full" or "minecraft:full" or "postprocessed" or "populated"),
         };
         bool numeric = layout is JavaChunkLayout.Flat128 or JavaChunkLayout.AnvilNumeric;
         foreach (var (sy, s) in col.Sections)

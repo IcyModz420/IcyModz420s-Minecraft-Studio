@@ -111,6 +111,13 @@ partial class MainForm
 
     /// <summary>Help → What's New: where to find the newer tools.</summary>
     const string WhatsNew =
+        "CHECK FOR PROBLEMS (World menu, map Tools, Overview)\n" +
+        "  Before you play a world: what would stop it opening, crash the game or throw players out, lose things or leave a player\n" +
+        "  stuck — damaged chunks, chunks stored in a way the game can't open, book and chunk bans and other lag machines, mods not\n" +
+        "  on this PC, the packs it uses, a game version newer than yours, and every player (dead in Hardcore, inside a block, in\n" +
+        "  lava, below the world). Each problem has its fix one button away: Rescue, Convert, Clean up, Move to safety …\n" +
+        "  Conversions are now held against how the game itself stores worlds: Java's unfinished border chunks are left for the game\n" +
+        "  to make (a Bedrock world converted with them wouldn't open), and Rescue's repaired copy fixes a world converted that way.\n\n" +
         "WHAT WORKS WHERE (Help menu, start page)\n" +
         "  Every feature against every platform: Java (PC), Bedrock on every device, Pocket 0.x, Xbox 360, Xbox One, PS3, PS4, PS Vita,\n" +
         "  Wii U, Switch and the 3DS. Show for your console lists only what works there. Every menu item says where it works, and a\n" +
